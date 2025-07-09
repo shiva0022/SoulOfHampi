@@ -81,15 +81,17 @@ const Contact = () => {
             </div>
 
             {/* Contact Form */}
-            <div className="bg-gradient-to-br from-[#4a3420]/90 via-[#5a4a3a]/80 to-[#3d2914]/90 rounded-3xl px-6 py-0 shadow-2xl border border-[#9d7a5e] w-full max-w-2xl mx-auto flex flex-col justify-center backdrop-blur-md transition-all duration-300">
-              <div className="flex flex-col items-center mb-1">
-                <h2 className="text-4xl font-bold text-[#f5f1e8] mb-1 tracking-wide drop-shadow-lg">Send us a Message</h2>
+            <div className="bg-gradient-to-br from-[#4a3420]/90 via-[#5a4a3a]/80 to-[#3d2914]/90 rounded-3xl px-6 py-6 shadow-2xl border border-[#9d7a5e] w-full max-w-2xl mx-auto flex flex-col justify-center backdrop-blur-md transition-all duration-300">
+              <div className="flex flex-col items-center mb-6">
+                <h2 className="text-4xl font-bold text-[#f5f1e8] mb-0 tracking-wide drop-shadow-lg">
+                  Send us a Message
+                </h2>
               </div>
-              <form className="space-y-2">
+              <form className="space-y-4">
                 <div>
                   <label
                     htmlFor="name"
-                    className="block text-[#f5f1e8] font-semibold mb-1 text-xl"
+                    className="block text-[#f5f1e8] font-semibold mb-2 text-lg"
                   >
                     Full Name
                   </label>
@@ -98,7 +100,7 @@ const Contact = () => {
                     id="name"
                     name="name"
                     required
-                    className="w-full px-4 py-2.5 rounded-2xl bg-[#2d1f0f]/90 text-[#f5f1e8] placeholder-[#d4c5a0] placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-[#d4c5a0] focus:ring-opacity-80 border border-[#6b5b4b] focus:border-[#d4c5a0] shadow-sm focus:shadow-lg transition-all duration-300 text-xl"
+                    className="w-full px-4 py-2 rounded-2xl bg-[#2d1f0f]/90 text-[#f5f1e8] placeholder-[#d4c5a0] placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-[#d4c5a0] focus:ring-opacity-80 border border-[#6b5b4b] focus:border-[#d4c5a0] shadow-sm focus:shadow-lg transition-all duration-300 text-lg"
                     placeholder="Enter your full name"
                   />
                 </div>
@@ -106,7 +108,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="email"
-                    className="block text-[#f5f1e8] font-semibold mb-1 text-xl"
+                    className="block text-[#f5f1e8] font-semibold mb-2 text-lg"
                   >
                     Email Address
                   </label>
@@ -115,7 +117,7 @@ const Contact = () => {
                     id="email"
                     name="email"
                     required
-                    className="w-full px-4 py-2.5 rounded-2xl bg-[#2d1f0f]/90 text-[#f5f1e8] placeholder-[#d4c5a0] placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-[#d4c5a0] focus:ring-opacity-80 border border-[#6b5b4b] focus:border-[#d4c5a0] shadow-sm focus:shadow-lg transition-all duration-300 text-xl"
+                    className="w-full px-4 py-2 rounded-2xl bg-[#2d1f0f]/90 text-[#f5f1e8] placeholder-[#d4c5a0] placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-[#d4c5a0] focus:ring-opacity-80 border border-[#6b5b4b] focus:border-[#d4c5a0] shadow-sm focus:shadow-lg transition-all duration-300 text-lg"
                     placeholder="Enter your email address"
                   />
                 </div>
@@ -123,7 +125,7 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="subject"
-                    className="block text-[#f5f1e8] font-semibold mb-1 text-xl"
+                    className="block text-[#f5f1e8] font-semibold mb-2 text-lg"
                   >
                     Subject
                   </label>
@@ -132,7 +134,7 @@ const Contact = () => {
                     id="subject"
                     name="subject"
                     required
-                    className="w-full px-4 py-2.5 rounded-2xl bg-[#2d1f0f]/90 text-[#f5f1e8] placeholder-[#d4c5a0] placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-[#d4c5a0] focus:ring-opacity-80 border border-[#6b5b4b] focus:border-[#d4c5a0] shadow-sm focus:shadow-lg transition-all duration-300 text-xl"
+                    className="w-full px-4 py-2 rounded-2xl bg-[#2d1f0f]/90 text-[#f5f1e8] placeholder-[#d4c5a0] placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-[#d4c5a0] focus:ring-opacity-80 border border-[#6b5b4b] focus:border-[#d4c5a0] shadow-sm focus:shadow-lg transition-all duration-300 text-lg"
                     placeholder="Enter message subject"
                   />
                 </div>
@@ -140,23 +142,23 @@ const Contact = () => {
                 <div>
                   <label
                     htmlFor="message"
-                    className="block text-[#f5f1e8] font-semibold mb-1 text-xl"
+                    className="block text-[#f5f1e8] font-semibold mb-2 text-lg"
                   >
                     Message
                   </label>
                   <textarea
                     id="message"
                     name="message"
-                    rows="2"
+                    rows="3"
                     required
-                    className="w-full px-4 py-2.5 rounded-2xl bg-[#2d1f0f]/90 text-[#f5f1e8] placeholder-[#d4c5a0] placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-[#d4c5a0] focus:ring-opacity-80 border border-[#6b5b4b] focus:border-[#d4c5a0] shadow-sm focus:shadow-lg transition-all duration-300 resize-none text-xl"
+                    className="w-full px-4 py-2 rounded-2xl bg-[#2d1f0f]/90 text-[#f5f1e8] placeholder-[#d4c5a0] placeholder-opacity-70 focus:outline-none focus:ring-2 focus:ring-[#d4c5a0] focus:ring-opacity-80 border border-[#6b5b4b] focus:border-[#d4c5a0] shadow-sm focus:shadow-lg transition-all duration-300 resize-none text-lg"
                     placeholder="Enter your message"
                   ></textarea>
                 </div>
 
                 <button
                   type="submit"
-                  className="w-full bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0] text-[#3d2914] px-6 py-2.5 rounded-2xl font-bold transition-all duration-300 shadow-lg hover:shadow-2xl border border-[#9d7a5e] text-xl focus:outline-none focus:ring-2 focus:ring-[#d4c5a0] focus:ring-opacity-80"
+                  className="w-full bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0] text-[#3d2914] px-6 py-2 rounded-2xl font-bold transition-all duration-300 shadow-lg hover:shadow-2xl border border-[#9d7a5e] text-lg focus:outline-none focus:ring-2 focus:ring-[#d4c5a0] focus:ring-opacity-80"
                 >
                   Send Message
                 </button>

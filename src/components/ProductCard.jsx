@@ -1,128 +1,198 @@
-import React from "react";
-import { FaHeart, FaShoppingCart, FaStar } from "react-icons/fa";
+import React, { useState } from "react";
+import {
+  FaHeart,
+  FaShoppingCart,
+  FaStar,
+  FaPlus,
+  FaMinus,
+} from "react-icons/fa";
 
 const ProductCard = ({ product }) => {
   const { id, title, price, image, category, rating, originalPrice } = product;
+  const [quantity, setQuantity] = useState(1);
+
+  const handleQuantityDecrease = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  };
+
+  const handleQuantityIncrease = () => {
+    if (quantity < 10) {
+      // Set a reasonable maximum limit
+      setQuantity(quantity + 1);
+    }
+  };
+
+  const handleAddToCart = () => {
+    console.log(`Adding ${quantity} of product ${id} to cart`);
+    // Here you would typically call your cart management function
+    // addToCart(product, quantity);
+  };
 
   return (
-    <div 
-      className="bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] rounded-2xl p-6 shadow-2xl border border-[#6b5b4b] transform transition-all duration-500 ease-in-out group hover:shadow-3xl w-[320px] mx-auto relative"
+    <div
+      className="bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] rounded-2xl shadow-2xl border border-[#6b5b4b] transform transition-all duration-500 ease-in-out group hover:shadow-3xl w-[320px] h-[420px] mx-auto relative overflow-hidden flex flex-col"
       style={{
-        transform: 'translateZ(0)',
-        willChange: 'transform, box-shadow'
+        transform: "translateZ(0)",
+        willChange: "transform, box-shadow",
       }}
       onMouseEnter={(e) => {
-        e.currentTarget.style.transform = 'translateZ(0) scale(1.035) translateY(-8px)';
-        e.currentTarget.style.boxShadow = '0 35px 60px -12px rgba(0, 0, 0, 0.4)';
+        e.currentTarget.style.transform =
+          "translateZ(0) scale(1.02) translateY(-4px)";
+        e.currentTarget.style.boxShadow = "0 25px 40px -8px rgba(0, 0, 0, 0.3)";
         e.currentTarget.style.zIndex = 10;
       }}
       onMouseLeave={(e) => {
-        e.currentTarget.style.transform = 'translateZ(0) scale(1) translateY(0)';
-        e.currentTarget.style.boxShadow = '0 20px 25px -5px rgba(0, 0, 0, 0.2)';
+        e.currentTarget.style.transform =
+          "translateZ(0) scale(1) translateY(0)";
+        e.currentTarget.style.boxShadow = "0 20px 25px -5px rgba(0, 0, 0, 0.2)";
         e.currentTarget.style.zIndex = 1;
       }}
     >
-      {/* Product Image Container */}
-      <div className="relative overflow-hidden rounded-xl mb-6 bg-gradient-to-br from-[#2d1f0f] to-[#3d2914]">
+      {/* Full Width Product Image Container */}
+      <div className="relative overflow-hidden bg-gradient-to-br from-[#2d1f0f] to-[#3d2914] h-48">
         <img
           src={image}
           alt={title}
-          className="w-full h-56 object-cover transition-all duration-500 ease-in-out group-hover:scale-105"
-          style={{ willChange: 'transform' }}
+          className="w-full h-full object-cover transition-all duration-500 ease-in-out group-hover:scale-102"
+          style={{ willChange: "transform" }}
         />
-        
+
+        {/* Overlay Badges & Wishlist */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
         {/* Wishlist Button */}
-        <div className="absolute top-4 right-4">
-          <button 
-            className="bg-[#d4c5a0] bg-opacity-95 p-3 rounded-full shadow-lg transition-all duration-300 ease-in-out hover:bg-[#b08968]"
-            style={{ willChange: 'transform, background-color' }}
+        <div className="absolute top-3 right-3">
+          <button
+            className="bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-lg transition-all duration-300 ease-in-out hover:bg-red-50"
+            style={{ willChange: "transform, background-color" }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.transform = 'scale(1.15)';
+              e.currentTarget.style.transform = "scale(1.08)";
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.transform = 'scale(1)';
+              e.currentTarget.style.transform = "scale(1)";
             }}
           >
-            <FaHeart 
+            <FaHeart
               className="text-[#3d2914] text-sm transition-colors duration-300 ease-in-out"
-              style={{ willChange: 'color' }}
-              onMouseEnter={(e) => e.currentTarget.style.color = '#ef4444'}
-              onMouseLeave={(e) => e.currentTarget.style.color = '#3d2914'}
+              style={{ willChange: "color" }}
+              onMouseEnter={(e) => (e.currentTarget.style.color = "#ef4444")}
+              onMouseLeave={(e) => (e.currentTarget.style.color = "#3d2914")}
             />
           </button>
         </div>
-        
+
         {/* Discount Badge */}
         {originalPrice && (
-          <div className="absolute top-4 left-4">
-            <span className="bg-gradient-to-r from-[#d4c5a0] to-[#b08968] text-[#3d2914] px-4 py-2 rounded-full text-sm font-bold shadow-lg border border-[#9d7a5e]">
+          <div className="absolute top-3 left-3">
+            <span className="bg-gradient-to-r from-[#d4c5a0] to-[#b08968] text-[#3d2914] px-3 py-1 rounded-full text-xs font-bold shadow-lg">
               {Math.round(((originalPrice - price) / originalPrice) * 100)}% OFF
             </span>
           </div>
         )}
-        
+
         {/* Category Badge */}
-        <div className="absolute bottom-4 left-4">
-          <span className="bg-[#6b5b4b] bg-opacity-90 text-[#f5f1e8] px-4 py-2 rounded-full text-sm font-medium shadow-lg border border-[#7c6c5c]">
+        <div className="absolute bottom-3 left-3">
+          <span className="bg-black/60 backdrop-blur-sm text-white px-3 py-1 rounded-full text-xs font-medium">
             {category}
           </span>
         </div>
       </div>
 
-      {/* Product Information */}
-      <div className="space-y-4">
-        {/* Product Title */}
-        <h3 
-          className="font-bold text-[#f5f1e8] text-xl leading-tight line-clamp-2 min-h-[3.5rem] transition-colors duration-300 ease-in-out group-hover:text-[#d4c5a0]"
-          style={{ willChange: 'color' }}
-        >
-          {title}
-        </h3>
-        
-        {/* Rating Section */}
-        <div className="flex items-center gap-3">
-          <div className="flex items-center gap-1">
-            {[...Array(5)].map((_, i) => (
-              <FaStar 
-                key={i} 
-                className={`text-lg transition-all duration-300 ease-in-out ${i < rating ? "text-yellow-400 fill-current" : "text-[#6b5b4b]"}`}
-              />
-            ))}
+      {/* Compact Product Information */}
+      <div className="p-4 flex-1 flex flex-col justify-between">
+        <div className="space-y-3">
+          {/* Product Title & Rating in same row */}
+          <div className="flex justify-between items-start gap-2">
+            <h3
+              className="font-bold text-[#f5f1e8] text-lg leading-tight flex-1 group-hover:text-[#d4c5a0] transition-colors duration-300 h-[3.5rem] overflow-hidden"
+              style={{
+                display: "-webkit-box",
+                WebkitLineClamp: 2,
+                WebkitBoxOrient: "vertical",
+              }}
+            >
+              {title}
+            </h3>
+            <div className="flex items-center gap-1 flex-shrink-0 mt-1">
+              <FaStar className="text-yellow-400 text-sm" />
+              <span className="text-sm text-[#d4c5a0] font-semibold">
+                {rating}
+              </span>
+            </div>
           </div>
-          <span className="text-sm text-[#d4c5a0] font-semibold">
-            ({rating}.0)
-          </span>
+
+          {/* Price & Quantity in same row */}
+          <div className="flex justify-between items-center">
+            <div className="flex items-center gap-2">
+              <span className="text-2xl font-bold text-[#f5f1e8]">
+                ₹{price.toLocaleString()}
+              </span>
+              {originalPrice && (
+                <span className="text-sm text-[#d4c5a0] opacity-70 line-through">
+                  ₹{originalPrice.toLocaleString()}
+                </span>
+              )}
+            </div>
+
+            {/* Compact Quantity Counter */}
+            <div className="flex items-center gap-2 bg-[#2d1f0f] rounded-lg p-1 border border-[#6b5b4b]">
+              <button
+                onClick={handleQuantityDecrease}
+                disabled={quantity <= 1}
+                className={`w-6 h-6 rounded flex items-center justify-center transition-all duration-200 ${
+                  quantity <= 1
+                    ? "bg-[#4a3420] text-[#6b5b4b] cursor-not-allowed"
+                    : "bg-[#d4c5a0] text-[#3d2914] hover:bg-[#b08968] active:scale-95"
+                }`}
+              >
+                <FaMinus className="text-xs" />
+              </button>
+
+              <span className="min-w-[1.5rem] text-center font-bold text-[#f5f1e8] text-sm">
+                {quantity}
+              </span>
+
+              <button
+                onClick={handleQuantityIncrease}
+                disabled={quantity >= 10}
+                className={`w-6 h-6 rounded flex items-center justify-center transition-all duration-200 ${
+                  quantity >= 10
+                    ? "bg-[#4a3420] text-[#6b5b4b] cursor-not-allowed"
+                    : "bg-[#d4c5a0] text-[#3d2914] hover:bg-[#b08968] active:scale-95"
+                }`}
+              >
+                <FaPlus className="text-xs" />
+              </button>
+            </div>
+          </div>
         </div>
 
-        {/* Price Section */}
-        <div className="flex items-center gap-4">
-          <span className="text-3xl font-bold text-[#f5f1e8]">₹{price.toLocaleString()}</span>
-          {originalPrice && (
-            <span className="text-lg text-[#d4c5a0] opacity-70 line-through font-medium">
-              ₹{originalPrice.toLocaleString()}
-            </span>
-          )}
-        </div>
-
-        {/* Action Buttons */}
-        <div className="flex gap-3 pt-4">
-          <button 
-            className="flex-1 bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0] text-[#3d2914] py-3 px-6 rounded-xl font-bold flex items-center justify-center gap-3 shadow-lg transition-all duration-300 ease-in-out border border-[#9d7a5e] hover:shadow-xl transform hover:scale-105 min-h-[44px]"
-            style={{ willChange: 'transform, box-shadow, background' }}
-          >
-            <FaShoppingCart className="text-lg" />
-            Add to Cart
-          </button>
-          <button 
-            className="bg-transparent border-2 border-[#d4c5a0] text-[#f5f1e8] hover:bg-[#d4c5a0] hover:text-[#3d2914] py-3 px-6 rounded-xl font-bold shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl transform hover:scale-105 min-h-[44px]"
-            style={{ willChange: 'transform, box-shadow, background' }}
-          >
-            View
-          </button>
+        {/* Separated Action Buttons - Always at bottom */}
+        <div className="mt-4">
+          <div className="flex gap-2">
+            <button
+              onClick={handleAddToCart}
+              className="flex-1 bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0] text-[#3d2914] py-2.5 px-4 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg transition-all duration-300 ease-in-out border border-[#9d7a5e] hover:shadow-xl transform hover:scale-102"
+              style={{ willChange: "transform, box-shadow, background" }}
+            >
+              <FaShoppingCart className="text-sm" />
+              <span className="text-sm">
+                ₹{(price * quantity).toLocaleString()}
+              </span>
+            </button>
+            <button
+              className="bg-transparent border-2 border-[#d4c5a0] text-[#f5f1e8] hover:bg-[#d4c5a0] hover:text-[#3d2914] py-2.5 px-4 rounded-xl font-bold shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl transform hover:scale-102"
+              style={{ willChange: "transform, box-shadow, background" }}
+            >
+              View
+            </button>
+          </div>
         </div>
       </div>
     </div>
   );
 };
 
-export default ProductCard; 
+export default ProductCard;
