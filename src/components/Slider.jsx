@@ -1,102 +1,86 @@
+// Slider.jsx
 import React from "react";
-import { Carousel } from "react-responsive-carousel";
-import "react-responsive-carousel/lib/styles/carousel.min.css";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination, Autoplay } from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
+const categories = [
+  {
+    id: 1,
+    title: "Traditional Handicrafts",
+    image:
+      "https://images.unsplash.com/photo-1690541478715-898f26cbc28d?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description: "Authentic handmade crafts",
+  },
+  {
+    id: 2,
+    title: "Wood & Stone Sculptures",
+    image:
+      "https://images.unsplash.com/photo-1728599652228-e19042c5141a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description: "Ancient art replicas",
+  },
+  {
+    id: 3,
+    title: "Textiles & Fabrics",
+    image:
+      "https://images.unsplash.com/photo-1678705730064-a7ecbab4b3fb?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description: "Traditional Indian fabrics",
+  },
+  {
+    id: 4,
+    title: "Jewelry & Ornaments",
+    image:
+      "https://images.unsplash.com/photo-1731586249458-c4837bf07de7?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    description: "Handcrafted jewelry pieces",
+  },
+  {
+    id: 5,
+    title: "Artisans & Sovenirs",
+    image:
+      "https://as1.ftcdn.net/v2/jpg/04/91/88/62/1000_F_491886281_c4pugzKqzh7u04kxhA84g5FsNE8UGz4m.jpg",
+    description: "food items & sovenirs",
+  },
+];
 
 const Slider = () => {
-  const categories = [
-    {
-      id: 1,
-      title: "Traditional Handicrafts",
-      image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      description: "Authentic handmade crafts",
-    },
-    {
-      id: 2,
-      title: "Stone Sculptures",
-      image:
-        "https://images.unsplash.com/photo-1594736797933-d0c6df09712e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      description: "Ancient art replicas",
-    },
-    {
-      id: 3,
-      title: "Textiles & Fabrics",
-      image:
-        "https://images.unsplash.com/photo-1571115764595-644a1f56a55c?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      description: "Traditional Indian fabrics",
-    },
-    {
-      id: 4,
-      title: "Jewelry & Ornaments",
-      image:
-        "https://images.unsplash.com/photo-1611652022419-a9419f74343d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      description: "Handcrafted jewelry pieces",
-    },
-    {
-      id: 5,
-      title: "Antique Collectibles",
-      image:
-        "https://images.unsplash.com/photo-1578321272176-b7bbc0679853?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      description: "Rare historical items",
-    },
-  ];
   return (
     <div className="w-1/2 p-4">
-      {/* Custom styles for carousel controls - minimal CSS needed for deep customization */}
-      <style>{`
-        .carousel .carousel-status { display: none; }
-        .carousel .control-dots {
-          margin: 0 !important;
-          padding: 12px 0 !important;
-        }
-        .carousel .control-dots .dot {
-          background: rgba(245, 241, 232, 0.6) !important;
-          box-shadow: none !important;
-          width: 12px !important;
-          height: 12px !important;
-          margin: 0 6px !important;
-          border-radius: 50% !important;
-        }
-        .carousel .control-dots .dot.selected {
-          background: #f5f1e8 !important;
-        }
-      `}</style>
+      {/* Custom styles for Swiper arrows and pagination using minimal CSS with Tailwind colors */}
 
-      <div className="m-1 rounded-[30px] overflow-hidden shadow-lg bg-[#c5b693] bg-opacity-20 backdrop-blur-sm">
-        <Carousel
-          showThumbs={false}
-          showStatus={false}
-          infiniteLoop={true}
-          autoPlay={true}
-          interval={3000}
-          showArrows={false}
-          showIndicators={true}
-          swipeable={true}
-          emulateTouch={true}
-          className="rounded-[30px] overflow-hidden"
-        >
-          {categories.map((category) => (
-            <div key={category.id} className="relative group">
+      <Swiper
+        modules={[Navigation, Pagination, Autoplay]}
+        loop={true}
+        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        pagination={{ clickable: true }}
+        navigation
+        spaceBetween={30}
+        className="rounded-[30px] overflow-hidden"
+      >
+        {categories.map((item) => (
+          <SwiperSlide key={item.id}>
+            <div className="relative group">
               <img
-                src={category.image}
-                alt={category.title}
-                className="w-full h-[400px] object-cover rounded-[30px] transition-transform duration-300 group-hover:scale-105"
+                src={item.image}
+                alt={item.title}
+                className="w-full h-[680px] object-cover rounded-[30px] group-hover:scale-105 transition-transform duration-300"
               />
-              {/* Gradient overlay for better text visibility */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent rounded-[30px] flex flex-col justify-end items-start p-6">
-                <div className="bg-[#3d2914] bg-opacity-70 backdrop-blur-sm rounded-lg p-4 mb-4 transform transition-all duration-300 group-hover:bg-opacity-80">
-                  <h3 className="text-2xl md:text-3xl font-bold text-[#f5f1e8] mb-2 leading-tight">
-                    {category.title}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent rounded-[30px] flex flex-col justify-end items-start p-8">
+                <div className="mb-6 transform group-hover:translate-y-[-4px] transition-all duration-300">
+                  <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-wide drop-shadow-lg text-shadow-xl">
+                    {item.title}
                   </h3>
-                  <p className="text-sm md:text-lg text-[#f5f1e8] opacity-90 leading-relaxed">
-                    {category.description}
+                  <p className="text-lg md:text-xl text-white/90 leading-relaxed font-medium drop-shadow-md">
+                    {item.description}
                   </p>
                 </div>
               </div>
             </div>
-          ))}
-        </Carousel>
-      </div>
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </div>
   );
 };
