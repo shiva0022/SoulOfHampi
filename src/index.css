@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* Enhanced Swiper Styles */
 .swiper-button-next,
 .swiper-button-prev {
   width: auto !important;
@@ -13,35 +14,35 @@
 
 .swiper-button-next:after,
 .swiper-button-prev:after {
-  font-size: 24px !important;
+  font-size: 28px !important;
   font-weight: bold !important;
   color: rgb(245, 241, 232) !important;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7) !important;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8) !important;
 }
 
 .swiper-button-next:hover:after,
 .swiper-button-prev:hover:after {
-  text-shadow: 2px 2px 8px rgba(245, 241, 232, 0.8) !important;
-  transform: scale(1.2) !important;
+  text-shadow: 2px 2px 12px rgba(245, 241, 232, 0.9) !important;
+  transform: scale(1.3) !important;
 }
 
 .swiper-pagination-bullet {
-  background: rgba(245, 241, 232, 0.4) !important;
-  width: 10px !important;
-  height: 10px !important;
-  margin: 0 4px !important;
+  background: rgba(245, 241, 232, 0.5) !important;
+  width: 12px !important;
+  height: 12px !important;
+  margin: 0 6px !important;
   transition: all 0.3s ease !important;
-  opacity: 0.7 !important;
+  opacity: 0.8 !important;
 }
 
 .swiper-pagination-bullet-active {
   background: rgb(245, 241, 232) !important;
   opacity: 1 !important;
-  transform: scale(1.3) !important;
+  transform: scale(1.4) !important;
 }
 
 .swiper-pagination {
-  bottom: 20px !important;
+  bottom: 30px !important;
 }
 
 /* Line clamp utilities */
@@ -75,9 +76,110 @@
   transform: scale(1.1);
 }
 
+/* Custom shadow utilities */
+.shadow-3xl {
+  box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.4);
+}
+
 /* Smooth transitions for all interactive elements */
 * {
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  transition-duration: 150ms;
+  transition-duration: 200ms;
+}
+
+/* Enhanced focus styles */
+input:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+  ring: 2px;
+  ring-color: #d4c5a0;
+  ring-opacity: 50;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #2d1f0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #d4c5a0, #b08968);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(to bottom, #b08968, #d4c5a0);
+}
+
+/* Enhanced text selection */
+::selection {
+  background-color: #d4c5a0;
+  color: #3d2914;
+}
+
+/* Loading animation for buttons */
+.loading {
+  position: relative;
+  overflow: hidden;
+}
+
+.loading::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    left: -100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+/* Enhanced gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, #d4c5a0, #b08968);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glassmorphism effect */
+.glass {
+  background: rgba(61, 41, 20, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(212, 197, 160, 0.2);
+}
+
+/* Enhanced button hover effects */
+.btn-hover {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.btn-hover:hover::before {
+  left: 100%;
 }

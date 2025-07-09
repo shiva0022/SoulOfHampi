@@ -11,7 +11,7 @@ import "./App.css";
 const App = () => {
   return (
     <Router>
-      <div className="min-h-screen bg-gradient-to-br from-[#d4c5a0] to-[#9d7a5e] font-['Segoe_UI',_Tahoma,_Geneva,_Verdana,_sans-serif]">
+      <div className="min-h-screen bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] font-['Segoe_UI',_Tahoma,_Geneva,_Verdana,_sans-serif]">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />

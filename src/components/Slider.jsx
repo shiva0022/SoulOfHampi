@@ -48,16 +48,14 @@ const categories = [
 const Slider = () => {
   return (
     <div className="w-1/2 p-4">
-      {/* Custom styles for Swiper arrows and pagination using minimal CSS with Tailwind colors */}
-
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         loop={true}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
+        autoplay={{ delay: 4000, disableOnInteraction: false }}
         pagination={{ clickable: true }}
         navigation
         spaceBetween={30}
-        className="rounded-[30px] overflow-hidden"
+        className="rounded-[30px] overflow-hidden shadow-2xl"
       >
         {categories.map((item) => (
           <SwiperSlide key={item.id}>
@@ -65,16 +63,19 @@ const Slider = () => {
               <img
                 src={item.image}
                 alt={item.title}
-                className="w-full h-[680px] object-cover rounded-[30px] group-hover:scale-105 transition-transform duration-300"
+                className="w-full h-[680px] object-cover rounded-[30px] group-hover:scale-105 transition-transform duration-500"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent rounded-[30px] flex flex-col justify-end items-start p-8">
-                <div className="mb-6 transform group-hover:translate-y-[-4px] transition-all duration-300">
-                  <h3 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-wide drop-shadow-lg text-shadow-xl">
+              <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/50 to-transparent rounded-[30px] flex flex-col justify-end items-start p-10">
+                <div className="mb-8 transform group-hover:translate-y-[-8px] transition-all duration-500">
+                  <h3 className="text-4xl md:text-5xl font-bold text-[#f5f1e8] mb-6 tracking-wide drop-shadow-2xl leading-tight">
                     {item.title}
                   </h3>
-                  <p className="text-lg md:text-xl text-white/90 leading-relaxed font-medium drop-shadow-md">
+                  <p className="text-xl md:text-2xl text-[#d4c5a0] leading-relaxed font-medium drop-shadow-lg max-w-md">
                     {item.description}
                   </p>
+                  <button className="mt-6 bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0] text-[#3d2914] px-6 py-3 rounded-xl font-semibold transition-all duration-500 ease-in-out shadow-lg hover:shadow-xl transform hover:scale-105 border border-[#9d7a5e]">
+                    Explore Category
+                  </button>
                 </div>
               </div>
             </div>

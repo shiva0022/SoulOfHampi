@@ -40,29 +40,32 @@ const MostPopular = () => {
   ];
 
   return (
-    <section className="py-16 px-4 bg-[#b08968] bg-opacity-10">
+    <section className="py-20 px-6 bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a]">
       <div className="container mx-auto max-w-7xl">
-        {/* Section Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold text-[#3d2914] mb-4">
-            Most Popular
-          </h2>
-          <p className="text-lg text-[#3d2914] opacity-80 max-w-2xl mx-auto">
+        {/* Enhanced Section Header */}
+        <div className="text-center mb-16">
+          <div className="inline-block mb-6">
+            <h2 className="text-5xl font-bold text-[#f5f1e8] mb-4 relative">
+              Most Popular
+              {/* <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-[#d4c5a0] to-[#b08968] rounded-full"></span> */}
+            </h2>
+          </div>
+          <p className="text-xl text-[#d4c5a0] max-w-3xl mx-auto leading-relaxed font-medium">
             Our best-selling products loved by thousands of customers. These items 
-            represent the essence of Hampi's rich cultural heritage.
+            represent the essence of Hampi's rich cultural heritage and timeless beauty.
           </p>
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-18">
           {popularProducts.map((product) => (
             <ProductCard key={product.id} product={product} />
           ))}
         </div>
 
-        {/* View All Button */}
-        <div className="text-center mt-12">
-          <button className="bg-[#3d2914] hover:bg-[#2d1f0f] text-[#f5f1e8] px-8 py-3 rounded-lg font-medium transition-colors duration-200 shadow-md hover:shadow-lg">
+        {/* Enhanced View All Button */}
+        <div className="text-center mt-16">
+          <button className="bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0] text-[#3d2914] px-10 py-4 rounded-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 border border-[#9d7a5e] text-lg">
             Explore All Popular Items
           </button>
         </div>
