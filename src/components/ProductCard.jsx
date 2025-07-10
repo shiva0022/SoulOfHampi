@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { useWishlist } from "../context/WishlistContext";
 import {
@@ -220,12 +221,13 @@ const ProductCard = ({ product }) => {
                 </>
               )}
             </button>
-            <button
-              className="bg-transparent border-2 border-[#d4c5a0] text-[#f5f1e8] hover:bg-[#d4c5a0] hover:text-[#3d2914] py-2.5 px-4 rounded-xl font-bold shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl transform hover:scale-102"
+            <Link
+              to={`/product/${id}`}
+              className="bg-transparent border-2 border-[#d4c5a0] text-[#f5f1e8] hover:bg-[#d4c5a0] hover:text-[#3d2914] py-2.5 px-4 rounded-xl font-bold shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl transform hover:scale-102 flex items-center justify-center"
               style={{ willChange: "transform, box-shadow, background" }}
             >
-              View
-            </button>
+              Buy Now
+            </Link>
           </div>
         </div>
       </div>

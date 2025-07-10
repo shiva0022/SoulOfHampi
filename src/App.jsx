@@ -9,6 +9,7 @@ import CategoryProducts from "./pages/CategoryProducts";
 import Contact from "./pages/Contact";
 import Cart from "./pages/Cart";
 import Wishlist from "./pages/Wishlist";
+import ProductDetails from "./pages/ProductDetails";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import "./App.css";
@@ -27,6 +28,7 @@ const App = () => {
                 path="/category/:category"
                 element={<CategoryProducts />}
               />
+              <Route path="/product/:id" element={<ProductDetails />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/cart" element={<Cart />} />
