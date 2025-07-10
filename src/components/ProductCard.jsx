@@ -1,15 +1,23 @@
 import React, { useState } from "react";
+import { useCart } from "../context/CartContext";
+import { useWishlist } from "../context/WishlistContext";
 import {
   FaHeart,
   FaShoppingCart,
   FaStar,
   FaPlus,
   FaMinus,
+  FaCheck,
 } from "react-icons/fa";
 
 const ProductCard = ({ product }) => {
   const { id, title, price, image, category, rating, originalPrice } = product;
   const [quantity, setQuantity] = useState(1);
+  const [isAdded, setIsAdded] = useState(false);
+  const { addToCart } = useCart();
+  const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
+
+  const inWishlist = isInWishlist(id);
 
   const handleQuantityDecrease = () => {
     if (quantity > 1) {
@@ -25,9 +33,21 @@ const ProductCard = ({ product }) => {
   };
 
   const handleAddToCart = () => {
-    console.log(`Adding ${quantity} of product ${id} to cart`);
-    // Here you would typically call your cart management function
-    // addToCart(product, quantity);
+    addToCart(product, quantity);
+    setIsAdded(true);
+
+    // Reset the "added" state after 2 seconds
+    setTimeout(() => {
+      setIsAdded(false);
+    }, 2000);
+  };
+
+  const handleWishlistToggle = () => {
+    if (inWishlist) {
+      removeFromWishlist(id);
+    } else {
+      addToWishlist(product);
+    }
   };
 
   return (
@@ -65,7 +85,12 @@ const ProductCard = ({ product }) => {
         {/* Wishlist Button */}
         <div className="absolute top-3 right-3">
           <button
-            className="bg-white/90 backdrop-blur-sm p-2 rounded-full shadow-lg transition-all duration-300 ease-in-out hover:bg-red-50"
+            onClick={handleWishlistToggle}
+            className={`${
+              inWishlist
+                ? "bg-red-500 hover:bg-red-600"
+                : "bg-white/90 hover:bg-red-50"
+            } backdrop-blur-sm p-2 rounded-full shadow-lg transition-all duration-300 ease-in-out`}
             style={{ willChange: "transform, background-color" }}
             onMouseEnter={(e) => {
               e.currentTarget.style.transform = "scale(1.08)";
@@ -75,10 +100,9 @@ const ProductCard = ({ product }) => {
             }}
           >
             <FaHeart
-              className="text-[#3d2914] text-sm transition-colors duration-300 ease-in-out"
-              style={{ willChange: "color" }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = "#ef4444")}
-              onMouseLeave={(e) => (e.currentTarget.style.color = "#3d2914")}
+              className={`${
+                inWishlist ? "text-white" : "text-[#3d2914]"
+              } text-sm transition-colors duration-300 ease-in-out`}
             />
           </button>
         </div>
@@ -174,13 +198,27 @@ const ProductCard = ({ product }) => {
           <div className="flex gap-2">
             <button
               onClick={handleAddToCart}
-              className="flex-1 bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0] text-[#3d2914] py-2.5 px-4 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg transition-all duration-300 ease-in-out border border-[#9d7a5e] hover:shadow-xl transform hover:scale-102"
+              disabled={isAdded}
+              className={`flex-1 ${
+                isAdded
+                  ? "bg-green-600 hover:bg-green-600"
+                  : "bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0]"
+              } text-[#3d2914] py-2.5 px-4 rounded-xl font-bold flex items-center justify-center gap-2 shadow-lg transition-all duration-300 ease-in-out border border-[#9d7a5e] hover:shadow-xl transform hover:scale-102`}
               style={{ willChange: "transform, box-shadow, background" }}
             >
-              <FaShoppingCart className="text-sm" />
-              <span className="text-sm">
-                ₹{(price * quantity).toLocaleString()}
-              </span>
+              {isAdded ? (
+                <>
+                  <FaCheck className="text-sm" />
+                  <span className="text-sm text-white">Added!</span>
+                </>
+              ) : (
+                <>
+                  <FaShoppingCart className="text-sm" />
+                  <span className="text-sm">
+                    ₹{(price * quantity).toLocaleString()}
+                  </span>
+                </>
+              )}
             </button>
             <button
               className="bg-transparent border-2 border-[#d4c5a0] text-[#f5f1e8] hover:bg-[#d4c5a0] hover:text-[#3d2914] py-2.5 px-4 rounded-xl font-bold shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl transform hover:scale-102"
