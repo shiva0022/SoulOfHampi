@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import ProductCard from "../components/ProductCard";
+import CategoryHeader from "../components/CategoryHeader";
+import BackButton from "../components/BackButton";
+import ProductGrid from "../components/ProductGrid";
+import CategoryPatternBackground from "../components/CategoryPatternBackground";
 
 const CategoryProducts = () => {
   const { category } = useParams();
@@ -578,93 +582,25 @@ const CategoryProducts = () => {
           <p className="text-lg text-[#d4c5a0] mb-6">
             The requested category doesn't exist.
           </p>
-          <button
-            onClick={handleBackToProducts}
-            className="bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0] text-[#3d2914] px-8 py-3 rounded-xl font-bold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-          >
-            Back to Products
-          </button>
+          <BackButton onClick={handleBackToProducts} />
         </div>
       </div>
     );
   }
 
   return (
-    <div className="min-h-screen py-20 px-6 bg-gradient-to-br from-[#2d1f0f] via-[#3d2914] to-[#4a3420]">
+    <div className="min-h-screen py-20 px-6 bg-gradient-to-br from-[#2d1f0f] via-[#3d2914] to-[#4a3420] relative overflow-hidden">
+      <CategoryPatternBackground categoryTitle={categoryInfo.title} mainEmoji={categoryInfo.emoji} />
       <div className="container-fluid mx-auto w-full">
-        {/* Animated Back Button */}
-        <div className="mb-8 animate-fade-in">
-          <button
-            onClick={handleBackToProducts}
-            className="group flex items-center gap-3 text-[#d4c5a0] hover:text-[#f5f1e8] transition-all duration-300 bg-[#3d2914]/50 hover:bg-[#4a3420]/70 px-6 py-3 rounded-full border border-[#6b5b4b] hover:border-[#d4c5a0] backdrop-blur-sm"
-          >
-            <svg
-              className="w-5 h-5 transform group-hover:-translate-x-1 transition-transform duration-300"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M15 19l-7-7 7-7"
-              />
-            </svg>
-            <span className="font-semibold">Back to All Products</span>
-          </button>
+        <div className="mb-8 animate-fade-in -mt-4">
+          <BackButton onClick={handleBackToProducts} />
         </div>
-
-        {/* Enhanced Category Header with Parallax Effect */}
-        <div className="text-center mb-20 relative overflow-hidden">
-          {/* Background Pattern */}
-          <div className="absolute inset-0 opacity-5">
-            <div className="grid grid-cols-8 gap-4 transform rotate-12 scale-150">
-              {[...Array(64)].map((_, i) => (
-                <div key={i} className="text-4xl">
-                  {categoryInfo.emoji}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          {/* Main Content */}
-          <div className="relative z-10">
-            <div className="inline-block animate-float">
-              <div className="text-9xl mb-8 filter drop-shadow-2xl transform hover:scale-110 transition-transform duration-500">
-                {categoryInfo.emoji}
-              </div>
-            </div>
-
-            <h1 className="text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-[#f5f1e8] via-[#d4c5a0] to-[#b08968] mb-8 relative animate-slide-up">
-              {categoryInfo.title}
-              <div className="absolute -bottom-4 left-1/2 transform -translate-x-1/2">
-                <div className="w-40 h-2 bg-gradient-to-r from-[#d4c5a0] via-[#b08968] to-[#d4c5a0] rounded-full shadow-lg"></div>
-                <div className="w-20 h-1 bg-gradient-to-r from-[#f5f1e8] to-transparent rounded-full mt-1 mx-auto"></div>
-              </div>
-            </h1>
-
-            <p className="text-2xl text-[#d4c5a0] max-w-5xl mx-auto leading-relaxed font-medium mb-8 animate-fade-in-delay">
-              {categoryInfo.description}
-            </p>
-
-            <div className="flex flex-wrap justify-center gap-4 mt-8">
-              <span className="text-lg text-[#f5f1e8] bg-gradient-to-r from-[#3d2914] to-[#4a3420] px-6 py-3 rounded-full border border-[#6b5b4b] shadow-xl backdrop-blur-sm">
-                🎯 {products.length} Authentic Products
-              </span>
-              <span className="text-lg text-[#f5f1e8] bg-gradient-to-r from-[#4a3420] to-[#5a4a3a] px-6 py-3 rounded-full border border-[#6b5b4b] shadow-xl backdrop-blur-sm">
-                ✨ Handcrafted Excellence
-              </span>
-              <span className="text-lg text-[#f5f1e8] bg-gradient-to-r from-[#5a4a3a] to-[#3d2914] px-6 py-3 rounded-full border border-[#6b5b4b] shadow-xl backdrop-blur-sm">
-                🏛️ Heritage Collection
-              </span>
-            </div>
-          </div>
-        </div>
-
-        {/* Enhanced Products Grid with Stagger Animation */}
+        <CategoryHeader
+          title={categoryInfo.title}
+          emoji={categoryInfo.emoji}
+          description={categoryInfo.description}
+        />
         <div className="relative">
-          {/* Section Title */}
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-[#f5f1e8] mb-4 relative inline-block">
               <span className="absolute inset-0 blur-lg bg-gradient-to-r from-[#d4c5a0] to-[#b08968] opacity-30"></span>
@@ -672,24 +608,8 @@ const CategoryProducts = () => {
             </h2>
             <div className="w-24 h-1 bg-gradient-to-r from-[#d4c5a0] to-[#b08968] mx-auto rounded-full"></div>
           </div>
-
-          {/* Products Grid with Enhanced Layout */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 justify-items-center">
-            {products.map((product, index) => (
-              <div
-                key={product.id}
-                className="transform transition-all duration-500 hover:scale-102"
-                style={{
-                  animationDelay: `${index * 0.1}s`,
-                  animation: "fadeInUp 0.6s ease-out forwards",
-                }}
-              >
-                <ProductCard product={product} />
-              </div>
-            ))}
-          </div>
+          <ProductGrid products={products} />
         </div>
-
         {/* Enhanced Call to Action Section - Simplified & Elegant */}
         <div className="text-center mt-20">
           <div className="relative max-w-4xl mx-auto">
@@ -708,12 +628,12 @@ const CategoryProducts = () => {
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button
                   onClick={handleBackToProducts}
-                  className="bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0] text-[#3d2914] px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-102"
+                  className="bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0] text-[#3d2914] px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-102"
                 >
                   Explore More Categories
                 </button>
 
-                <button className="border-2 border-[#d4c5a0] text-[#f5f1e8] hover:bg-[#d4c5a0] hover:text-[#3d2914] px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-102">
+                <button className="border-2 border-[#d4c5a0] text-[#f5f1e8] hover:bg-[#d4c5a0] hover:text-[#3d2914] px-8 py-4 rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-2xl transform hover:scale-102">
                   Contact Our Artisans
                 </button>
               </div>

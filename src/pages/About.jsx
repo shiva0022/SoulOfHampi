@@ -19,7 +19,7 @@ const About = () => {
         {/* Main Content Grid */}
         <div className="grid lg:grid-cols-2 gap-12 items-center mb-20">
           {/* Story Section */}
-          <div className="bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] rounded-2xl p-10 shadow-2xl border border-[#6b5b4b] hover:shadow-3xl transition-all duration-300 transform hover:scale-105">
+          <div className="bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] rounded-2xl p-10 shadow-2xl border border-[#6b5b4b] hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
             <h2 className="text-4xl font-bold text-[#f5f1e8] mb-8">
               Our Story
             </h2>
@@ -37,7 +37,7 @@ const About = () => {
           </div>
 
           {/* Mission Section */}
-          <div className="bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] rounded-2xl p-10 shadow-2xl border border-[#6b5b4b] hover:shadow-3xl transition-all duration-300 transform hover:scale-105">
+          <div className="bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] rounded-2xl p-10 shadow-2xl border border-[#6b5b4b] hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
             <h2 className="text-4xl font-bold text-[#f5f1e8] mb-8">
               Our Mission
             </h2>
@@ -57,7 +57,7 @@ const About = () => {
 
         {/* Features Section */}
         <div className="grid md:grid-cols-3 gap-8 mb-20">
-          <div className="text-center bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] rounded-2xl p-8 shadow-2xl border border-[#6b5b4b] hover:shadow-3xl transition-all duration-300 transform hover:scale-105">
+          <div className="text-center bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] rounded-2xl p-8 shadow-2xl border border-[#6b5b4b] hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
             <div className="bg-gradient-to-r from-[#d4c5a0] to-[#b08968] rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6 shadow-lg">
               <span className="text-4xl">🏛️</span>
             </div>
@@ -70,7 +70,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="text-center bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] rounded-2xl p-8 shadow-2xl border border-[#6b5b4b] hover:shadow-3xl transition-all duration-300 transform hover:scale-105">
+          <div className="text-center bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] rounded-2xl p-8 shadow-2xl border border-[#6b5b4b] hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
             <div className="bg-gradient-to-r from-[#d4c5a0] to-[#b08968] rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6 shadow-lg">
               <span className="text-4xl">🎨</span>
             </div>
@@ -83,7 +83,7 @@ const About = () => {
             </p>
           </div>
 
-          <div className="text-center bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] rounded-2xl p-8 shadow-2xl border border-[#6b5b4b] hover:shadow-3xl transition-all duration-300 transform hover:scale-105">
+          <div className="text-center bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] rounded-2xl p-8 shadow-2xl border border-[#6b5b4b] hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
             <div className="bg-gradient-to-r from-[#d4c5a0] to-[#b08968] rounded-full w-24 h-24 flex items-center justify-center mx-auto mb-6 shadow-lg">
               <span className="text-4xl">🌟</span>
             </div>
@@ -107,7 +107,7 @@ const About = () => {
               Join us in celebrating the timeless beauty and cultural richness
               of one of India's most magnificent heritage sites through our curated collection
             </p>
-            <button className="bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0] text-[#3d2914] px-10 py-4 rounded-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 border border-[#9d7a5e] text-lg">
+            <button className="bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0] text-[#3d2914] px-10 py-4 rounded-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-2xl transform hover:scale-105 border border-[#9d7a5e] text-lg">
               Explore Our Collection
             </button>
           </div>

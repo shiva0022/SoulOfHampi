@@ -93,7 +93,7 @@ const ProductCard = ({ product }) => {
 
   return (
     <div
-      className="bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] rounded-2xl shadow-2xl border border-[#6b5b4b] transform transition-all duration-500 ease-in-out group hover:shadow-3xl w-[320px] h-[420px] mx-auto relative overflow-hidden flex flex-col"
+      className="bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] rounded-2xl shadow-2xl border border-[#6b5b4b] transform transition-all duration-500 ease-in-out group hover:shadow-2xl w-[320px] h-[420px] mx-auto relative overflow-hidden flex flex-col"
       style={{
         transform: "translateZ(0)",
         willChange: "transform, box-shadow",

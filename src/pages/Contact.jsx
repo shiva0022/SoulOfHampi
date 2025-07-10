@@ -28,7 +28,7 @@ const Contact = () => {
                 Contact Information
               </h2>
               <div className="grid md:grid-cols-2 gap-8">
-                <div className="bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] rounded-2xl p-8 shadow-2xl border border-[#6b5b4b] hover:shadow-3xl transition-all duration-300 transform hover:scale-105">
+                <div className="bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] rounded-2xl p-8 shadow-2xl border border-[#6b5b4b] hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
                   <FaMapMarkerAlt className="text-4xl text-[#d4c5a0] mb-6" />
                   <h3 className="text-2xl font-bold text-[#f5f1e8] mb-4">
                     Visit Us
@@ -42,7 +42,7 @@ const Contact = () => {
                   </p>
                 </div>
 
-                <div className="bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] rounded-2xl p-8 shadow-2xl border border-[#6b5b4b] hover:shadow-3xl transition-all duration-300 transform hover:scale-105">
+                <div className="bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] rounded-2xl p-8 shadow-2xl border border-[#6b5b4b] hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
                   <FaPhone className="text-4xl text-[#d4c5a0] mb-6" />
                   <h3 className="text-2xl font-bold text-[#f5f1e8] mb-4">
                     Call Us
@@ -54,7 +54,7 @@ const Contact = () => {
                   </p>
                 </div>
 
-                <div className="bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] rounded-2xl p-8 shadow-2xl border border-[#6b5b4b] hover:shadow-3xl transition-all duration-300 transform hover:scale-105">
+                <div className="bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] rounded-2xl p-8 shadow-2xl border border-[#6b5b4b] hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
                   <FaEnvelope className="text-4xl text-[#d4c5a0] mb-6" />
                   <h3 className="text-2xl font-bold text-[#f5f1e8] mb-4">
                     Email Us
@@ -66,7 +66,7 @@ const Contact = () => {
                   </p>
                 </div>
 
-                <div className="bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] rounded-2xl p-8 shadow-2xl border border-[#6b5b4b] hover:shadow-3xl transition-all duration-300 transform hover:scale-105">
+                <div className="bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] rounded-2xl p-8 shadow-2xl border border-[#6b5b4b] hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
                   <FaClock className="text-4xl text-[#d4c5a0] mb-6" />
                   <h3 className="text-2xl font-bold text-[#f5f1e8] mb-4">
                     Business Hours
@@ -175,7 +175,7 @@ const Contact = () => {
             Frequently Asked Questions
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="bg-gradient-to-br from-[#2d1f0f] via-[#3d2914] to-[#4a3420] rounded-2xl p-8 shadow-2xl border border-[#6b5b4b] hover:shadow-3xl transition-all duration-300 transform hover:scale-105">
+            <div className="bg-gradient-to-br from-[#2d1f0f] via-[#3d2914] to-[#4a3420] rounded-2xl p-8 shadow-2xl border border-[#6b5b4b] hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
               <h3 className="text-2xl font-bold text-[#f5f1e8] mb-4">
                 What are your shipping times?
               </h3>
@@ -186,7 +186,7 @@ const Contact = () => {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-[#2d1f0f] via-[#3d2914] to-[#4a3420] rounded-2xl p-8 shadow-2xl border border-[#6b5b4b] hover:shadow-3xl transition-all duration-300 transform hover:scale-105">
+            <div className="bg-gradient-to-br from-[#2d1f0f] via-[#3d2914] to-[#4a3420] rounded-2xl p-8 shadow-2xl border border-[#6b5b4b] hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
               <h3 className="text-2xl font-bold text-[#f5f1e8] mb-4">
                 What is your return policy?
               </h3>
@@ -196,7 +196,7 @@ const Contact = () => {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-[#2d1f0f] via-[#3d2914] to-[#4a3420] rounded-2xl p-8 shadow-2xl border border-[#6b5b4b] hover:shadow-3xl transition-all duration-300 transform hover:scale-105">
+            <div className="bg-gradient-to-br from-[#2d1f0f] via-[#3d2914] to-[#4a3420] rounded-2xl p-8 shadow-2xl border border-[#6b5b4b] hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
               <h3 className="text-2xl font-bold text-[#f5f1e8] mb-4">
                 Do you ship internationally?
               </h3>
@@ -206,7 +206,7 @@ const Contact = () => {
               </p>
             </div>
 
-            <div className="bg-gradient-to-br from-[#2d1f0f] via-[#3d2914] to-[#4a3420] rounded-2xl p-8 shadow-2xl border border-[#6b5b4b] hover:shadow-3xl transition-all duration-300 transform hover:scale-105">
+            <div className="bg-gradient-to-br from-[#2d1f0f] via-[#3d2914] to-[#4a3420] rounded-2xl p-8 shadow-2xl border border-[#6b5b4b] hover:shadow-2xl transition-all duration-300 transform hover:scale-105">
               <h3 className="text-2xl font-bold text-[#f5f1e8] mb-4">
                 Are your products authentic?
               </h3>

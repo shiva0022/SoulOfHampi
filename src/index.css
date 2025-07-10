@@ -76,11 +76,6 @@
   transform: scale(1.1);
 }
 
-/* Custom shadow utilities */
-.shadow-3xl {
-  box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.4);
-}
-
 /* Smooth transitions for all interactive elements */
 * {
   transition-property: color, background-color, border-color,
@@ -167,6 +162,7 @@ button:focus {
 .glass {
   background: rgba(61, 41, 20, 0.1);
   backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
   border: 1px solid rgba(212, 197, 160, 0.2);
 }
 
@@ -197,14 +193,33 @@ button:focus {
 }
 
 @keyframes fadeInUp {
-  from {
+  0% {
     opacity: 0;
-    transform: translateY(30px);
+    transform: translateY(40px);
   }
-  to {
+  100% {
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+@keyframes fadeInUpStagger {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up-stagger {
+  animation: fadeInUpStagger 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
 }
 
 @keyframes float {
@@ -270,11 +285,22 @@ button:focus {
   animation: float-delayed 3s ease-in-out infinite 1.5s;
 }
 
-/* Enhanced button and card hover effects */
-.hover\:shadow-3xl:hover {
-  box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.4);
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0.8,0,1,1);
+  }
+  50% {
+    transform: translateY(-18px) scale(1.08);
+    animation-timing-function: cubic-bezier(0,0,0.2,1);
+  }
 }
 
 .animate-bounce-slow {
   animation: bounce 2s infinite;
+}
+
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
 }
