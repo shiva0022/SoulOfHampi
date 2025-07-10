@@ -28,7 +28,8 @@ const Products = () => {
       title: "Traditional Ilkal Silk Saree with Kasuti Border",
       price: 4500,
       originalPrice: 6000,
-      image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1000&auto=format&fit=crop",
       category: "Ilkal Sarees",
       rating: 5,
     },
@@ -37,7 +38,8 @@ const Products = () => {
       title: "Handwoven Cotton Ilkal Saree with Gold Thread",
       price: 3200,
       originalPrice: 4200,
-      image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1000&auto=format&fit=crop",
       category: "Ilkal Sarees",
       rating: 4,
     },
@@ -45,7 +47,8 @@ const Products = () => {
       id: 3,
       title: "Premium Ilkal Silk Saree with Temple Border",
       price: 5800,
-      image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1000&auto=format&fit=crop",
       category: "Ilkal Sarees",
       rating: 5,
     },
@@ -54,7 +57,8 @@ const Products = () => {
       title: "Classic Red Ilkal Saree with Peacock Motifs",
       price: 3800,
       originalPrice: 4800,
-      image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1000&auto=format&fit=crop",
       category: "Ilkal Sarees",
       rating: 5,
     },
@@ -63,7 +67,8 @@ const Products = () => {
       title: "Elegant Blue Cotton Ilkal with Silver Zari",
       price: 2800,
       originalPrice: 3600,
-      image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1000&auto=format&fit=crop",
       category: "Ilkal Sarees",
       rating: 4,
     },
@@ -72,7 +77,8 @@ const Products = () => {
       title: "Bridal Ilkal Silk Saree with Heavy Border",
       price: 7200,
       originalPrice: 9000,
-      image: "https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1000&auto=format&fit=crop",
       category: "Ilkal Sarees",
       rating: 5,
     },
@@ -84,7 +90,8 @@ const Products = () => {
       title: "Hampi Special Mango Pickle (500g)",
       price: 250,
       originalPrice: 320,
-      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop",
       category: "Traditional Food",
       rating: 5,
     },
@@ -92,7 +99,8 @@ const Products = () => {
       id: 5,
       title: "Local Groundnut Chutney Powder",
       price: 180,
-      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop",
       category: "Traditional Food",
       rating: 4,
     },
@@ -101,7 +109,8 @@ const Products = () => {
       title: "Authentic Jowar Roti Mix",
       price: 150,
       originalPrice: 200,
-      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop",
       category: "Traditional Food",
       rating: 4,
     },
@@ -110,7 +119,8 @@ const Products = () => {
       title: "Spicy Tamarind Gongura Pickle",
       price: 280,
       originalPrice: 350,
-      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop",
       category: "Traditional Food",
       rating: 5,
     },
@@ -118,7 +128,8 @@ const Products = () => {
       id: 20,
       title: "Homemade Sesame Laddu (12 pieces)",
       price: 220,
-      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop",
       category: "Traditional Food",
       rating: 4,
     },
@@ -127,7 +138,8 @@ const Products = () => {
       title: "Traditional Ragi Flour (1kg)",
       price: 120,
       originalPrice: 160,
-      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop",
       category: "Traditional Food",
       rating: 4,
     },
@@ -136,7 +148,8 @@ const Products = () => {
       title: "Hampi Special Coconut Burfi",
       price: 300,
       originalPrice: 400,
-      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop",
       category: "Traditional Food",
       rating: 5,
     },
@@ -144,7 +157,8 @@ const Products = () => {
       id: 23,
       title: "Organic Jaggery Blocks (500g)",
       price: 140,
-      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop",
       category: "Traditional Food",
       rating: 4,
     },
@@ -153,7 +167,8 @@ const Products = () => {
       title: "Mixed Spice Powder Collection",
       price: 380,
       originalPrice: 480,
-      image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop",
       category: "Traditional Food",
       rating: 5,
     },
@@ -165,7 +180,8 @@ const Products = () => {
       title: "Hampi Temple Miniature Stone Carving",
       price: 1200,
       originalPrice: 1500,
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
       category: "Stone Carvings",
       rating: 5,
     },
@@ -173,7 +189,8 @@ const Products = () => {
       id: 8,
       title: "Wooden Ganesha Sculpture",
       price: 800,
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
       category: "Wooden Carvings",
       rating: 4,
     },
@@ -182,7 +199,8 @@ const Products = () => {
       title: "Intricate Stone Elephant Figurine",
       price: 950,
       originalPrice: 1200,
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
       category: "Stone Carvings",
       rating: 5,
     },
@@ -191,7 +209,8 @@ const Products = () => {
       title: "Hand-carved Wooden Buddha Statue",
       price: 1800,
       originalPrice: 2200,
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
       category: "Wooden Carvings",
       rating: 5,
     },
@@ -199,7 +218,8 @@ const Products = () => {
       id: 26,
       title: "Stone Lotus Flower Wall Art",
       price: 680,
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
       category: "Stone Carvings",
       rating: 4,
     },
@@ -208,7 +228,8 @@ const Products = () => {
       title: "Wooden Krishna Flute Player",
       price: 1200,
       originalPrice: 1500,
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
       category: "Wooden Carvings",
       rating: 5,
     },
@@ -217,7 +238,8 @@ const Products = () => {
       title: "Intricately Carved Stone Peacock",
       price: 1450,
       originalPrice: 1800,
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
       category: "Stone Carvings",
       rating: 5,
     },
@@ -225,7 +247,8 @@ const Products = () => {
       id: 29,
       title: "Traditional Wooden Mask Collection",
       price: 750,
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
       category: "Wooden Carvings",
       rating: 4,
     },
@@ -234,7 +257,8 @@ const Products = () => {
       title: "Stone Hanuman Sculpture",
       price: 2200,
       originalPrice: 2800,
-      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
       category: "Stone Carvings",
       rating: 5,
     },
@@ -246,7 +270,8 @@ const Products = () => {
       title: "Traditional Terracotta Water Pot",
       price: 450,
       originalPrice: 600,
-      image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1000&auto=format&fit=crop",
       category: "Pottery",
       rating: 4,
     },
@@ -254,7 +279,8 @@ const Products = () => {
       id: 11,
       title: "Handcrafted Terracotta Lamp Set",
       price: 320,
-      image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1000&auto=format&fit=crop",
       category: "Terracotta",
       rating: 5,
     },
@@ -263,7 +289,8 @@ const Products = () => {
       title: "Decorative Clay Planters (Set of 3)",
       price: 680,
       originalPrice: 850,
-      image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1000&auto=format&fit=crop",
       category: "Pottery",
       rating: 4,
     },
@@ -272,7 +299,8 @@ const Products = () => {
       title: "Large Terracotta Storage Jar",
       price: 850,
       originalPrice: 1100,
-      image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1000&auto=format&fit=crop",
       category: "Pottery",
       rating: 5,
     },
@@ -280,7 +308,8 @@ const Products = () => {
       id: 32,
       title: "Handpainted Clay Bowls (Set of 6)",
       price: 420,
-      image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1000&auto=format&fit=crop",
       category: "Pottery",
       rating: 4,
     },
@@ -289,7 +318,8 @@ const Products = () => {
       title: "Traditional Terracotta Coffee Cups",
       price: 280,
       originalPrice: 350,
-      image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1000&auto=format&fit=crop",
       category: "Terracotta",
       rating: 4,
     },
@@ -297,7 +327,8 @@ const Products = () => {
       id: 34,
       title: "Decorative Clay Wind Chimes",
       price: 380,
-      image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1000&auto=format&fit=crop",
       category: "Pottery",
       rating: 5,
     },
@@ -306,7 +337,8 @@ const Products = () => {
       title: "Artistic Terracotta Vase Collection",
       price: 620,
       originalPrice: 780,
-      image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1000&auto=format&fit=crop",
       category: "Terracotta",
       rating: 4,
     },
@@ -315,7 +347,8 @@ const Products = () => {
       title: "Traditional Clay Cooking Pot",
       price: 550,
       originalPrice: 700,
-      image: "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1000&auto=format&fit=crop",
+      image:
+        "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1000&auto=format&fit=crop",
       category: "Pottery",
       rating: 5,
     },
@@ -404,15 +437,15 @@ const Products = () => {
   ];
 
   return (
-    <div className="min-h-screen py-32 px-6">
+    <div className="min-h-screen py-20 sm:py-24 md:py-32 px-4 sm:px-6">
       <div className="container-fluid mx-auto w-full">
         {/* Page Header */}
-        <div className="text-center mb-16">
-          <h1 className="text-6xl font-bold text-[#f5f1e8] mb-6 relative">
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#f5f1e8] mb-4 sm:mb-6 relative">
             Our Products
-            <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-[#d4c5a0] to-[#b08968] rounded-full"></span>
+            <span className="absolute -bottom-1 sm:-bottom-2 left-1/2 transform -translate-x-1/2 w-20 sm:w-24 md:w-32 h-0.5 sm:h-1 bg-gradient-to-r from-[#d4c5a0] to-[#b08968] rounded-full"></span>
           </h1>
-          <p className="text-2xl text-[#d4c5a0] max-w-4xl mx-auto leading-relaxed font-medium">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-[#d4c5a0] max-w-4xl mx-auto leading-relaxed font-medium">
             Discover our authentic Hampi collection featuring handcrafted
             treasures, traditional artifacts, and cultural masterpieces from the
             heart of Karnataka.
@@ -454,21 +487,21 @@ const Products = () => {
           onViewMore={() => handleViewMore("Miniature Sculptures & Souvenirs")}
         />
         {/* Call to Action */}
-        <div className="text-center mt-20">
-          <div className="bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] rounded-2xl p-12 shadow-2xl border border-[#6b5b4b] max-w-4xl mx-auto">
-            <h3 className="text-3xl font-bold text-[#f5f1e8] mb-6">
+        <div className="text-center mt-12 sm:mt-16 md:mt-20">
+          <div className="bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] rounded-2xl p-6 sm:p-8 md:p-12 shadow-2xl border border-[#6b5b4b] max-w-4xl mx-auto">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#f5f1e8] mb-4 sm:mb-6">
               Can't Find What You're Looking For?
             </h3>
-            <p className="text-lg text-[#d4c5a0] leading-relaxed mb-8 max-w-2xl mx-auto">
+            <p className="text-sm sm:text-base md:text-lg text-[#d4c5a0] leading-relaxed mb-6 sm:mb-8 max-w-2xl mx-auto">
               We're constantly adding new products to our collection. Contact us
               for custom orders or if you're looking for something specific from
               Hampi's artisan community.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0] text-[#3d2914] px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 border border-[#9d7a5e]">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center">
+              <button className="bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0] text-[#3d2914] px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 border border-[#9d7a5e] text-sm sm:text-base">
                 Custom Orders
               </button>
-              <button className="bg-transparent border-2 border-[#d4c5a0] text-[#f5f1e8] hover:bg-[#d4c5a0] hover:text-[#3d2914] px-8 py-4 rounded-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105">
+              <button className="bg-transparent border-2 border-[#d4c5a0] text-[#f5f1e8] hover:bg-[#d4c5a0] hover:text-[#3d2914] px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-3xl transform hover:scale-105 text-sm sm:text-base">
                 Contact Us
               </button>
             </div>

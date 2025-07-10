@@ -1,17 +1,22 @@
 import React from "react";
 import ProductCard from "./ProductCard";
 
-const ProductSection = ({ title, description, products, emoji, onViewMore }) => (
+const ProductSection = ({
+  title,
+  description,
+  products,
+  emoji,
+  onViewMore,
+}) => (
   <div className="mb-20">
     <div className="text-center mb-12">
       <div className="text-6xl mb-4">{emoji}</div>
       <h2 className="text-4xl font-bold text-[#f5f1e8] mb-4">{title}</h2>
-      <p className="text-lg text-[#d4c5a0] max-w-2xl mx-auto leading-relaxed">{description}</p>
+      <p className="text-lg text-[#d4c5a0] max-w-2xl mx-auto leading-relaxed">
+        {description}
+      </p>
     </div>
-    <div
-      className="overflow-x-auto scrollbar-hide pt-8"
-      style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
-    >
+    <div className="overflow-x-auto scrollbar-hide pt-8">
       <div className="flex gap-6 pb-4" style={{ width: "max-content" }}>
         {products.map((product) => (
           <div key={product.id} className="flex-shrink-0">
@@ -19,11 +24,6 @@ const ProductSection = ({ title, description, products, emoji, onViewMore }) => 
           </div>
         ))}
       </div>
-      <style jsx>{`
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
     </div>
     <div className="text-center mt-8">
       <button
@@ -36,4 +36,4 @@ const ProductSection = ({ title, description, products, emoji, onViewMore }) => 
   </div>
 );
 
-export default ProductSection; 
+export default ProductSection;

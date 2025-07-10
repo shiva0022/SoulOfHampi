@@ -590,7 +590,10 @@ const CategoryProducts = () => {
 
   return (
     <div className="min-h-screen py-20 px-6 bg-gradient-to-br from-[#2d1f0f] via-[#3d2914] to-[#4a3420] relative overflow-hidden">
-      <CategoryPatternBackground categoryTitle={categoryInfo.title} mainEmoji={categoryInfo.emoji} />
+      <CategoryPatternBackground
+        categoryTitle={categoryInfo.title}
+        mainEmoji={categoryInfo.emoji}
+      />
       <div className="container-fluid mx-auto w-full">
         <div className="mb-8 animate-fade-in -mt-4">
           <BackButton onClick={handleBackToProducts} />
@@ -649,11 +652,6 @@ const CategoryProducts = () => {
           </div>
         </div>
       </div>
-
-      {/* Custom CSS for Animations */}
-      <style jsx>{`
-       
-      `}</style>
     </div>
   );
 };
