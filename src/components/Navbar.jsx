@@ -16,7 +16,7 @@ const Navbar = () => {
         <span>
           <img src="/logo.png" alt="logo" className="w-8 h-8" />
         </span>
-        <span className="font-bold text-xl text-[#f5f1e8] tracking-wide">
+        <span className="font-sans text-xl text-[#f5f1e8] tracking-wide">
           SoulOfHampi
         </span>
       </div>

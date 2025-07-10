@@ -48,7 +48,7 @@ const TrendingNow = () => {
           <div className="inline-block mb-6">
             <h2 className="text-5xl font-bold text-[#f5f1e8] mb-4 relative">
               Trending Now
-              {/* <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-[#d4c5a0] to-[#b08968] rounded-full"></span> */}
+              <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-gradient-to-r from-[#d4c5a0] to-[#b08968] rounded-full"></span>
             </h2>
           </div>
           <p className="text-xl text-[#d4c5a0] max-w-3xl mx-auto leading-relaxed font-medium">
