@@ -1,5 +1,11 @@
-import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React, { useEffect } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
 import { CartProvider } from "./context/CartContext";
 import { WishlistProvider } from "./context/WishlistContext";
 import Home from "./pages/Home";
@@ -12,28 +18,108 @@ import Wishlist from "./pages/Wishlist";
 import ProductDetails from "./pages/ProductDetails";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
+import PageTransition from "./components/PageTransition";
+import { preloadFonts, checkFontLoading } from "./utils/fontOptimization";
 import "./App.css";
 
+const AnimatedRoutes = () => {
+  const location = useLocation();
+
+  useEffect(() => {
+    // Scroll to top on route change for better UX
+    window.scrollTo(0, 0);
+  }, [location.pathname]);
+
+  return (
+    <AnimatePresence mode="wait">
+      <Routes location={location} key={location.pathname}>
+        <Route
+          path="/"
+          element={
+            <PageTransition type="slideUp">
+              <Home />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/products"
+          element={
+            <PageTransition type="fade">
+              <Products />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/category/:category"
+          element={
+            <PageTransition type="slide">
+              <CategoryProducts />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/product/:id"
+          element={
+            <PageTransition type="default">
+              <ProductDetails />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/about"
+          element={
+            <PageTransition type="slideUp">
+              <About />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/contact"
+          element={
+            <PageTransition type="slide">
+              <Contact />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/cart"
+          element={
+            <PageTransition type="default">
+              <Cart />
+            </PageTransition>
+          }
+        />
+        <Route
+          path="/wishlist"
+          element={
+            <PageTransition type="fade">
+              <Wishlist />
+            </PageTransition>
+          }
+        />
+      </Routes>
+    </AnimatePresence>
+  );
+};
+
 const App = () => {
+  useEffect(() => {
+    // Initialize font optimizations
+    preloadFonts();
+    checkFontLoading().then(loaded => {
+      if (loaded) {
+        console.log('Fonts loaded successfully');
+      }
+    });
+  }, []);
+
   return (
     <CartProvider>
       <WishlistProvider>
         <Router>
-          <div className="min-h-screen bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] font-['Segoe_UI',_Tahoma,_Geneva,_Verdana,_sans-serif]">
+          <div className="min-h-screen bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] font-performance" style={{ fontFamily: 'var(--font-primary)' }}>
             <Navbar />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/products" element={<Products />} />
-              <Route
-                path="/category/:category"
-                element={<CategoryProducts />}
-              />
-              <Route path="/product/:id" element={<ProductDetails />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/contact" element={<Contact />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/wishlist" element={<Wishlist />} />
-            </Routes>
+            <AnimatedRoutes />
             <Footer />
           </div>
         </Router>

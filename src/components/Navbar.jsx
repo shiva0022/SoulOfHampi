@@ -24,7 +24,7 @@ const Navbar = () => {
         <span>
           <img src="/logo.png" alt="logo" className="w-6 h-6 sm:w-8 sm:h-8" />
         </span>
-        <span className="font-sans text-lg sm:text-xl text-[#f5f1e8] tracking-wide">
+        <span className="brand-text text-lg sm:text-xl text-[#f5f1e8] tracking-wide">
           SoulOfHampi
         </span>
       </div>
@@ -34,7 +34,7 @@ const Navbar = () => {
         <li>
           <Link
             to="/"
-            className="hover:text-[#d4c5a0] transition-colors duration-300 font-medium text-[#f5f1e8] relative group"
+            className="nav-text hover:text-[#d4c5a0] transition-colors duration-300 font-medium text-[#f5f1e8] relative group"
           >
             Home
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#d4c5a0] transition-all duration-300 group-hover:w-full"></span>
@@ -43,7 +43,7 @@ const Navbar = () => {
         <li>
           <Link
             to="/products"
-            className="hover:text-[#d4c5a0] transition-colors duration-300 font-medium text-[#f5f1e8] relative group"
+            className="nav-text hover:text-[#d4c5a0] transition-colors duration-300 font-medium text-[#f5f1e8] relative group"
           >
             Products
             <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#d4c5a0] transition-all duration-300 group-hover:w-full"></span>

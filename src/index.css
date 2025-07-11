@@ -1,5 +1,156 @@
 @import "tailwindcss";
 
+/* Font Optimization - Modern Typography Stack */
+:root {
+  /* Primary font family - Inter for body text */
+  --font-primary: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  
+  /* Secondary font family - Playfair Display for headings */
+  --font-heading: 'Playfair Display', Georgia, 'Times New Roman', Times, serif;
+  
+  /* Font weights */
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+}
+
+/* Base typography optimization */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.6;
+  letter-spacing: -0.005em;
+}
+
+/* Headings optimization */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+/* Specific heading sizes */
+h1 {
+  font-weight: var(--font-weight-bold);
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: -0.025em;
+}
+
+/* Button and UI text optimization */
+button, .btn {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.01em;
+}
+
+/* Product text optimization */
+.product-title {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-medium);
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+}
+
+.product-price {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Navigation text optimization */
+.nav-text {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.005em;
+}
+
+/* Description text optimization */
+.description-text {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.7;
+  letter-spacing: -0.002em;
+}
+
+/* Brand/Logo text optimization */
+.brand-text {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: -0.01em;
+}
+
+/* Typography utility classes */
+.text-heading {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+.text-body {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-normal);
+  line-height: 1.6;
+  letter-spacing: -0.002em;
+}
+
+.text-button {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-medium);
+  letter-spacing: 0.01em;
+}
+
+.text-brand {
+  font-family: var(--font-heading);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: -0.01em;
+}
+
+.text-price {
+  font-family: var(--font-primary);
+  font-weight: var(--font-weight-bold);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Font loading optimization */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Inter'), url('https://fonts.gstatic.com/s/inter/v12/UcCO3FwrK3iLTeHuS_fvQtMwCp50KnMw2boKoduKmMEVuLyfAZ9hiA.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: local('Playfair Display'), url('https://fonts.gstatic.com/s/playfairdisplay/v30/nuFiD-vYSZviVYUb_rj3ij__anPXBYf9lWwdpQ.woff2') format('woff2');
+}
+
+/* Performance optimizations for fonts */
+.font-performance {
+  font-kerning: auto;
+  font-variant-ligatures: common-ligatures;
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-rendering: optimizeLegibility;
+}
+
 /* Enhanced Swiper Styles */
 .swiper-button-next,
 .swiper-button-prev {
@@ -313,4 +464,47 @@ button:focus {
 .backdrop-blur-sm {
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+}
+
+/* Product section overflow handling */
+.product-section-wrapper {
+  padding-top: 20px;
+  padding-bottom: 20px;
+  overflow-x: hidden;
+}
+
+.product-scroll-container {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  overflow-x: auto;
+  overflow-y: visible;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Prevent card clipping during hover scaling - consistent sizing */
+.product-card-container {
+  flex-shrink: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Page transition optimizations */
+.page-transition {
+  min-height: 100vh;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+
+/* Smooth page transitions - prevent layout shift */
+[data-page-transition] {
+  will-change: transform, opacity;
+  transform-style: preserve-3d;
+}
+
+/* Optimize animations for better performance */
+.motion-div {
+  transform: translateZ(0);
+  backface-visibility: hidden;
 }

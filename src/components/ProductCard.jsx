@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { useWishlist } from "../context/WishlistContext";
 import {
@@ -22,6 +22,7 @@ const ProductCard = ({ product }) => {
   const [isTransitioning, setIsTransitioning] = useState(false);
   const { addToCart } = useCart();
   const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
+  const navigate = useNavigate();
 
   // Use images array if available, otherwise create one from the single image
   const productImages = images || [image];
@@ -60,20 +61,26 @@ const ProductCard = ({ product }) => {
     }, 700); // Match this with the CSS transition duration
   };
 
-  const handleQuantityDecrease = () => {
+  const handleQuantityDecrease = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
     if (quantity > 1) {
       setQuantity(quantity - 1);
     }
   };
 
-  const handleQuantityIncrease = () => {
+  const handleQuantityIncrease = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
     if (quantity < 10) {
       // Set a reasonable maximum limit
       setQuantity(quantity + 1);
     }
   };
 
-  const handleAddToCart = () => {
+  const handleAddToCart = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
     addToCart(product, quantity);
     setIsAdded(true);
 
@@ -83,7 +90,9 @@ const ProductCard = ({ product }) => {
     }, 2000);
   };
 
-  const handleWishlistToggle = () => {
+  const handleWishlistToggle = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
     if (inWishlist) {
       removeFromWishlist(id);
     } else {
@@ -92,15 +101,16 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <div
-      className="bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] rounded-2xl shadow-2xl border border-[#6b5b4b] transform transition-all duration-500 ease-in-out group hover:shadow-2xl w-full max-w-[280px] sm:max-w-[300px] md:max-w-[320px] lg:max-w-[320px] h-[380px] sm:h-[400px] md:h-[420px] mx-auto relative overflow-hidden flex flex-col"
-      style={{
-        transform: "translateZ(0)",
-        willChange: "transform, box-shadow",
-      }}
+    <Link to={`/product/${id}`} className="block">
+      <div
+        className="bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] rounded-2xl shadow-2xl border border-[#6b5b4b] transform transition-all duration-500 ease-in-out group hover:shadow-2xl w-[280px] sm:w-[300px] md:w-[320px] lg:w-[320px] h-[380px] sm:h-[400px] md:h-[420px] mx-auto relative overflow-hidden flex flex-col flex-shrink-0 cursor-pointer"
+        style={{
+          transform: "translateZ(0)",
+          willChange: "transform, box-shadow",
+        }}
       onMouseEnter={(e) => {
         e.currentTarget.style.transform =
-          "translateZ(0) scale(1.03) translateY(-6px)";
+          "translateZ(0) scale(1.03) translateY(-4px)";
         e.currentTarget.style.boxShadow =
           "0 30px 60px -12px rgba(0, 0, 0, 0.4)";
         e.currentTarget.style.zIndex = 10;
@@ -347,17 +357,22 @@ const ProductCard = ({ product }) => {
                 </>
               )}
             </button>
-            <Link
-              to={`/product/${id}`}
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                e.preventDefault();
+                navigate(`/product/${id}`);
+              }}
               className="bg-transparent border-2 border-[#d4c5a0] text-[#f5f1e8] hover:bg-[#d4c5a0] hover:text-[#3d2914] py-2 sm:py-2.5 px-2 sm:px-4 rounded-xl font-bold shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl transform hover:scale-102 flex items-center justify-center text-xs sm:text-sm"
               style={{ willChange: "transform, box-shadow, background" }}
             >
               Buy Now
-            </Link>
+            </button>
           </div>
         </div>
       </div>
     </div>
+    </Link>
   );
 };
 

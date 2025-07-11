@@ -40,11 +40,20 @@ const NewArrivals = () => {
       category: "Sculptures",
       rating: 5,
     },
+    {
+      id: 12,
+      title: "Stone Carved Ganesha Idol",
+      price: 1899,
+      image:
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+      category: "Sculptures",
+      rating: 5,
+    },
   ];
 
   return (
     <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-gradient-to-br from-[#2d1f0f] via-[#3d2914] to-[#4a3420]">
-      <div className="container mx-auto max-w-7xl">
+      <div className="container-fluid mx-auto w-full">
         {/* Enhanced Section Header */}
         <div className="text-center mb-12 sm:mb-16">
           <div className="inline-block mb-4 sm:mb-6">
@@ -61,9 +70,9 @@ const NewArrivals = () => {
         </div>
 
         {/* Products Horizontal Scroll */}
-        <div className="flex overflow-x-auto gap-6 sm:gap-8 pb-4 scrollbar-hide">
+        <div className="product-scroll-container flex overflow-x-auto gap-6 pb-4 pt-4 scrollbar-hide px-4">
           {newProducts.map((product) => (
-            <div key={product.id} className="flex-shrink-0">
+            <div key={product.id} className="product-card-container">
               <ProductCard product={product} />
             </div>
           ))}

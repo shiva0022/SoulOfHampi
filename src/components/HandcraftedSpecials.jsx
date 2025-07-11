@@ -41,11 +41,20 @@ const HandcraftedSpecials = () => {
       category: "Handicrafts",
       rating: 5,
     },
+    {
+      id: 16,
+      title: "Artisan Carved Sandalwood Box",
+      price: 2299,
+      image:
+        "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?q=80&w=1000&auto=format&fit=crop",
+      category: "Handicrafts",
+      rating: 5,
+    },
   ];
 
   return (
     <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a]">
-      <div className="container mx-auto max-w-7xl">
+      <div className="container-fluid mx-auto w-full">
         {/* Enhanced Section Header */}
         <div className="text-center mb-12 sm:mb-16">
           <div className="inline-block mb-4 sm:mb-6">
@@ -62,9 +71,9 @@ const HandcraftedSpecials = () => {
         </div>
 
         {/* Products Horizontal Scroll */}
-        <div className="flex overflow-x-auto gap-6 sm:gap-8 pb-4 scrollbar-hide">
+        <div className="product-scroll-container flex overflow-x-auto gap-6 pb-4 pt-4 scrollbar-hide px-4">
           {specialProducts.map((product) => (
-            <div key={product.id} className="flex-shrink-0">
+            <div key={product.id} className="product-card-container">
               <ProductCard product={product} />
             </div>
           ))}
