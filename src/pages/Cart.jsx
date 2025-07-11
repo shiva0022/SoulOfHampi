@@ -2,15 +2,8 @@ import React from "react";
 import { useCart } from "../context/CartContext";
 import { Link } from "react-router-dom";
 import {
-  FaShoppingCart,
   FaTrash,
-  FaPlus,
-  FaMinus,
   FaArrowLeft,
-  FaTag,
-  FaGift,
-  FaCreditCard,
-  FaHeart,
 } from "react-icons/fa";
 import EmptyCartView from "../components/EmptyCartView";
 import CartItemRow from "../components/CartItemRow";

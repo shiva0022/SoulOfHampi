@@ -15,6 +15,7 @@ const categories = [
     image:
       "https://images.unsplash.com/photo-1690541478715-898f26cbc28d?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description: "Authentic handmade crafts",
+    categoryRoute: "ilkal-sarees"
   },
   {
     id: 2,
@@ -22,6 +23,7 @@ const categories = [
     image:
       "https://images.unsplash.com/photo-1728599652228-e19042c5141a?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description: "Ancient art replicas",
+    categoryRoute: "stone-wooden-carvings"
   },
   {
     id: 3,
@@ -29,6 +31,7 @@ const categories = [
     image:
       "https://images.unsplash.com/photo-1678705730064-a7ecbab4b3fb?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description: "Traditional Indian fabrics",
+    categoryRoute: "ilkal-sarees"
   },
   {
     id: 4,
@@ -36,6 +39,7 @@ const categories = [
     image:
       "https://images.unsplash.com/photo-1731586249458-c4837bf07de7?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     description: "Handcrafted jewelry pieces",
+    categoryRoute: "miniature-souvenirs"
   },
   {
     id: 5,
@@ -43,14 +47,15 @@ const categories = [
     image:
       "https://as1.ftcdn.net/v2/jpg/04/91/88/62/1000_F_491886281_c4pugzKqzh7u04kxhA84g5FsNE8UGz4m.jpg",
     description: "food items & sovenirs",
+    categoryRoute: "traditional-food"
   },
 ];
 
 const Slider = () => {
   const navigate = useNavigate();
 
-  const handleExploreCategory = () => {
-    navigate('/products');
+  const handleExploreCategory = (categoryRoute) => {
+    navigate(`/category/${categoryRoute}`);
   };
   return (
     <div className="w-full lg:w-1/2 p-2 sm:p-4 order-2">
@@ -80,7 +85,7 @@ const Slider = () => {
                     {item.description}
                   </p>
                   <button 
-                    onClick={handleExploreCategory}
+                    onClick={() => handleExploreCategory(item.categoryRoute)}
                     className="bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0] text-[#3d2914] px-3 sm:px-4 md:px-5 py-1.5 sm:py-2 md:py-2.5 rounded-xl font-semibold transition-all duration-500 ease-in-out shadow-lg hover:shadow-xl transform hover:scale-105 border border-[#9d7a5e] text-xs sm:text-sm md:text-base"
                   >
                     Explore Category
