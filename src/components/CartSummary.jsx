@@ -1,9 +1,37 @@
 import React from "react";
 import { FaTag, FaGift, FaCreditCard, FaHeart } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { toast } from 'react-toastify';
+import { useCart } from "../context/CartContext";
 
-const CartSummary = ({ itemCount, total, shipping, finalTotal }) => (
-  <div className="bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] rounded-2xl shadow-2xl border border-[#6b5b4b] p-6 sticky top-8">
+const CartSummary = ({ itemCount, total, shipping, finalTotal }) => {
+  const { clearCart } = useCart();
+
+  const handleCheckout = () => {
+    // Clear the cart
+    clearCart();
+    
+    // Show success toast
+    toast.success("Thank you for shopping!", {
+      position: "top-center",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      style: {
+        backgroundColor: '#3d2914',
+        color: '#f5f1e8',
+        border: '2px solid #d4c5a0',
+        borderRadius: '12px',
+        fontSize: '16px',
+        fontWeight: 'bold'
+      }
+    });
+  };
+
+  return (
+    <div className="bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] rounded-2xl shadow-2xl border border-[#6b5b4b] p-6 sticky top-8">
     <h2 className="text-xl font-bold text-[#f5f1e8] mb-6 flex items-center gap-2">
       <FaTag className="text-[#d4c5a0]" />
       Order Summary
@@ -33,7 +61,10 @@ const CartSummary = ({ itemCount, total, shipping, finalTotal }) => (
       </div>
     </div>
     <div className="space-y-3">
-      <button className="w-full bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0] text-[#3d2914] py-3 px-6 rounded-xl font-bold flex items-center justify-center gap-3 shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl transform hover:scale-105">
+      <button 
+        onClick={handleCheckout}
+        className="w-full bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0] text-[#3d2914] py-3 px-6 rounded-xl font-bold flex items-center justify-center gap-3 shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl transform hover:scale-105"
+      >
         <FaCreditCard className="text-lg" />
         Proceed to Checkout
       </button>
@@ -55,6 +86,7 @@ const CartSummary = ({ itemCount, total, shipping, finalTotal }) => (
       </div>
     </div>
   </div>
-);
+  );
+};
 
 export default CartSummary; 

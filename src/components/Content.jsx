@@ -1,6 +1,16 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Content = () => {
+  const navigate = useNavigate();
+
+  const handleExploreClick = () => {
+    navigate('/products');
+  };
+
+  const handleLearnMoreClick = () => {
+    navigate('/about');
+  };
   return (
     <div className="content p-2 sm:p-4 w-full lg:w-1/2 order-1">
       <div className="m-2 relative group">
@@ -23,10 +33,16 @@ const Content = () => {
             collection of handcrafted items, traditional art, and more.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 w-full sm:w-auto">
-            <button className="bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0] text-[#3d2914] px-4 sm:px-6 md:px-7 py-2 sm:py-3 rounded-xl font-semibold transition-all duration-500 ease-in-out shadow-lg hover:shadow-xl transform hover:scale-105 border border-[#9d7a5e] text-center text-sm sm:text-base">
+            <button 
+              onClick={handleExploreClick}
+              className="bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0] text-[#3d2914] px-4 sm:px-6 md:px-7 py-2 sm:py-3 rounded-xl font-semibold transition-all duration-500 ease-in-out shadow-lg hover:shadow-xl transform hover:scale-105 border border-[#9d7a5e] text-center text-sm sm:text-base"
+            >
               Explore Collection
             </button>
-            <button className="bg-transparent border-2 border-[#d4c5a0] text-[#f5f1e8] hover:bg-[#d4c5a0] hover:text-[#3d2914] px-4 sm:px-6 md:px-7 py-2 sm:py-3 rounded-xl font-semibold transition-all duration-500 ease-in-out shadow-lg hover:shadow-xl transform hover:scale-105 text-center text-sm sm:text-base">
+            <button 
+              onClick={handleLearnMoreClick}
+              className="bg-transparent border-2 border-[#d4c5a0] text-[#f5f1e8] hover:bg-[#d4c5a0] hover:text-[#3d2914] px-4 sm:px-6 md:px-7 py-2 sm:py-3 rounded-xl font-semibold transition-all duration-500 ease-in-out shadow-lg hover:shadow-xl transform hover:scale-105 text-center text-sm sm:text-base"
+            >
               Learn More
             </button>
           </div>

@@ -7,7 +7,7 @@ import HandcraftedSpecials from '../components/HandcraftedSpecials';
 
 const Home = () => {
   return (
-    <div className="home overflow-x-hidden max-w-full">
+    <div className="overflow-x-hidden w-full font-primary text-optimize">
       <Hero />
       <TrendingNow />
       <MostPopular />

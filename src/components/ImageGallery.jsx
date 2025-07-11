@@ -52,7 +52,7 @@ const ImageGallery = ({
           {product.images.map((imgSrc, idx) => (
             <div
               key={idx}
-              className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out ${
+              className={`absolute inset-0 transition-all duration-700 ease-in-out ${
                 selectedImage === idx ? "opacity-100 z-10" : "opacity-0 z-0"
               }`}
             >
@@ -161,7 +161,7 @@ const ImageGallery = ({
                 }
               }}
               disabled={isTransitioning}
-              className={`w-20 h-20 rounded-lg overflow-hidden border-2 transition-all duration-500 ease-in-out relative animate-fade-in-up-stagger ${
+              className={`w-20 h-20 rounded-lg overflow-hidden border-2 transition-all duration-500 ease-in-out relative animate-fade-in-up ${
                 selectedImage === index ? "border-[#d4c5a0] scale-110 shadow-lg" : "border-[#6b5b4b] hover:border-[#d4c5a0] hover:shadow-md"
               } ${isTransitioning ? "opacity-70" : ""}`}
               style={{ animationDelay: `${index * 100}ms` }}

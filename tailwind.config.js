@@ -31,6 +31,38 @@ export default {
         'semibold': '600',
         'bold': '700',
         'extrabold': '800',
+      },
+      animation: {
+        'fade-in-up': 'fadeInUp 0.7s cubic-bezier(0.4, 0, 0.2, 1) both',
+        'slide-in-up': 'slideInUp 0.6s ease-out forwards',
+        'float': 'float 3s ease-in-out infinite',
+        'fade-in-left': 'fadeInFromLeft 600ms cubic-bezier(0.4, 0, 0.2, 1) forwards',
+        'fade-in-right': 'fadeInFromRight 600ms cubic-bezier(0.4, 0, 0.2, 1) forwards',
+      },
+      keyframes: {
+        fadeInUp: {
+          '0%': { opacity: '0', transform: 'translateY(40px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' }
+        },
+        slideInUp: {
+          'from': { opacity: '0', transform: 'translateY(30px)' },
+          'to': { opacity: '1', transform: 'translateY(0)' }
+        },
+        float: {
+          '0%, 100%': { transform: 'translateY(0px)' },
+          '50%': { transform: 'translateY(-10px)' }
+        },
+        fadeInFromLeft: {
+          'from': { opacity: '0', transform: 'translateX(-20px)' },
+          'to': { opacity: '1', transform: 'translateX(0)' }
+        },
+        fadeInFromRight: {
+          'from': { opacity: '0', transform: 'translateX(20px)' },
+          'to': { opacity: '1', transform: 'translateX(0)' }
+        }
+      },
+      backdropBlur: {
+        'xs': '2px',
       }
     },
   },

@@ -9,12 +9,12 @@ const ProductTabs = ({
   <div className="mt-12">
     <div className="bg-gradient-to-br from-[#3d2914] to-[#4a3420] rounded-2xl border border-[#6b5b4b] overflow-hidden">
       {/* Tab Headers */}
-      <div className="flex border-b border-[#6b5b4b]">
+      <div className="flex border-b border-[#6b5b4b] mobile-tab-scroll">
         {["description", "specifications", "reviews"].map((tab) => (
           <button
             key={tab}
             onClick={() => setActiveTab(tab)}
-            className={`flex-1 py-4 px-6 font-semibold transition-all duration-300 ${
+            className={`flex-shrink-0 whitespace-nowrap py-4 px-4 sm:px-6 font-semibold transition-all duration-300 ${
               activeTab === tab
                 ? "bg-[#d4c5a0] text-[#3d2914]"
                 : "text-[#f5f1e8] hover:bg-[#4a3420]"
@@ -25,7 +25,7 @@ const ProductTabs = ({
         ))}
       </div>
       {/* Tab Content */}
-      <div className="p-6">
+      <div className="p-4 sm:p-6 mobile-tab-scroll">
         {activeTab === "description" && (
           <div className="space-y-4">
             <p className="text-[#f5f1e8] text-lg leading-relaxed">

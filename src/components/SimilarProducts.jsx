@@ -11,7 +11,7 @@ const SimilarProducts = ({ similarProducts }) => (
       {similarProducts.map((similarProduct, idx) => (
         <div
           key={similarProduct.id}
-          className="animate-fade-in-up-stagger"
+          className="animate-fade-in-up"
           style={{ animationDelay: `${idx * 120}ms` }}
         >
           <ProductCard product={similarProduct} />

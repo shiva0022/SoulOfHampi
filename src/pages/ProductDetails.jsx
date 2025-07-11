@@ -243,7 +243,7 @@ const ProductDetails = () => {
           activeTab={activeTab}
           setActiveTab={setActiveTab}
         />
-        <div className="animate-fade-in-up-stagger">
+        <div className="animate-fade-in-up">
           <SimilarProducts similarProducts={similarProducts} />
         </div>
       </div>

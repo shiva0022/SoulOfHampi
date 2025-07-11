@@ -6,6 +6,8 @@ import {
   useLocation,
 } from "react-router-dom";
 import { AnimatePresence } from "framer-motion";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { CartProvider } from "./context/CartContext";
 import { WishlistProvider } from "./context/WishlistContext";
 import Home from "./pages/Home";
@@ -134,6 +136,23 @@ const App = () => {
             <Navbar />
             <AnimatedRoutes />
             <Footer />
+            <ToastContainer
+              position="top-center"
+              autoClose={3000}
+              hideProgressBar={false}
+              newestOnTop={false}
+              closeOnClick
+              rtl={false}
+              pauseOnFocusLoss
+              draggable
+              pauseOnHover
+              theme="dark"
+              toastStyle={{
+                backgroundColor: '#3d2914',
+                color: '#f5f1e8',
+                border: '1px solid #d4c5a0'
+              }}
+            />
           </div>
         </Router>
       </WishlistProvider>
