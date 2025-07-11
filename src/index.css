@@ -1,9 +1,37 @@
+
 @import "tailwindcss";
 
+/* Google Fonts: Playfair Display for headings, Lora for body */
+@import url('https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
+
 /* Global styles that can't be converted to Tailwind */
+
 html, body {
   overflow-x: hidden;
   max-width: 100vw;
+  font-family: 'Lora', serif;
+  color: #f5f1e8;
+  background-color: #3d2914;
+}
+
+/* Headings: Playfair Display, beautiful and traditional */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  color: #d4c5a0;
+  text-shadow: 0 2px 8px rgba(61,41,20,0.12);
+}
+
+/* Subtle enhancement for links */
+a {
+  font-family: 'Lora', serif;
+  color: #d4c5a0;
+  transition: color 0.2s;
+}
+a:hover {
+  color: #b08968;
+  text-decoration: none;
 }
 
 *, *::before, *::after {
@@ -212,7 +240,7 @@ html, body {
 .custom-toast-body {
   padding: 0;
   margin: 0;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Lora', 'Inter', system-ui, serif, sans-serif;
   display: flex;
   align-items: center;
   justify-content: center;
