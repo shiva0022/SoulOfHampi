@@ -40,7 +40,7 @@ const ImageGallery = ({
   return (
     <div className="bg-gradient-to-br from-[#3d2914] to-[#4a3420] rounded-2xl p-6 border border-[#6b5b4b]">
       <div
-        className={`relative aspect-square rounded-xl overflow-hidden bg-white ${
+        className={`relative aspect-square rounded-xl overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 ${
           isZoomed ? "cursor-zoom-out" : "cursor-zoom-in"
         } animate-fade-in-up`}
         onClick={toggleZoom}
@@ -50,29 +50,25 @@ const ImageGallery = ({
       >
         <div className="swiper-like-slider relative w-full h-full">
           {product.images.map((imgSrc, idx) => (
-            <img
+            <div
               key={idx}
-              src={imgSrc}
-              alt={`${product.title} - view ${idx + 1}`}
-              className={`absolute w-full h-full object-cover transition-all duration-700 ease-in-out ${
-                selectedImage === idx ? "opacity-100 scale-100 z-10" : "opacity-0 scale-110 z-0"
-              } ${isZoomed ? "!scale-150" : ""} animate-fade-in-up`}
-              style={{
-                ...(isZoomed
-                  ? {
-                      transformOrigin: `${zoomPosition.x}% ${zoomPosition.y}%`,
-                      willChange: "transform, opacity, scale",
-                      transition:
-                        "transform 700ms cubic-bezier(0.4, 0, 0.2, 1), opacity 700ms cubic-bezier(0.4, 0, 0.2, 1), scale 700ms cubic-bezier(0.4, 0, 0.2, 1)",
-                    }
-                  : {
-                      willChange: "transform, opacity, scale",
-                      transition:
-                        "transform 700ms cubic-bezier(0.4, 0, 0.2, 1), opacity 700ms cubic-bezier(0.4, 0, 0.2, 1), scale 700ms cubic-bezier(0.4, 0, 0.2, 1)",
-                    }),
-                animationDelay: `${idx * 100}ms`,
-              }}
-            />
+              className={`absolute inset-0 flex items-center justify-center transition-all duration-700 ease-in-out ${
+                selectedImage === idx ? "opacity-100 z-10" : "opacity-0 z-0"
+              }`}
+            >
+              <img
+                src={imgSrc}
+                alt={`${product.title} - view ${idx + 1}`}
+                className={`w-full h-full object-cover transition-all duration-700 ease-in-out ${
+                  isZoomed ? "scale-150" : "scale-100"
+                }`}
+                style={{
+                  ...(isZoomed && {
+                    transformOrigin: `${zoomPosition.x}% ${zoomPosition.y}%`,
+                  }),
+                }}
+              />
+            </div>
           ))}
           <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-500 z-20"></div>
         </div>
@@ -150,44 +146,47 @@ const ImageGallery = ({
           <FaShare className="text-[#3d2914] text-lg" />
         </button>
       </div>
+      
       {/* Thumbnail Images */}
-      <div className="flex flex-wrap gap-3 justify-center">
-        {product.images.map((image, index) => (
-          <button
-            key={index}
-            onClick={() => {
-              if (!isTransitioning && selectedImage !== index) {
-                setIsTransitioning(true);
-                setSelectedImage(index);
-                setTimeout(() => setIsTransitioning(false), 700);
-              }
-            }}
-            disabled={isTransitioning}
-            className={`w-20 h-20 rounded-lg overflow-hidden border-2 transition-all duration-500 ease-in-out relative animate-fade-in-up-stagger ${
-              selectedImage === index ? "border-[#d4c5a0] scale-110 shadow-lg" : "border-[#6b5b4b] hover:border-[#d4c5a0] hover:shadow-md"
-            } ${isTransitioning ? "opacity-70" : ""}`}
-            style={{ animationDelay: `${index * 100}ms` }}
-            aria-label={`Select image ${index + 1}`}
-          >
-            <div className="w-full h-full overflow-hidden relative">
-              <img
-                src={image}
-                alt={`Product thumbnail ${index + 1}`}
-                className={`w-full h-full object-cover transition-all duration-500 ease-in-out ${
-                  selectedImage === index ? "scale-110" : "hover:scale-110"
-                }`}
-              />
-              <div
-                className={`absolute inset-0 bg-white/20 transition-opacity duration-300 ${
-                  selectedImage === index ? "opacity-0" : "opacity-100 hover:opacity-0"
-                }`}
-              ></div>
-            </div>
-          </button>
-        ))}
+      <div className="mt-8 pt-6 border-t border-[#6b5b4b]/30">
+        <div className="flex flex-wrap gap-4 justify-center">
+          {product.images.map((image, index) => (
+            <button
+              key={index}
+              onClick={() => {
+                if (!isTransitioning && selectedImage !== index) {
+                  setIsTransitioning(true);
+                  setSelectedImage(index);
+                  setTimeout(() => setIsTransitioning(false), 700);
+                }
+              }}
+              disabled={isTransitioning}
+              className={`w-20 h-20 rounded-lg overflow-hidden border-2 transition-all duration-500 ease-in-out relative animate-fade-in-up-stagger ${
+                selectedImage === index ? "border-[#d4c5a0] scale-110 shadow-lg" : "border-[#6b5b4b] hover:border-[#d4c5a0] hover:shadow-md"
+              } ${isTransitioning ? "opacity-70" : ""}`}
+              style={{ animationDelay: `${index * 100}ms` }}
+              aria-label={`Select image ${index + 1}`}
+            >
+              <div className="w-full h-full overflow-hidden relative">
+                <img
+                  src={image}
+                  alt={`Product thumbnail ${index + 1}`}
+                  className={`w-full h-full object-cover transition-all duration-500 ease-in-out ${
+                    selectedImage === index ? "scale-105" : "hover:scale-105"
+                  }`}
+                />
+                <div
+                  className={`absolute inset-0 bg-gradient-to-t from-black/10 to-transparent transition-opacity duration-300 ${
+                    selectedImage === index ? "opacity-0" : "opacity-40 hover:opacity-0"
+                  }`}
+                ></div>
+              </div>
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );
 };
 
-export default ImageGallery; 
+export default ImageGallery;
