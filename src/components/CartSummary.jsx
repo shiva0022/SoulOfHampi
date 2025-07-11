@@ -12,21 +12,31 @@ const CartSummary = ({ itemCount, total, shipping, finalTotal }) => {
     clearCart();
     
     // Show success toast
-    toast.success("Thank you for shopping!", {
+    toast.success("🎉 Thank you for shopping with us! Your order has been placed successfully.", {
       position: "top-center",
-      autoClose: 3000,
+      autoClose: 4000,
       hideProgressBar: false,
       closeOnClick: true,
-      pauseOnHover: true,
+      pauseOnHover: false,
       draggable: true,
       style: {
-        backgroundColor: '#3d2914',
+        background: 'linear-gradient(135deg, #3d2914 0%, #2d1f0f 50%, #4a3420 100%)',
         color: '#f5f1e8',
         border: '2px solid #d4c5a0',
-        borderRadius: '12px',
-        fontSize: '16px',
-        fontWeight: 'bold'
-      }
+        borderRadius: '20px',
+        fontSize: '18px',
+        fontWeight: '700',
+        padding: '24px 20px',
+        minHeight: '90px',
+        boxShadow: '0 12px 40px rgba(0, 0, 0, 0.5), 0 0 30px rgba(212, 197, 160, 0.3)',
+        fontFamily: 'Inter, system-ui, sans-serif',
+        textAlign: 'center',
+        lineHeight: '1.4',
+        letterSpacing: '0.3px',
+        overflow: 'hidden',
+        position: 'relative'
+      },
+      icon: '🛍️'
     });
   };
 

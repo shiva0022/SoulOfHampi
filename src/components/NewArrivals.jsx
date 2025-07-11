@@ -11,7 +11,7 @@ const NewArrivals = () => {
       title: "Handwoven Bamboo Basket Set",
       price: 799,
       image:
-        "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1000&auto=format&fit=crop",
       category: "Handicrafts",
       rating: 4,
     },
@@ -21,7 +21,7 @@ const NewArrivals = () => {
       price: 649,
       originalPrice: 849,
       image:
-        "https://images.unsplash.com/photo-1518709268805-4e9042af2176?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1609205624349-85a066e55e8c?q=80&w=1000&auto=format&fit=crop",
       category: "Handicrafts",
       rating: 5,
     },
@@ -30,7 +30,7 @@ const NewArrivals = () => {
       title: "Embroidered Silk Cushion Covers",
       price: 449,
       image:
-        "https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1000&auto=format&fit=crop",
       category: "Textiles",
       rating: 4,
     },
@@ -44,12 +44,60 @@ const NewArrivals = () => {
       rating: 5,
     },
     {
-      id: 12,
-      title: "Stone Carved Ganesha Idol",
-      price: 1899,
+      id: 13,
+      title: "Handcrafted Leather Journal",
+      price: 899,
+      originalPrice: 1199,
+      image:
+        "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?q=80&w=1000&auto=format&fit=crop",
+      category: "Stationery",
+      rating: 4,
+    },
+    {
+      id: 14,
+      title: "Traditional Wooden Comb",
+      price: 299,
+      image:
+        "https://images.unsplash.com/photo-1585129332289-96baaaa73050?q=80&w=1000&auto=format&fit=crop",
+      category: "Personal Care",
+      rating: 4,
+    },
+    {
+      id: 15,
+      title: "Ceramic Tea Set with Traditional Design",
+      price: 1599,
+      originalPrice: 1999,
+      image:
+        "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=1000&auto=format&fit=crop",
+      category: "Kitchenware",
+      rating: 5,
+    },
+    {
+      id: 16,
+      title: "Handmade Soaps Gift Set",
+      price: 449,
+      image:
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1000&auto=format&fit=crop",
+      category: "Personal Care",
+      rating: 4,
+    },
+    {
+      id: 17,
+      title: "Traditional Rangoli Stencils",
+      price: 199,
+      originalPrice: 299,
       image:
         "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
-      category: "Sculptures",
+      category: "Art",
+      rating: 4,
+    },
+    {
+      id: 18,
+      title: "Copper Water Jug with Glasses",
+      price: 1299,
+      image:
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1000&auto=format&fit=crop",
+      category: "Kitchenware",
       rating: 5,
     },
   ];
@@ -60,9 +108,8 @@ const NewArrivals = () => {
         {/* Enhanced Section Header */}
         <div className="text-center mb-12 sm:mb-16">
           <div className="inline-block mb-4 sm:mb-6">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#f5f1e8] mb-4 relative">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#f5f1e8] mb-4">
               New Arrivals
-              <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 sm:w-20 lg:w-24 h-1 bg-gradient-to-r from-[#d4c5a0] to-[#b08968] rounded-full"></span>
             </h2>
           </div>
           <p className="text-base sm:text-lg lg:text-xl text-[#d4c5a0] max-w-3xl mx-auto leading-relaxed font-medium px-4">

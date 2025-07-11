@@ -138,19 +138,27 @@ const App = () => {
             <Footer />
             <ToastContainer
               position="top-center"
-              autoClose={3000}
+              autoClose={4000}
               hideProgressBar={false}
-              newestOnTop={false}
-              closeOnClick
+              newestOnTop={true}
+              closeOnClick={true}
               rtl={false}
-              pauseOnFocusLoss
-              draggable
-              pauseOnHover
+              pauseOnFocusLoss={false}
+              draggable={true}
+              pauseOnHover={false}
               theme="dark"
+              limit={3}
               toastStyle={{
                 backgroundColor: '#3d2914',
                 color: '#f5f1e8',
-                border: '1px solid #d4c5a0'
+                border: '2px solid #d4c5a0',
+                borderRadius: '20px',
+                boxShadow: '0 8px 32px rgba(0, 0, 0, 0.4), 0 0 20px rgba(212, 197, 160, 0.2)',
+                minHeight: '90px',
+                fontSize: '18px',
+                fontWeight: '600',
+                padding: '24px 20px',
+                fontFamily: 'Inter, system-ui, sans-serif'
               }}
             />
           </div>

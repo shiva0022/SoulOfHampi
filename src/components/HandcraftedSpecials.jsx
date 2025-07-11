@@ -12,7 +12,7 @@ const HandcraftedSpecials = () => {
       price: 4999,
       originalPrice: 6499,
       image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1545558014-8692077e9b5c?q=80&w=1000&auto=format&fit=crop",
       category: "Exclusive",
       rating: 5,
     },
@@ -21,7 +21,7 @@ const HandcraftedSpecials = () => {
       title: "Handcrafted Silver Filigree Necklace",
       price: 2899,
       image:
-        "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1000&auto=format&fit=crop",
       category: "Jewelry",
       rating: 5,
     },
@@ -31,7 +31,7 @@ const HandcraftedSpecials = () => {
       price: 1699,
       originalPrice: 2199,
       image:
-        "https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1000&auto=format&fit=crop",
       category: "Textiles",
       rating: 4,
     },
@@ -40,17 +40,65 @@ const HandcraftedSpecials = () => {
       title: "Artisan Carved Sandalwood Box",
       price: 2299,
       image:
-        "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1585129332289-96baaaa73050?q=80&w=1000&auto=format&fit=crop",
       category: "Handicrafts",
       rating: 5,
     },
     {
-      id: 16,
-      title: "Artisan Carved Sandalwood Box",
-      price: 2299,
+      id: 17,
+      title: "Premium Mysore Silk Painting",
+      price: 3499,
+      originalPrice: 4299,
       image:
-        "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?q=80&w=1000&auto=format&fit=crop",
-      category: "Handicrafts",
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+      category: "Art",
+      rating: 5,
+    },
+    {
+      id: 18,
+      title: "Handforged Bronze Sculpture",
+      price: 5999,
+      image:
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+      category: "Sculptures",
+      rating: 5,
+    },
+    {
+      id: 19,
+      title: "Exclusive Kashmir Pashmina Shawl",
+      price: 7999,
+      originalPrice: 9999,
+      image:
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1000&auto=format&fit=crop",
+      category: "Textiles",
+      rating: 5,
+    },
+    {
+      id: 20,
+      title: "Handcrafted Gold Plated Jewelry Box",
+      price: 4499,
+      image:
+        "https://images.unsplash.com/photo-1585129332289-96baaaa73050?q=80&w=1000&auto=format&fit=crop",
+      category: "Luxury",
+      rating: 5,
+    },
+    {
+      id: 21,
+      title: "Traditional Tanjore Painting",
+      price: 8999,
+      originalPrice: 11999,
+      image:
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+      category: "Art",
+      rating: 5,
+    },
+    {
+      id: 22,
+      title: "Master Craftsman Wooden Elephant",
+      price: 6999,
+      image:
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+      category: "Sculptures",
       rating: 5,
     },
   ];
@@ -61,9 +109,8 @@ const HandcraftedSpecials = () => {
         {/* Enhanced Section Header */}
         <div className="text-center mb-12 sm:mb-16">
           <div className="inline-block mb-4 sm:mb-6">
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#f5f1e8] mb-4 relative">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#f5f1e8] mb-4">
               Handcrafted Specials
-              <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 sm:w-20 lg:w-24 h-1 bg-gradient-to-r from-[#d4c5a0] to-[#b08968] rounded-full"></span>
             </h2>
           </div>
           <p className="text-base sm:text-lg lg:text-xl text-[#d4c5a0] max-w-3xl mx-auto leading-relaxed font-medium px-4">

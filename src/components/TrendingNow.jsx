@@ -22,7 +22,7 @@ const TrendingNow = () => {
       price: 1899,
       originalPrice: 2499,
       image:
-        "https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1000&auto=format&fit=crop",
       category: "Textiles",
       rating: 4,
     },
@@ -31,7 +31,7 @@ const TrendingNow = () => {
       title: "Ancient Temple Bell Replica",
       price: 899,
       image:
-        "https://images.unsplash.com/photo-1518709268805-4e9042af2176?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
       category: "Handicrafts",
       rating: 5,
     },
@@ -41,18 +41,65 @@ const TrendingNow = () => {
       price: 1299,
       originalPrice: 1599,
       image:
-        "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1585129332289-96baaaa73050?q=80&w=1000&auto=format&fit=crop",
       category: "Handicrafts",
       rating: 4,
     },
     {
       id: 5,
-      title: "Handcrafted Wooden Jewelry Box",
-      price: 1299,
-      originalPrice: 1599,
+      title: "Brass Oil Lamp with Intricate Design",
+      price: 649,
       image:
-        "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1609205624349-85a066e55e8c?q=80&w=1000&auto=format&fit=crop",
+      category: "Home Decor",
+      rating: 4,
+    },
+    {
+      id: 6,
+      title: "Handwoven Basket Set",
+      price: 899,
+      originalPrice: 1199,
+      image:
+        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1000&auto=format&fit=crop",
       category: "Handicrafts",
+      rating: 5,
+    },
+    {
+      id: 7,
+      title: "Traditional Pottery Vase",
+      price: 749,
+      image:
+        "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=1000&auto=format&fit=crop",
+      category: "Pottery",
+      rating: 4,
+    },
+    {
+      id: 8,
+      title: "Carved Wooden Photo Frame",
+      price: 549,
+      originalPrice: 699,
+      image:
+        "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?q=80&w=1000&auto=format&fit=crop",
+      category: "Home Decor",
+      rating: 4,
+    },
+    {
+      id: 9,
+      title: "Miniature Stone Temple",
+      price: 1899,
+      image:
+        "https://images.unsplash.com/photo-1545558014-8692077e9b5c?q=80&w=1000&auto=format&fit=crop",
+      category: "Sculptures",
+      rating: 5,
+    },
+    {
+      id: 10,
+      title: "Handmade Copper Water Bottle",
+      price: 999,
+      originalPrice: 1299,
+      image:
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1000&auto=format&fit=crop",
+      category: "Utility",
       rating: 4,
     },
   ];
@@ -63,9 +110,8 @@ const TrendingNow = () => {
         {/* Enhanced Section Header */}
         <div className="text-center mb-12 sm:mb-16">
           <div className="inline-block mb-4 sm:mb-6">
-            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-[#f5f1e8] mb-4 relative">
+            <h2 className="font-heading text-3xl sm:text-4xl lg:text-5xl font-bold text-[#f5f1e8] mb-4">
               Trending Now
-              <span className="absolute -bottom-2 left-1/2 transform -translate-x-1/2 w-16 sm:w-20 lg:w-24 h-1 bg-gradient-to-r from-[#d4c5a0] to-[#b08968] rounded-full"></span>
             </h2>
           </div>
           <p className="font-primary text-base sm:text-lg lg:text-xl text-[#d4c5a0] max-w-3xl mx-auto leading-relaxed font-medium px-4">

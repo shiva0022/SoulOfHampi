@@ -29,7 +29,7 @@ const Products = () => {
       price: 4500,
       originalPrice: 6000,
       image:
-        "https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1000&auto=format&fit=crop",
       category: "Ilkal Sarees",
       rating: 5,
     },
@@ -39,7 +39,7 @@ const Products = () => {
       price: 3200,
       originalPrice: 4200,
       image:
-        "https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1000&auto=format&fit=crop",
       category: "Ilkal Sarees",
       rating: 4,
     },
@@ -48,7 +48,7 @@ const Products = () => {
       title: "Premium Ilkal Silk Saree with Temple Border",
       price: 5800,
       image:
-        "https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1000&auto=format&fit=crop",
       category: "Ilkal Sarees",
       rating: 5,
     },
@@ -58,7 +58,7 @@ const Products = () => {
       price: 3800,
       originalPrice: 4800,
       image:
-        "https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1000&auto=format&fit=crop",
       category: "Ilkal Sarees",
       rating: 5,
     },
@@ -68,7 +68,7 @@ const Products = () => {
       price: 2800,
       originalPrice: 3600,
       image:
-        "https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1000&auto=format&fit=crop",
       category: "Ilkal Sarees",
       rating: 4,
     },
@@ -78,7 +78,45 @@ const Products = () => {
       price: 7200,
       originalPrice: 9000,
       image:
-        "https://images.unsplash.com/photo-1583394838336-acd977736f90?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1000&auto=format&fit=crop",
+      category: "Ilkal Sarees",
+      rating: 5,
+    },
+    {
+      id: 101,
+      title: "Festive Green Ilkal with Golden Border",
+      price: 4200,
+      originalPrice: 5200,
+      image:
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1000&auto=format&fit=crop",
+      category: "Ilkal Sarees",
+      rating: 4,
+    },
+    {
+      id: 102,
+      title: "Contemporary Ilkal with Modern Design",
+      price: 3600,
+      image:
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1000&auto=format&fit=crop",
+      category: "Ilkal Sarees",
+      rating: 4,
+    },
+    {
+      id: 103,
+      title: "Handloom Ilkal with Traditional Checks",
+      price: 2900,
+      originalPrice: 3400,
+      image:
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1000&auto=format&fit=crop",
+      category: "Ilkal Sarees",
+      rating: 4,
+    },
+    {
+      id: 104,
+      title: "Vintage Style Ilkal with Heritage Pattern",
+      price: 5200,
+      image:
+        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1000&auto=format&fit=crop",
       category: "Ilkal Sarees",
       rating: 5,
     },
@@ -91,7 +129,7 @@ const Products = () => {
       price: 250,
       originalPrice: 320,
       image:
-        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=1000&auto=format&fit=crop",
       category: "Traditional Food",
       rating: 5,
     },
@@ -100,7 +138,7 @@ const Products = () => {
       title: "Local Groundnut Chutney Powder",
       price: 180,
       image:
-        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=1000&auto=format&fit=crop",
       category: "Traditional Food",
       rating: 4,
     },
@@ -110,7 +148,7 @@ const Products = () => {
       price: 150,
       originalPrice: 200,
       image:
-        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=1000&auto=format&fit=crop",
       category: "Traditional Food",
       rating: 4,
     },
@@ -120,7 +158,7 @@ const Products = () => {
       price: 280,
       originalPrice: 350,
       image:
-        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=1000&auto=format&fit=crop",
       category: "Traditional Food",
       rating: 5,
     },
@@ -129,7 +167,7 @@ const Products = () => {
       title: "Homemade Sesame Laddu (12 pieces)",
       price: 220,
       image:
-        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1000&auto=format&fit=crop",
       category: "Traditional Food",
       rating: 4,
     },
@@ -139,7 +177,7 @@ const Products = () => {
       price: 120,
       originalPrice: 160,
       image:
-        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=1000&auto=format&fit=crop",
       category: "Traditional Food",
       rating: 4,
     },
@@ -149,7 +187,7 @@ const Products = () => {
       price: 300,
       originalPrice: 400,
       image:
-        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1000&auto=format&fit=crop",
       category: "Traditional Food",
       rating: 5,
     },
@@ -158,7 +196,7 @@ const Products = () => {
       title: "Organic Jaggery Blocks (500g)",
       price: 140,
       image:
-        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=1000&auto=format&fit=crop",
       category: "Traditional Food",
       rating: 4,
     },
@@ -168,7 +206,17 @@ const Products = () => {
       price: 380,
       originalPrice: 480,
       image:
-        "https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=1000&auto=format&fit=crop",
+      category: "Traditional Food",
+      rating: 5,
+    },
+    {
+      id: 105,
+      title: "Homemade Ghee (500ml)",
+      price: 480,
+      originalPrice: 550,
+      image:
+        "https://images.unsplash.com/photo-1596040033229-a9821ebd058d?q=80&w=1000&auto=format&fit=crop",
       category: "Traditional Food",
       rating: 5,
     },
@@ -190,7 +238,7 @@ const Products = () => {
       title: "Wooden Ganesha Sculpture",
       price: 800,
       image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1585129332289-96baaaa73050?q=80&w=1000&auto=format&fit=crop",
       category: "Wooden Carvings",
       rating: 4,
     },
@@ -210,7 +258,7 @@ const Products = () => {
       price: 1800,
       originalPrice: 2200,
       image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1585129332289-96baaaa73050?q=80&w=1000&auto=format&fit=crop",
       category: "Wooden Carvings",
       rating: 5,
     },
@@ -229,7 +277,7 @@ const Products = () => {
       price: 1200,
       originalPrice: 1500,
       image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1585129332289-96baaaa73050?q=80&w=1000&auto=format&fit=crop",
       category: "Wooden Carvings",
       rating: 5,
     },
@@ -248,7 +296,7 @@ const Products = () => {
       title: "Traditional Wooden Mask Collection",
       price: 750,
       image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1585129332289-96baaaa73050?q=80&w=1000&auto=format&fit=crop",
       category: "Wooden Carvings",
       rating: 4,
     },
@@ -262,6 +310,16 @@ const Products = () => {
       category: "Stone Carvings",
       rating: 5,
     },
+    {
+      id: 106,
+      title: "Carved Wooden Jewelry Box",
+      price: 950,
+      originalPrice: 1150,
+      image:
+        "https://images.unsplash.com/photo-1585129332289-96baaaa73050?q=80&w=1000&auto=format&fit=crop",
+      category: "Wooden Carvings",
+      rating: 4,
+    },
   ];
 
   const pottery = [
@@ -271,7 +329,7 @@ const Products = () => {
       price: 450,
       originalPrice: 600,
       image:
-        "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=1000&auto=format&fit=crop",
       category: "Pottery",
       rating: 4,
     },
@@ -280,7 +338,7 @@ const Products = () => {
       title: "Handcrafted Terracotta Lamp Set",
       price: 320,
       image:
-        "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=1000&auto=format&fit=crop",
       category: "Terracotta",
       rating: 5,
     },
@@ -290,7 +348,7 @@ const Products = () => {
       price: 680,
       originalPrice: 850,
       image:
-        "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=1000&auto=format&fit=crop",
       category: "Pottery",
       rating: 4,
     },
@@ -300,7 +358,7 @@ const Products = () => {
       price: 850,
       originalPrice: 1100,
       image:
-        "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=1000&auto=format&fit=crop",
       category: "Pottery",
       rating: 5,
     },
@@ -309,7 +367,7 @@ const Products = () => {
       title: "Handpainted Clay Bowls (Set of 6)",
       price: 420,
       image:
-        "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=1000&auto=format&fit=crop",
       category: "Pottery",
       rating: 4,
     },
@@ -319,7 +377,7 @@ const Products = () => {
       price: 280,
       originalPrice: 350,
       image:
-        "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=1000&auto=format&fit=crop",
       category: "Terracotta",
       rating: 4,
     },
@@ -328,7 +386,7 @@ const Products = () => {
       title: "Decorative Clay Wind Chimes",
       price: 380,
       image:
-        "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=1000&auto=format&fit=crop",
       category: "Pottery",
       rating: 5,
     },
@@ -338,7 +396,7 @@ const Products = () => {
       price: 620,
       originalPrice: 780,
       image:
-        "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=1000&auto=format&fit=crop",
       category: "Terracotta",
       rating: 4,
     },
@@ -348,9 +406,19 @@ const Products = () => {
       price: 550,
       originalPrice: 700,
       image:
-        "https://images.unsplash.com/photo-1519125323398-675f0ddb6308?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=1000&auto=format&fit=crop",
       category: "Pottery",
       rating: 5,
+    },
+    {
+      id: 107,
+      title: "Handcrafted Clay Incense Burner",
+      price: 250,
+      originalPrice: 320,
+      image:
+        "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=1000&auto=format&fit=crop",
+      category: "Pottery",
+      rating: 4,
     },
   ];
 
@@ -360,7 +428,7 @@ const Products = () => {
       title: "Miniature Virupaksha Temple Model",
       price: 550,
       originalPrice: 750,
-      image: "/api/placeholder/300/400",
+      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
       category: "Souvenirs",
       rating: 5,
     },
@@ -368,7 +436,7 @@ const Products = () => {
       id: 14,
       title: "Hampi Ruins Brass Sculpture",
       price: 890,
-      image: "/api/placeholder/300/400",
+      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
       category: "Miniature Sculptures",
       rating: 4,
     },
@@ -377,7 +445,7 @@ const Products = () => {
       title: "Traditional Hampi Key Chain Collection",
       price: 120,
       originalPrice: 180,
-      image: "/api/placeholder/300/400",
+      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
       category: "Souvenirs",
       rating: 4,
     },
@@ -386,7 +454,7 @@ const Products = () => {
       title: "Miniature Stone Chariot Replica",
       price: 1200,
       originalPrice: 1500,
-      image: "/api/placeholder/300/400",
+      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
       category: "Miniature Sculptures",
       rating: 5,
     },
@@ -395,7 +463,7 @@ const Products = () => {
       title: "Hampi Magnetic Souvenir Set",
       price: 250,
       originalPrice: 320,
-      image: "/api/placeholder/300/400",
+      image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1000&auto=format&fit=crop",
       category: "Souvenirs",
       rating: 4,
     },
@@ -404,7 +472,7 @@ const Products = () => {
       title: "Bronze Hampi Monument Collection",
       price: 1850,
       originalPrice: 2300,
-      image: "/api/placeholder/300/400",
+      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
       category: "Miniature Sculptures",
       rating: 5,
     },
@@ -412,7 +480,7 @@ const Products = () => {
       id: 40,
       title: "Hampi Postcard and Stamp Set",
       price: 180,
-      image: "/api/placeholder/300/400",
+      image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1000&auto=format&fit=crop",
       category: "Souvenirs",
       rating: 4,
     },
@@ -421,7 +489,7 @@ const Products = () => {
       title: "Miniature Vittala Temple with Pillars",
       price: 980,
       originalPrice: 1200,
-      image: "/api/placeholder/300/400",
+      image: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
       category: "Miniature Sculptures",
       rating: 5,
     },
@@ -430,7 +498,16 @@ const Products = () => {
       title: "Hampi Heritage Bookmark Collection",
       price: 150,
       originalPrice: 200,
-      image: "/api/placeholder/300/400",
+      image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1000&auto=format&fit=crop",
+      category: "Souvenirs",
+      rating: 4,
+    },
+    {
+      id: 108,
+      title: "Handcrafted Hampi Map Art",
+      price: 450,
+      originalPrice: 580,
+      image: "https://images.unsplash.com/photo-1544947950-fa07a98d237f?q=80&w=1000&auto=format&fit=crop",
       category: "Souvenirs",
       rating: 4,
     },
