@@ -16,8 +16,8 @@ const ProductSection = ({
         {description}
       </p>
     </div>
-    <div className="overflow-x-auto scrollbar-hide pt-8">
-      <div className="flex gap-6 pb-4" style={{ width: "max-content" }}>
+    <div className="overflow-x-auto scrollbar-hide pt-8 max-w-full">
+      <div className="flex gap-6 pb-4 min-w-max">
         {products.map((product) => (
           <div key={product.id} className="flex-shrink-0">
             <ProductCard product={product} />

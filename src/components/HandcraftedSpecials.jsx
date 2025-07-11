@@ -1,7 +1,10 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import ProductCard from "./ProductCard";
 
 const HandcraftedSpecials = () => {
+  const navigate = useNavigate();
+  
   const specialProducts = [
     {
       id: 13,
@@ -53,8 +56,8 @@ const HandcraftedSpecials = () => {
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a]">
-      <div className="container-fluid mx-auto w-full">
+    <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] overflow-x-hidden">
+      <div className="container-fluid mx-auto w-full max-w-full">
         {/* Enhanced Section Header */}
         <div className="text-center mb-12 sm:mb-16">
           <div className="inline-block mb-4 sm:mb-6">
@@ -71,7 +74,7 @@ const HandcraftedSpecials = () => {
         </div>
 
         {/* Products Horizontal Scroll */}
-        <div className="product-scroll-container flex overflow-x-auto gap-6 pb-4 pt-4 scrollbar-hide px-4">
+        <div className="product-scroll-container flex overflow-x-auto gap-6 pb-4 pt-4 scrollbar-hide px-2 sm:px-4 max-w-full">
           {specialProducts.map((product) => (
             <div key={product.id} className="product-card-container">
               <ProductCard product={product} />
@@ -81,7 +84,10 @@ const HandcraftedSpecials = () => {
 
         {/* Enhanced View All Button */}
         <div className="text-center mt-12 sm:mt-16">
-          <button className="bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0] text-[#3d2914] px-8 sm:px-10 py-3 sm:py-4 rounded-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-2xl transform hover:scale-105 border border-[#9d7a5e] text-base sm:text-lg">
+          <button 
+            onClick={() => navigate('/products')}
+            className="bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0] text-[#3d2914] px-8 sm:px-10 py-3 sm:py-4 rounded-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-2xl transform hover:scale-105 border border-[#9d7a5e] text-base sm:text-lg"
+          >
             Discover All Specials
           </button>
         </div>

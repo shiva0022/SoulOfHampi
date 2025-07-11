@@ -19,6 +19,7 @@ import ProductDetails from "./pages/ProductDetails";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import PageTransition from "./components/PageTransition";
+import ScrollToTop from "./components/ScrollToTop";
 import { preloadFonts, checkFontLoading } from "./utils/fontOptimization";
 import "./App.css";
 
@@ -26,8 +27,19 @@ const AnimatedRoutes = () => {
   const location = useLocation();
 
   useEffect(() => {
-    // Scroll to top on route change for better UX
-    window.scrollTo(0, 0);
+    // Enhanced scroll to top on route change
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: 'smooth'
+      });
+    };
+
+    // Delay scroll to allow page transition to start
+    const timeoutId = setTimeout(scrollToTop, 100);
+
+    return () => clearTimeout(timeoutId);
   }, [location.pathname]);
 
   return (
@@ -117,7 +129,8 @@ const App = () => {
     <CartProvider>
       <WishlistProvider>
         <Router>
-          <div className="min-h-screen bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] font-performance" style={{ fontFamily: 'var(--font-primary)' }}>
+          <ScrollToTop />
+          <div className="min-h-screen bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] font-performance overflow-x-hidden max-w-full" style={{ fontFamily: 'var(--font-primary)' }}>
             <Navbar />
             <AnimatedRoutes />
             <Footer />

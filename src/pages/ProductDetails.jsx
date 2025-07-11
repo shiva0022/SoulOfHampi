@@ -207,8 +207,8 @@ const ProductDetails = () => {
     );
   }
   return (
-    <div className="min-h-screen bg-gradient-to-br from-[#1a1410] via-[#2d1f0f] to-[#3d2914]">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+    <div className="min-h-screen bg-gradient-to-br from-[#1a1410] via-[#2d1f0f] to-[#3d2914] overflow-x-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 max-w-full">
         <BreadcrumbNav productTitle={product.title} />
         <div className="-mt-2 sm:-mt-4">
           <BackButton onClick={() => navigate(-1)} />
