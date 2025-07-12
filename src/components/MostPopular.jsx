@@ -64,7 +64,7 @@ const MostPopular = () => {
 
   const popularProducts = [
     {
-      id: 5,
+      id: 2001,
       title: "Traditional Jaggery Powder",
       price: 599,
       originalPrice: 799,
@@ -74,7 +74,7 @@ const MostPopular = () => {
       rating: 5,
     },
     {
-      id: 6,
+      id: 2002,
       title: "Hand-Painted Terracotta Vases",
       price: 1499,
       image: "/images/pottery/4470f5cb265c2ec91b5432c81cb2dfe7.jpg",
@@ -82,7 +82,7 @@ const MostPopular = () => {
       rating: 5,
     },
     {
-      id: 7,
+      id: 2003,
       title: "Elegant Pink Silk Saree",
       price: 899,
       originalPrice: 1199,
@@ -91,7 +91,7 @@ const MostPopular = () => {
       rating: 4,
     },
     {
-      id: 8,
+      id: 2004,
       title: "Intricate Goddess Sculpture",
       price: 3299,
       image: "/images/stone carvings/54beeaad3c880ff443665dc033055409.jpg",
@@ -99,7 +99,7 @@ const MostPopular = () => {
       rating: 5,
     },
     {
-      id: 9,
+      id: 2005,
       title: "Assorted Indian Sweets Platter",
       price: 449,
       originalPrice: 599,
@@ -109,7 +109,7 @@ const MostPopular = () => {
       rating: 4,
     },
     {
-      id: 10,
+      id: 2006,
       title: "Spiced Chutney Mix",
       price: 299,
       image:
@@ -118,7 +118,7 @@ const MostPopular = () => {
       rating: 4,
     },
     {
-      id: 11,
+      id: 2007,
       title: "Decorative Clay Lamps",
       price: 1899,
       originalPrice: 2299,
@@ -127,7 +127,7 @@ const MostPopular = () => {
       rating: 5,
     },
     {
-      id: 12,
+      id: 2008,
       title: "Classic Kerala Kasavu Saree",
       price: 599,
       image: "/images/sarees/21542895214a4eba815f502b3f6d25df.jpg",
@@ -135,7 +135,7 @@ const MostPopular = () => {
       rating: 4,
     },
     {
-      id: 13,
+      id: 2009,
       title: "Temple Art Carving",
       price: 799,
       originalPrice: 999,
@@ -144,7 +144,7 @@ const MostPopular = () => {
       rating: 4,
     },
     {
-      id: 14,
+      id: 2010,
       title: "Traditional Rice Kheer",
       price: 349,
       image:

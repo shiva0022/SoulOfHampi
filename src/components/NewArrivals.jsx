@@ -64,7 +64,7 @@ const NewArrivals = () => {
 
   const newProducts = [
     {
-      id: 9,
+      id: 3001,
       title: "Brass Rama Darbar Idols Set",
       price: 799,
       image:
@@ -73,7 +73,7 @@ const NewArrivals = () => {
       rating: 4,
     },
     {
-      id: 10,
+      id: 3002,
       title: "Terracotta Dancing Dolls",
       price: 649,
       originalPrice: 849,
@@ -82,7 +82,7 @@ const NewArrivals = () => {
       rating: 5,
     },
     {
-      id: 11,
+      id: 3003,
       title: "Elegant Green Silk Saree",
       price: 449,
       image: "/images/sarees/4ce921addf51f774aeec8966aa5c7863.jpg",
@@ -90,7 +90,7 @@ const NewArrivals = () => {
       rating: 4,
     },
     {
-      id: 12,
+      id: 3004,
       title: "Intricate Wooden Floral Carving",
       price: 1899,
       image: "/images/stone carvings/85b628a683953ba2bed52a4d20390317.jpg",
@@ -98,7 +98,7 @@ const NewArrivals = () => {
       rating: 5,
     },
     {
-      id: 13,
+      id: 3005,
       title: "North Indian Combo Meal",
       price: 899,
       originalPrice: 1199,
@@ -108,7 +108,7 @@ const NewArrivals = () => {
       rating: 4,
     },
     {
-      id: 14,
+      id: 3006,
       title: "Traditional Homemade Pickle",
       price: 299,
       image:
@@ -117,7 +117,7 @@ const NewArrivals = () => {
       rating: 4,
     },
     {
-      id: 15,
+      id: 3007,
       title: "Clay Pots for Cooking & Storage",
       price: 1599,
       originalPrice: 1999,
@@ -126,7 +126,7 @@ const NewArrivals = () => {
       rating: 5,
     },
     {
-      id: 16,
+      id: 3008,
       title: "Magenta Silk Saree with Belt",
       price: 449,
       image: "/images/sarees/743ad6d71c91dddd91019acfd6ecdff1.jpg",
@@ -134,7 +134,7 @@ const NewArrivals = () => {
       rating: 4,
     },
     {
-      id: 17,
+      id: 3009,
       title: "Artisan Wood Carving in Progress",
       price: 199,
       originalPrice: 299,
@@ -143,7 +143,7 @@ const NewArrivals = () => {
       rating: 4,
     },
     {
-      id: 18,
+      id: 3010,
       title: "Delicious Gulab Jamun Dessert",
       price: 1299,
       image:
@@ -152,7 +152,6 @@ const NewArrivals = () => {
       rating: 5,
     },
   ];
-
 
   return (
     <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-gradient-to-br from-[#2d1f0f] via-[#3d2914] to-[#4a3420] overflow-x-hidden">

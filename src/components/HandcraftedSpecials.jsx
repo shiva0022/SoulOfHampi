@@ -62,7 +62,7 @@ const HandcraftedSpecials = () => {
 
   const specialProducts = [
     {
-      id: 13,
+      id: 4001,
       title: "Spiced Millet Powder Blend",
       price: 4999,
       originalPrice: 6499,
@@ -72,7 +72,7 @@ const HandcraftedSpecials = () => {
       rating: 5,
     },
     {
-      id: 14,
+      id: 4002,
       title: "Warli Art Pottery Vases",
       price: 2899,
       image: "/images/pottery/4470f5cb265c2ec91b5432c81cb2dfe7.jpg",
@@ -80,7 +80,7 @@ const HandcraftedSpecials = () => {
       rating: 5,
     },
     {
-      id: 15,
+      id: 4003,
       title: "Beige and Pink Silk Saree",
       price: 1699,
       originalPrice: 2199,
@@ -89,7 +89,7 @@ const HandcraftedSpecials = () => {
       rating: 4,
     },
     {
-      id: 16,
+      id: 4004,
       title: "Wooden Carved Goddess Statue",
       price: 2299,
       image: "/images/stone carvings/54beeaad3c880ff443665dc033055409.jpg",
@@ -97,7 +97,7 @@ const HandcraftedSpecials = () => {
       rating: 5,
     },
     {
-      id: 17,
+      id: 4005,
       title: "Festive Indian Sweets Platter",
       price: 3499,
       originalPrice: 4299,
@@ -107,7 +107,7 @@ const HandcraftedSpecials = () => {
       rating: 5,
     },
     {
-      id: 18,
+      id: 4006,
       title: "Spiced Ground Lentil Mix",
       price: 5999,
       image:
@@ -116,7 +116,7 @@ const HandcraftedSpecials = () => {
       rating: 5,
     },
     {
-      id: 19,
+      id: 4007,
       title: "Traditional Clay Lamps Collection",
       price: 7999,
       originalPrice: 9999,
@@ -125,7 +125,7 @@ const HandcraftedSpecials = () => {
       rating: 5,
     },
     {
-      id: 20,
+      id: 4008,
       title: "Classic Kerala Kasavu Saree",
       price: 4499,
       image: "/images/sarees/21542895214a4eba815f502b3f6d25df.jpg",
@@ -133,7 +133,7 @@ const HandcraftedSpecials = () => {
       rating: 5,
     },
     {
-      id: 21,
+      id: 4009,
       title: "Temple Style Wooden Carving",
       price: 8999,
       originalPrice: 11999,
@@ -142,7 +142,7 @@ const HandcraftedSpecials = () => {
       rating: 5,
     },
     {
-      id: 22,
+      id: 4010,
       title: "Traditional Kheer Dessert",
       price: 6999,
       image:
@@ -151,7 +151,6 @@ const HandcraftedSpecials = () => {
       rating: 5,
     },
   ];
-
 
   return (
     <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] overflow-x-hidden">
