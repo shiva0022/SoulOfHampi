@@ -5,6 +5,14 @@ import ProductCard from "./ProductCard";
 const NewArrivals = () => {
   const navigate = useNavigate();
 
+  // Handle horizontal scroll with mouse wheel
+  const handleWheel = (e) => {
+    const container = e.currentTarget;
+    const scrollAmount = e.deltaY;
+    container.scrollLeft += scrollAmount;
+    e.preventDefault();
+  };
+
   const newProducts = [
     {
       id: 9,
@@ -114,7 +122,11 @@ const NewArrivals = () => {
         </div>
 
         {/* Products Horizontal Scroll */}
-        <div className="product-scroll-container flex overflow-x-auto gap-6 pb-4 pt-4 scrollbar-hide px-2 sm:px-4 max-w-full">
+        <div
+          className="product-scroll-container flex overflow-x-auto gap-6 pb-4 pt-4 scrollbar-hide px-2 sm:px-4 max-w-full"
+          onWheel={handleWheel}
+          style={{ scrollBehavior: "smooth" }}
+        >
           {newProducts.map((product) => (
             <div key={product.id} className="product-card-container">
               <ProductCard product={product} />

@@ -5,6 +5,14 @@ import ProductCard from "./ProductCard";
 const TrendingNow = () => {
   const navigate = useNavigate();
 
+  // Handle horizontal scroll with mouse wheel
+  const handleWheel = (e) => {
+    const container = e.currentTarget;
+    const scrollAmount = e.deltaY;
+    container.scrollLeft += scrollAmount;
+    e.preventDefault();
+  };
+
   const trendingProducts = [
     {
       id: 1,
@@ -116,7 +124,11 @@ const TrendingNow = () => {
         </div>
 
         {/* Products Horizontal Scroll */}
-        <div className="product-scroll-container flex overflow-x-auto gap-6 pb-4 pt-4 scrollbar-hide px-2 sm:px-4 max-w-full">
+        <div
+          className="product-scroll-container flex overflow-x-auto gap-6 pb-4 pt-4 scrollbar-hide px-2 sm:px-4 max-w-full"
+          onWheel={handleWheel}
+          style={{ scrollBehavior: "smooth" }}
+        >
           {trendingProducts.map((product) => (
             <div key={product.id} className="product-card-container">
               <ProductCard product={product} />
@@ -128,7 +140,7 @@ const TrendingNow = () => {
         <div className="text-center mt-12 sm:mt-16">
           <button
             onClick={() => navigate("/products")}
-            className="font-primary font-medium tracking-wide bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0] text-[#3d2914] px-8 sm:px-10 py-3 sm:py-4 rounded-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-2xl transform hover:scale-105 border border-[#9d7a5e] text-base sm:text-lg"
+            className="font-primary tracking-wide bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0] text-[#3d2914] px-8 sm:px-10 py-3 sm:py-4 rounded-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-2xl transform hover:scale-105 border border-[#9d7a5e] text-base sm:text-lg"
           >
             View All Trending Products
           </button>
