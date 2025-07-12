@@ -20,14 +20,17 @@ const Navbar = () => {
   return (
     <nav className="navbar flex justify-between items-center p-4 lg:px-6 text-[#f5f1e8] shadow-2xl bg-gradient-to-r from-[#2d1f0f] via-[#3d2914] to-[#4a3420] backdrop-blur-[10px] h-16 border-b border-[#6b5b4b] relative z-50">
       {/* Logo */}
-      <div className="logo flex gap-2 items-center">
+      <Link
+        to="/"
+        className="logo flex gap-2 items-center hover:opacity-80 transition-opacity duration-300"
+      >
         <span>
           <img src="/logo.png" alt="logo" className="w-6 h-6 sm:w-8 sm:h-8" />
         </span>
         <span className="font-heading text-lg sm:text-xl text-[#f5f1e8] tracking-wide font-semibold">
           SoulOfHampi
         </span>
-      </div>
+      </Link>
 
       {/* Desktop Navigation */}
       <ul className="nav-links hidden lg:flex gap-6 xl:gap-8">
