@@ -9,8 +9,6 @@ import {
   FaPlus,
   FaMinus,
   FaCheck,
-  FaAngleRight,
-  FaAngleLeft,
 } from "react-icons/fa";
 
 const ProductCard = ({ product }) => {
@@ -18,48 +16,14 @@ const ProductCard = ({ product }) => {
     product;
   const [quantity, setQuantity] = useState(1);
   const [isAdded, setIsAdded] = useState(false);
-  const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
   const { addToCart } = useCart();
   const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
   const navigate = useNavigate();
 
-  // Use images array if available, otherwise create one from the single image
-  const productImages = images || [image];
+  // Use the first image from images array if available, otherwise use the single image
+  const displayImage = images && images.length > 0 ? images[0] : image;
 
   const inWishlist = isInWishlist(id);
-
-  const nextImage = (e) => {
-    e.stopPropagation();
-    e.preventDefault();
-    if (isTransitioning) return;
-
-    setIsTransitioning(true);
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex < productImages.length - 1 ? prevIndex + 1 : 0
-    );
-
-    // Reset transitioning state after animation completes
-    setTimeout(() => {
-      setIsTransitioning(false);
-    }, 700); // Match this with the CSS transition duration
-  };
-
-  const prevImage = (e) => {
-    e.stopPropagation();
-    e.preventDefault();
-    if (isTransitioning) return;
-
-    setIsTransitioning(true);
-    setCurrentImageIndex((prevIndex) =>
-      prevIndex > 0 ? prevIndex - 1 : productImages.length - 1
-    );
-
-    // Reset transitioning state after animation completes
-    setTimeout(() => {
-      setIsTransitioning(false);
-    }, 700); // Match this with the CSS transition duration
-  };
 
   const handleQuantityDecrease = (e) => {
     e.stopPropagation();
@@ -115,12 +79,10 @@ const ProductCard = ({ product }) => {
             "0 30px 60px -12px rgba(0, 0, 0, 0.4)";
           e.currentTarget.style.zIndex = "5";
 
-          // Scale the active image on hover
-          const activeImg = e.currentTarget.querySelector(
-            ".swiper-like-slider img.opacity-100"
-          );
-          if (activeImg) {
-            activeImg.style.transform = "scale(1.05)";
+          // Scale the image on hover
+          const img = e.currentTarget.querySelector(".product-image");
+          if (img) {
+            img.style.transform = "scale(1.05)";
           }
         }}
         onMouseLeave={(e) => {
@@ -130,95 +92,25 @@ const ProductCard = ({ product }) => {
             "0 20px 25px -5px rgba(0, 0, 0, 0.2)";
           e.currentTarget.style.zIndex = "1";
 
-          // Reset the active image scale
-          const activeImg = e.currentTarget.querySelector(
-            ".swiper-like-slider img.opacity-100"
-          );
-          if (activeImg) {
-            activeImg.style.transform = "scale(1)";
+          // Reset the image scale
+          const img = e.currentTarget.querySelector(".product-image");
+          if (img) {
+            img.style.transform = "scale(1)";
           }
         }}
       >
         {/* Full Width Product Image Container */}
         <div className="relative overflow-hidden bg-gradient-to-br from-[#2d1f0f] to-[#3d2914] h-40 sm:h-44 md:h-48">
-          <div className="swiper-like-slider relative w-full h-full">
-            {productImages.map((imgSrc, idx) => (
-              <img
-                key={idx}
-                src={imgSrc}
-                alt={`${title} - view ${idx + 1}`}
-                className={`absolute w-full h-full object-cover transition-transform duration-700 ease-in-out ${
-                  currentImageIndex === idx
-                    ? "opacity-100 scale-100 z-10"
-                    : "opacity-0 scale-110 z-0"
-                }`}
-                style={{
-                  willChange: "transform, opacity",
-                  transition:
-                    "transform 700ms cubic-bezier(0.4, 0, 0.2, 1), opacity 700ms cubic-bezier(0.4, 0, 0.2, 1)",
-                }}
-              />
-            ))}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
-          </div>
-
-          {/* Image Navigation Controls (visible on hover) */}
-          {productImages.length > 1 && (
-            <div className="absolute inset-0 flex items-center justify-between px-1 sm:px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30">
-              <button
-                onClick={prevImage}
-                disabled={isTransitioning}
-                className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-black/50 backdrop-blur-sm text-white flex items-center justify-center hover:bg-black/70 transition-all duration-300 transform hover:scale-110 shadow-lg ${
-                  isTransitioning ? "cursor-not-allowed opacity-50" : ""
-                }`}
-                aria-label="Previous image"
-              >
-                <FaAngleLeft size={10} className="sm:text-xs" />
-              </button>
-              <button
-                onClick={nextImage}
-                disabled={isTransitioning}
-                className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-black/50 backdrop-blur-sm text-white flex items-center justify-center hover:bg-black/70 transition-all duration-300 transform hover:scale-110 shadow-lg ${
-                  isTransitioning ? "cursor-not-allowed opacity-50" : ""
-                }`}
-                aria-label="Next image"
-              >
-                <FaAngleRight size={10} className="sm:text-xs" />
-              </button>
-            </div>
-          )}
-
-          {/* Image indicator dots */}
-          {productImages.length > 1 && (
-            <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1 sm:gap-2 z-30">
-              {productImages.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                    e.preventDefault();
-                    if (!isTransitioning && currentImageIndex !== index) {
-                      setIsTransitioning(true);
-                      setCurrentImageIndex(index);
-                      setTimeout(() => {
-                        setIsTransitioning(false);
-                      }, 700);
-                    }
-                  }}
-                  disabled={isTransitioning}
-                  className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-500 ease-in-out cursor-pointer border border-white/40 ${
-                    currentImageIndex === index
-                      ? "bg-white w-4 sm:w-6 shadow-md"
-                      : "bg-white/50 hover:bg-white/80"
-                  }`}
-                  aria-label={`View image ${index + 1}`}
-                />
-              ))}
-            </div>
-          )}
-
-          {/* Overlay Badges & Wishlist */}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+          <img
+            src={displayImage}
+            alt={title}
+            className="product-image absolute w-full h-full object-cover transition-transform duration-700 ease-in-out"
+            style={{
+              willChange: "transform",
+              transition: "transform 700ms cubic-bezier(0.4, 0, 0.2, 1)",
+            }}
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
 
           {/* Wishlist Button */}
           <div className="absolute top-2 right-2 sm:top-3 sm:right-3 z-30">

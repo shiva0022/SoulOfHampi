@@ -35,13 +35,11 @@ const ProductDetails = () => {
   const navigate = useNavigate();
   const [product, setProduct] = useState(null);
   const [similarProducts, setSimilarProducts] = useState([]);
-  const [selectedImage, setSelectedImage] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [isAddedToCart, setIsAddedToCart] = useState(false);
   const [activeTab, setActiveTab] = useState("description");
   const [isZoomed, setIsZoomed] = useState(false);
   const [zoomPosition, setZoomPosition] = useState({ x: 0, y: 0 });
-  const [isTransitioning, setIsTransitioning] = useState(false);
 
   const { addToCart } = useCart();
   const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
@@ -213,14 +211,10 @@ const ProductDetails = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 animate-fade-in-up">
           <ImageGallery
             product={product}
-            selectedImage={selectedImage}
-            setSelectedImage={setSelectedImage}
             isZoomed={isZoomed}
             setIsZoomed={setIsZoomed}
             zoomPosition={zoomPosition}
             setZoomPosition={setZoomPosition}
-            isTransitioning={isTransitioning}
-            setIsTransitioning={setIsTransitioning}
             inWishlist={inWishlist}
             handleWishlistToggle={handleWishlistToggle}
             toggleZoom={toggleZoom}
