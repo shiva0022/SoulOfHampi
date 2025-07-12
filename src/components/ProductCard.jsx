@@ -68,8 +68,8 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <Link 
-      to={`/product/${id}`} 
+    <Link
+      to={`/product/${id}`}
       state={{ selectedImage: displayImage }}
       className="block"
     >
@@ -268,7 +268,7 @@ const ProductCard = ({ product }) => {
                   e.stopPropagation();
                   e.preventDefault();
                   navigate(`/product/${id}`, {
-                    state: { selectedImage: displayImage }
+                    state: { selectedImage: displayImage },
                   });
                 }}
                 className="bg-transparent border-2 border-[#d4c5a0] text-[#f5f1e8] hover:bg-[#d4c5a0] hover:text-[#3d2914] py-2 sm:py-2.5 px-2 sm:px-4 rounded-xl font-bold shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl transform hover:scale-102 flex items-center justify-center text-xs sm:text-sm relative"

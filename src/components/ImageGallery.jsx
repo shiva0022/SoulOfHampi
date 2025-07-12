@@ -16,7 +16,8 @@ const ImageGallery = ({
   const imageRef = useRef(null);
 
   // Use selectedImage if provided, otherwise fall back to first image from product images array
-  const displayImage = selectedImage || 
+  const displayImage =
+    selectedImage ||
     (product.images && product.images.length > 0
       ? product.images[0]
       : product.image);
