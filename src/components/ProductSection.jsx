@@ -1,6 +1,7 @@
 import React, { useState, useRef } from "react";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import ProductCard from "./ProductCard";
+import { enhanceProductData } from "../data/products";
 
 const ProductSection = ({
   title,
@@ -113,7 +114,7 @@ const ProductSection = ({
           <div className="flex gap-6 pb-4 pt-6 min-w-max px-2 sm:px-4 lg:px-0">
             {products.map((product) => (
               <div key={product.id} className="flex-shrink-0">
-                <ProductCard product={product} />
+                <ProductCard product={enhanceProductData(product)} />
               </div>
             ))}
           </div>

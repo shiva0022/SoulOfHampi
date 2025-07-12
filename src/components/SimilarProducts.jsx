@@ -1,5 +1,6 @@
 import React from "react";
 import ProductCard from "./ProductCard";
+import { enhanceProductData } from "../data/products";
 
 const SimilarProducts = ({ similarProducts }) => (
   <div className="mt-16 mb-8">
@@ -14,7 +15,7 @@ const SimilarProducts = ({ similarProducts }) => (
           className="animate-fade-in-up"
           style={{ animationDelay: `${idx * 120}ms` }}
         >
-          <ProductCard product={similarProduct} />
+          <ProductCard product={enhanceProductData(similarProduct)} />
         </div>
       ))}
     </div>

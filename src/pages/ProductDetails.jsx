@@ -35,6 +35,7 @@ const ProductDetails = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const selectedImage = location.state?.selectedImage;
+  const passedProductData = location.state?.productData;
   const [product, setProduct] = useState(null);
   const [similarProducts, setSimilarProducts] = useState([]);
   const [quantity, setQuantity] = useState(1);
@@ -49,7 +50,13 @@ const ProductDetails = () => {
   const imageRef = useRef(null);
 
   useEffect(() => {
-    const productData = getProductById(id);
+    // Use passed product data if available, otherwise fetch by ID
+    let productData = passedProductData;
+    
+    if (!productData) {
+      productData = getProductById(id);
+    }
+    
     setProduct(productData);
 
     // Mock fetch of similar products - in a real app, this would be from an API

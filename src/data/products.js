@@ -579,7 +579,7 @@ export const getProductById = (id) => {
 };
 
 // Enhanced product data utility function
-const enhanceProductData = (product) => {
+export const enhanceProductData = (product) => {
   const defaultEnhancements = {
     images: product.images || [product.image],
     reviewCount: product.reviewCount || Math.floor(Math.random() * 200) + 50,

@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import ProductCard from "./ProductCard";
+import { enhanceProductData } from "../data/products";
 
 const MostPopular = () => {
   const navigate = useNavigate();
@@ -201,7 +202,7 @@ const MostPopular = () => {
           >
             {popularProducts.map((product) => (
               <div key={product.id} className="product-card-container">
-                <ProductCard product={product} />
+                <ProductCard product={enhanceProductData(product)} />
               </div>
             ))}
           </div>
