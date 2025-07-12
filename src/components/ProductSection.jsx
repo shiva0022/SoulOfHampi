@@ -77,18 +77,21 @@ const ProductSection = ({
       </div>
 
       {/* Products Horizontal Scroll with Navigation */}
-      <div className="relative pt-8 max-w-full" style={{ overflow: "visible" }}>
-        {/* Navigation Buttons */}
+      <div
+        className="relative pt-8 max-w-full lg:px-16"
+        style={{ overflow: "visible" }}
+      >
+        {/* Navigation Buttons - Hidden on mobile and tablet */}
         <button
           onClick={scrollToPrev}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[#c4915c] hover:bg-[#e8b678] text-white p-2 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+          className="hidden lg:block absolute left-0 top-1/2 transform -translate-y-1/2 bg-[#c4915c] hover:bg-[#e8b678] text-white p-2 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
           style={{ zIndex: 10 }}
         >
           <FaChevronLeft size={20} />
         </button>
         <button
           onClick={scrollToNext}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#c4915c] hover:bg-[#e8b678] text-white p-2 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+          className="hidden lg:block absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#c4915c] hover:bg-[#e8b678] text-white p-2 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
           style={{ zIndex: 10 }}
         >
           <FaChevronRight size={20} />
@@ -107,7 +110,7 @@ const ProductSection = ({
             overflowY: "visible",
           }}
         >
-          <div className="flex gap-6 pb-4 pt-6 min-w-max">
+          <div className="flex gap-6 pb-4 pt-6 min-w-max px-2 sm:px-4 lg:px-0">
             {products.map((product) => (
               <div key={product.id} className="flex-shrink-0">
                 <ProductCard product={product} />

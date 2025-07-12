@@ -171,21 +171,21 @@ const TrendingNow = () => {
         </div>
 
         {/* Products Horizontal Scroll with Navigation */}
-        <div className="relative">
-          {/* Previous Button */}
+        <div className="relative lg:px-16">
+          {/* Previous Button - Hidden on mobile and tablet */}
           <button
             onClick={scrollToPrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 bg-[#c4915c] hover:bg-[#e8b678] text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+            className="hidden lg:block absolute left-0 top-1/2 -translate-y-1/2 bg-[#c4915c] hover:bg-[#e8b678] text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
             style={{ zIndex: 10 }}
             aria-label="Scroll to previous products"
           >
             <FaChevronLeft className="w-4 h-4" />
           </button>
 
-          {/* Next Button */}
+          {/* Next Button - Hidden on mobile and tablet */}
           <button
             onClick={scrollToNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 bg-[#c4915c] hover:bg-[#e8b678] text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+            className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 bg-[#c4915c] hover:bg-[#e8b678] text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
             style={{ zIndex: 10 }}
             aria-label="Scroll to next products"
           >
@@ -195,7 +195,7 @@ const TrendingNow = () => {
           {/* Scroll Container */}
           <div
             ref={scrollContainerRef}
-            className="product-scroll-container flex overflow-x-auto gap-6 pb-4 pt-4 scrollbar-hide px-2 sm:px-4 max-w-full cursor-grab active:cursor-grabbing select-none"
+            className="product-scroll-container flex overflow-x-auto gap-6 pb-4 pt-4 scrollbar-hide px-2 sm:px-4 lg:px-0 max-w-full cursor-grab active:cursor-grabbing select-none"
             onWheel={handleWheel}
             onMouseDown={handleMouseDown}
             onMouseLeave={handleMouseLeave}

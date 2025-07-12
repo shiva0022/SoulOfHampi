@@ -171,18 +171,18 @@ const NewArrivals = () => {
         </div>
 
         {/* Products Horizontal Scroll */}
-        <div className="relative">
-          {/* Navigation Buttons */}
+        <div className="relative lg:px-16">
+          {/* Navigation Buttons - Hidden on mobile and tablet */}
           <button
             onClick={scrollToPrev}
-            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[#c4915c] hover:bg-[#e8b678] text-white p-2 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+            className="hidden lg:block absolute left-0 top-1/2 transform -translate-y-1/2 bg-[#c4915c] hover:bg-[#e8b678] text-white p-2 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
             style={{ zIndex: 10 }}
           >
             <FaChevronLeft size={20} />
           </button>
           <button
             onClick={scrollToNext}
-            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#c4915c] hover:bg-[#e8b678] text-white p-2 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+            className="hidden lg:block absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#c4915c] hover:bg-[#e8b678] text-white p-2 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
             style={{ zIndex: 10 }}
           >
             <FaChevronRight size={20} />
@@ -190,7 +190,7 @@ const NewArrivals = () => {
 
           <div
             ref={scrollContainerRef}
-            className="product-scroll-container flex overflow-x-auto gap-6 pb-4 pt-4 scrollbar-hide px-2 sm:px-4 max-w-full cursor-grab active:cursor-grabbing"
+            className="product-scroll-container flex overflow-x-auto gap-6 pb-4 pt-4 scrollbar-hide px-2 sm:px-4 lg:px-0 max-w-full cursor-grab active:cursor-grabbing"
             onWheel={handleWheel}
             onMouseDown={handleMouseDown}
             onMouseMove={handleMouseMove}
