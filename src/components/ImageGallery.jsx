@@ -3,6 +3,7 @@ import { FaHeart, FaShare, FaSearch } from "react-icons/fa";
 
 const ImageGallery = ({
   product,
+  selectedImage,
   isZoomed,
   setIsZoomed,
   zoomPosition,
@@ -14,11 +15,11 @@ const ImageGallery = ({
 }) => {
   const imageRef = useRef(null);
 
-  // Use the first image from the product images array
-  const displayImage =
-    product.images && product.images.length > 0
+  // Use selectedImage if provided, otherwise fall back to first image from product images array
+  const displayImage = selectedImage || 
+    (product.images && product.images.length > 0
       ? product.images[0]
-      : product.image;
+      : product.image);
 
   return (
     <div className="bg-gradient-to-br from-[#3d2914] to-[#4a3420] rounded-2xl p-6 border border-[#6b5b4b]">

@@ -20,8 +20,11 @@ const ProductCard = ({ product }) => {
   const { addToWishlist, removeFromWishlist, isInWishlist } = useWishlist();
   const navigate = useNavigate();
 
-  // Use the first image from images array if available, otherwise use the single image
-  const displayImage = images && images.length > 0 ? images[0] : image;
+  // Use the first image from the product images array (same logic as ImageGallery)
+  const displayImage =
+    product.images && product.images.length > 0
+      ? product.images[0]
+      : product.image;
 
   const inWishlist = isInWishlist(id);
 
@@ -65,7 +68,11 @@ const ProductCard = ({ product }) => {
   };
 
   return (
-    <Link to={`/product/${id}`} className="block">
+    <Link 
+      to={`/product/${id}`} 
+      state={{ selectedImage: displayImage }}
+      className="block"
+    >
       <div
         className="bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] rounded-2xl shadow-2xl border border-[#6b5b4b] transform transition-all duration-500 ease-in-out group hover:shadow-2xl w-[280px] sm:w-[300px] md:w-[320px] lg:w-[320px] h-[380px] sm:h-[400px] md:h-[420px] mx-auto relative overflow-hidden flex flex-col flex-shrink-0 cursor-pointer"
         style={{
@@ -260,7 +267,9 @@ const ProductCard = ({ product }) => {
                 onClick={(e) => {
                   e.stopPropagation();
                   e.preventDefault();
-                  navigate(`/product/${id}`);
+                  navigate(`/product/${id}`, {
+                    state: { selectedImage: displayImage }
+                  });
                 }}
                 className="bg-transparent border-2 border-[#d4c5a0] text-[#f5f1e8] hover:bg-[#d4c5a0] hover:text-[#3d2914] py-2 sm:py-2.5 px-2 sm:px-4 rounded-xl font-bold shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl transform hover:scale-102 flex items-center justify-center text-xs sm:text-sm relative"
                 style={{

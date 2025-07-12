@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { useParams, useNavigate, Link } from "react-router-dom";
+import { useParams, useNavigate, useLocation, Link } from "react-router-dom";
 import { useCart } from "../context/CartContext";
 import { useWishlist } from "../context/WishlistContext";
 import { getProductById } from "../data/products";
@@ -33,6 +33,8 @@ import {
 const ProductDetails = () => {
   const { id } = useParams();
   const navigate = useNavigate();
+  const location = useLocation();
+  const selectedImage = location.state?.selectedImage;
   const [product, setProduct] = useState(null);
   const [similarProducts, setSimilarProducts] = useState([]);
   const [quantity, setQuantity] = useState(1);
@@ -211,6 +213,7 @@ const ProductDetails = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 animate-fade-in-up">
           <ImageGallery
             product={product}
+            selectedImage={selectedImage}
             isZoomed={isZoomed}
             setIsZoomed={setIsZoomed}
             zoomPosition={zoomPosition}
