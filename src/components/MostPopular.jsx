@@ -4,7 +4,7 @@ import ProductCard from "./ProductCard";
 
 const MostPopular = () => {
   const navigate = useNavigate();
-  
+
   const popularProducts = [
     {
       id: 5,
@@ -12,7 +12,7 @@ const MostPopular = () => {
       price: 599,
       originalPrice: 799,
       image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+        "/images/miniature sculptures and souviners/2342c49ed891abfe385b99ef19cbbc91.jpg",
       category: "Art",
       rating: 5,
     },
@@ -20,8 +20,7 @@ const MostPopular = () => {
       id: 6,
       title: "Handcrafted Silver Anklets",
       price: 1499,
-      image:
-        "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/pottery/4470f5cb265c2ec91b5432c81cb2dfe7.jpg",
       category: "Jewelry",
       rating: 5,
     },
@@ -30,8 +29,7 @@ const MostPopular = () => {
       title: "Traditional Cotton Kurta",
       price: 899,
       originalPrice: 1199,
-      image:
-        "https://images.unsplash.com/photo-1622290291468-a28f7020eef4?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/sarees/1c7485d9d22edb682bc7c5a4478b5c4e.jpg",
       category: "Textiles",
       rating: 4,
     },
@@ -39,8 +37,7 @@ const MostPopular = () => {
       id: 8,
       title: "Stone Carved Buddha Statue",
       price: 3299,
-      image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/stone carvings/54beeaad3c880ff443665dc033055409.jpg",
       category: "Sculptures",
       rating: 5,
     },
@@ -50,7 +47,7 @@ const MostPopular = () => {
       price: 449,
       originalPrice: 599,
       image:
-        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1000&auto=format&fit=crop",
+        "/images/traditional foods and snacks/27130747d60745ecf57dd6a6fab195b8.jpg",
       category: "Accessories",
       rating: 4,
     },
@@ -59,7 +56,7 @@ const MostPopular = () => {
       title: "Traditional Incense Holder",
       price: 299,
       image:
-        "https://images.unsplash.com/photo-1609205624349-85a066e55e8c?q=80&w=1000&auto=format&fit=crop",
+        "/images/miniature sculptures and souviners/33884c622fea38280341a7d02aa357f5.jpg",
       category: "Home Decor",
       rating: 4,
     },
@@ -68,8 +65,7 @@ const MostPopular = () => {
       title: "Carved Sandalwood Box",
       price: 1899,
       originalPrice: 2299,
-      image:
-        "https://images.unsplash.com/photo-1585129332289-96baaaa73050?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/pottery/4a77370f27cbe85183d654fea9cc505c.jpg",
       category: "Handicrafts",
       rating: 5,
     },
@@ -77,8 +73,7 @@ const MostPopular = () => {
       id: 12,
       title: "Traditional Brass Diya Set",
       price: 599,
-      image:
-        "https://images.unsplash.com/photo-1609205624349-85a066e55e8c?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/sarees/21542895214a4eba815f502b3f6d25df.jpg",
       category: "Home Decor",
       rating: 4,
     },
@@ -87,8 +82,7 @@ const MostPopular = () => {
       title: "Embroidered Wall Hanging",
       price: 799,
       originalPrice: 999,
-      image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/stone carvings/76221dbbfe0b746625cc76557d8b4140.jpg",
       category: "Art",
       rating: 4,
     },
@@ -97,7 +91,7 @@ const MostPopular = () => {
       title: "Handmade Paper Journal",
       price: 349,
       image:
-        "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?q=80&w=1000&auto=format&fit=crop",
+        "/images/traditional foods and snacks/4d6469332c08595879ee5ceae4958882.jpg",
       category: "Stationery",
       rating: 4,
     },
@@ -131,8 +125,8 @@ const MostPopular = () => {
 
         {/* Enhanced View All Button */}
         <div className="text-center mt-12 sm:mt-16">
-          <button 
-            onClick={() => navigate('/products')}
+          <button
+            onClick={() => navigate("/products")}
             className="bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0] text-[#3d2914] px-8 sm:px-10 py-3 sm:py-4 rounded-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-2xl transform hover:scale-105 border border-[#9d7a5e] text-base sm:text-lg"
           >
             Explore All Popular Items

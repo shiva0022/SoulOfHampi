@@ -4,7 +4,7 @@ import ProductCard from "./ProductCard";
 
 const TrendingNow = () => {
   const navigate = useNavigate();
-  
+
   const trendingProducts = [
     {
       id: 1,
@@ -12,7 +12,7 @@ const TrendingNow = () => {
       price: 2499,
       originalPrice: 3499,
       image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+        "/images/miniature sculptures and souviners/5ae0ab25e48e90b522bbfa20a38ea710.jpg",
       category: "Sculptures",
       rating: 5,
     },
@@ -21,8 +21,7 @@ const TrendingNow = () => {
       title: "Traditional Handwoven Silk Saree",
       price: 1899,
       originalPrice: 2499,
-      image:
-        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/pottery/b9ed6322c94048a2feef644a9b855696.jpg",
       category: "Textiles",
       rating: 4,
     },
@@ -30,8 +29,7 @@ const TrendingNow = () => {
       id: 3,
       title: "Ancient Temple Bell Replica",
       price: 899,
-      image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/sarees/8b691aeb62447e3f95cfc5343db225f1.jpg",
       category: "Handicrafts",
       rating: 5,
     },
@@ -40,8 +38,7 @@ const TrendingNow = () => {
       title: "Handcrafted Wooden Jewelry Box",
       price: 1299,
       originalPrice: 1599,
-      image:
-        "https://images.unsplash.com/photo-1585129332289-96baaaa73050?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/stone carvings/b0e3ea7f7d709aea1f4eba4bef16f607.jpg",
       category: "Handicrafts",
       rating: 4,
     },
@@ -50,7 +47,7 @@ const TrendingNow = () => {
       title: "Brass Oil Lamp with Intricate Design",
       price: 649,
       image:
-        "https://images.unsplash.com/photo-1609205624349-85a066e55e8c?q=80&w=1000&auto=format&fit=crop",
+        "/images/traditional foods and snacks/85eb62403daffc2522514e776bc7109c.jpg",
       category: "Home Decor",
       rating: 4,
     },
@@ -60,7 +57,7 @@ const TrendingNow = () => {
       price: 899,
       originalPrice: 1199,
       image:
-        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1000&auto=format&fit=crop",
+        "/images/miniature sculptures and souviners/8ab1bba51cf5da1f236cc3cc9868cc9d.jpg",
       category: "Handicrafts",
       rating: 5,
     },
@@ -68,8 +65,7 @@ const TrendingNow = () => {
       id: 7,
       title: "Traditional Pottery Vase",
       price: 749,
-      image:
-        "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/pottery/c5854d7184fcfe3e047362a3a4ce2672.jpg",
       category: "Pottery",
       rating: 4,
     },
@@ -78,8 +74,7 @@ const TrendingNow = () => {
       title: "Carved Wooden Photo Frame",
       price: 549,
       originalPrice: 699,
-      image:
-        "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/sarees/a8121d302b4635f75c93007cc91f8d6b.jpg",
       category: "Home Decor",
       rating: 4,
     },
@@ -87,8 +82,7 @@ const TrendingNow = () => {
       id: 9,
       title: "Miniature Stone Temple",
       price: 1899,
-      image:
-        "https://images.unsplash.com/photo-1545558014-8692077e9b5c?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/stone carvings/c7b2a924a699d4113c9830f080ba101f.jpg",
       category: "Sculptures",
       rating: 5,
     },
@@ -98,7 +92,7 @@ const TrendingNow = () => {
       price: 999,
       originalPrice: 1299,
       image:
-        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1000&auto=format&fit=crop",
+        "/images/traditional foods and snacks/a08c2ba0f9a21d09cd59e0dd0d66c6c6.jpg",
       category: "Utility",
       rating: 4,
     },
@@ -132,8 +126,8 @@ const TrendingNow = () => {
 
         {/* Enhanced View All Button */}
         <div className="text-center mt-12 sm:mt-16">
-          <button 
-            onClick={() => navigate('/products')}
+          <button
+            onClick={() => navigate("/products")}
             className="font-primary font-medium tracking-wide bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0] text-[#3d2914] px-8 sm:px-10 py-3 sm:py-4 rounded-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-2xl transform hover:scale-105 border border-[#9d7a5e] text-base sm:text-lg"
           >
             View All Trending Products

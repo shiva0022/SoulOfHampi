@@ -4,7 +4,7 @@ import ProductCard from "./ProductCard";
 
 const HandcraftedSpecials = () => {
   const navigate = useNavigate();
-  
+
   const specialProducts = [
     {
       id: 13,
@@ -12,7 +12,7 @@ const HandcraftedSpecials = () => {
       price: 4999,
       originalPrice: 6499,
       image:
-        "https://images.unsplash.com/photo-1545558014-8692077e9b5c?q=80&w=1000&auto=format&fit=crop",
+        "/images/miniature sculptures and souviners/2342c49ed891abfe385b99ef19cbbc91.jpg",
       category: "Exclusive",
       rating: 5,
     },
@@ -20,8 +20,7 @@ const HandcraftedSpecials = () => {
       id: 14,
       title: "Handcrafted Silver Filigree Necklace",
       price: 2899,
-      image:
-        "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/pottery/4470f5cb265c2ec91b5432c81cb2dfe7.jpg",
       category: "Jewelry",
       rating: 5,
     },
@@ -30,8 +29,7 @@ const HandcraftedSpecials = () => {
       title: "Traditional Handloom Silk Dupatta",
       price: 1699,
       originalPrice: 2199,
-      image:
-        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/sarees/1c7485d9d22edb682bc7c5a4478b5c4e.jpg",
       category: "Textiles",
       rating: 4,
     },
@@ -39,8 +37,7 @@ const HandcraftedSpecials = () => {
       id: 16,
       title: "Artisan Carved Sandalwood Box",
       price: 2299,
-      image:
-        "https://images.unsplash.com/photo-1585129332289-96baaaa73050?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/stone carvings/54beeaad3c880ff443665dc033055409.jpg",
       category: "Handicrafts",
       rating: 5,
     },
@@ -50,7 +47,7 @@ const HandcraftedSpecials = () => {
       price: 3499,
       originalPrice: 4299,
       image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+        "/images/traditional foods and snacks/27130747d60745ecf57dd6a6fab195b8.jpg",
       category: "Art",
       rating: 5,
     },
@@ -59,7 +56,7 @@ const HandcraftedSpecials = () => {
       title: "Handforged Bronze Sculpture",
       price: 5999,
       image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+        "/images/miniature sculptures and souviners/33884c622fea38280341a7d02aa357f5.jpg",
       category: "Sculptures",
       rating: 5,
     },
@@ -68,8 +65,7 @@ const HandcraftedSpecials = () => {
       title: "Exclusive Kashmir Pashmina Shawl",
       price: 7999,
       originalPrice: 9999,
-      image:
-        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/pottery/4a77370f27cbe85183d654fea9cc505c.jpg",
       category: "Textiles",
       rating: 5,
     },
@@ -77,8 +73,7 @@ const HandcraftedSpecials = () => {
       id: 20,
       title: "Handcrafted Gold Plated Jewelry Box",
       price: 4499,
-      image:
-        "https://images.unsplash.com/photo-1585129332289-96baaaa73050?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/sarees/21542895214a4eba815f502b3f6d25df.jpg",
       category: "Luxury",
       rating: 5,
     },
@@ -87,8 +82,7 @@ const HandcraftedSpecials = () => {
       title: "Traditional Tanjore Painting",
       price: 8999,
       originalPrice: 11999,
-      image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/stone carvings/76221dbbfe0b746625cc76557d8b4140.jpg",
       category: "Art",
       rating: 5,
     },
@@ -97,7 +91,7 @@ const HandcraftedSpecials = () => {
       title: "Master Craftsman Wooden Elephant",
       price: 6999,
       image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+        "/images/traditional foods and snacks/4d6469332c08595879ee5ceae4958882.jpg",
       category: "Sculptures",
       rating: 5,
     },
@@ -131,8 +125,8 @@ const HandcraftedSpecials = () => {
 
         {/* Enhanced View All Button */}
         <div className="text-center mt-12 sm:mt-16">
-          <button 
-            onClick={() => navigate('/products')}
+          <button
+            onClick={() => navigate("/products")}
             className="bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0] text-[#3d2914] px-8 sm:px-10 py-3 sm:py-4 rounded-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-2xl transform hover:scale-105 border border-[#9d7a5e] text-base sm:text-lg"
           >
             Discover All Specials

@@ -4,14 +4,14 @@ import ProductCard from "./ProductCard";
 
 const NewArrivals = () => {
   const navigate = useNavigate();
-  
+
   const newProducts = [
     {
       id: 9,
       title: "Handwoven Bamboo Basket Set",
       price: 799,
       image:
-        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1000&auto=format&fit=crop",
+        "/images/miniature sculptures and souviners/394c1d1375cb96035a40b349b2aec24f.jpg",
       category: "Handicrafts",
       rating: 4,
     },
@@ -20,8 +20,7 @@ const NewArrivals = () => {
       title: "Traditional Brass Oil Lamp",
       price: 649,
       originalPrice: 849,
-      image:
-        "https://images.unsplash.com/photo-1609205624349-85a066e55e8c?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/pottery/5464839dc1cd2af61062378c70a518f7.jpg",
       category: "Handicrafts",
       rating: 5,
     },
@@ -29,8 +28,7 @@ const NewArrivals = () => {
       id: 11,
       title: "Embroidered Silk Cushion Covers",
       price: 449,
-      image:
-        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/sarees/4ce921addf51f774aeec8966aa5c7863.jpg",
       category: "Textiles",
       rating: 4,
     },
@@ -38,8 +36,7 @@ const NewArrivals = () => {
       id: 12,
       title: "Stone Carved Ganesha Idol",
       price: 1899,
-      image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/stone carvings/85b628a683953ba2bed52a4d20390317.jpg",
       category: "Sculptures",
       rating: 5,
     },
@@ -49,7 +46,7 @@ const NewArrivals = () => {
       price: 899,
       originalPrice: 1199,
       image:
-        "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?q=80&w=1000&auto=format&fit=crop",
+        "/images/traditional foods and snacks/7030666c91f0bdaa1116f798c7226273.jpg",
       category: "Stationery",
       rating: 4,
     },
@@ -58,7 +55,7 @@ const NewArrivals = () => {
       title: "Traditional Wooden Comb",
       price: 299,
       image:
-        "https://images.unsplash.com/photo-1585129332289-96baaaa73050?q=80&w=1000&auto=format&fit=crop",
+        "/images/miniature sculptures and souviners/42b6f85498dae7f3ce474aa246af2889.jpg",
       category: "Personal Care",
       rating: 4,
     },
@@ -67,8 +64,7 @@ const NewArrivals = () => {
       title: "Ceramic Tea Set with Traditional Design",
       price: 1599,
       originalPrice: 1999,
-      image:
-        "https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/pottery/79c09aa0f017c452056b8bc202f0618e.jpg",
       category: "Kitchenware",
       rating: 5,
     },
@@ -76,8 +72,7 @@ const NewArrivals = () => {
       id: 16,
       title: "Handmade Soaps Gift Set",
       price: 449,
-      image:
-        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/sarees/743ad6d71c91dddd91019acfd6ecdff1.jpg",
       category: "Personal Care",
       rating: 4,
     },
@@ -86,8 +81,7 @@ const NewArrivals = () => {
       title: "Traditional Rangoli Stencils",
       price: 199,
       originalPrice: 299,
-      image:
-        "https://images.unsplash.com/photo-1578662996442-48f60103fc96?q=80&w=1000&auto=format&fit=crop",
+      image: "/images/stone carvings/8e9bb1f7a2df92158f8bcfd3bb693d11.jpg",
       category: "Art",
       rating: 4,
     },
@@ -96,7 +90,7 @@ const NewArrivals = () => {
       title: "Copper Water Jug with Glasses",
       price: 1299,
       image:
-        "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?q=80&w=1000&auto=format&fit=crop",
+        "/images/traditional foods and snacks/846f78c0d8224bdfc17444b4b2f93788.jpg",
       category: "Kitchenware",
       rating: 5,
     },
@@ -130,8 +124,8 @@ const NewArrivals = () => {
 
         {/* Enhanced View All Button */}
         <div className="text-center mt-12 sm:mt-16">
-          <button 
-            onClick={() => navigate('/products')}
+          <button
+            onClick={() => navigate("/products")}
             className="bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0] text-[#3d2914] px-8 sm:px-10 py-3 sm:py-4 rounded-xl font-bold transition-all duration-300 shadow-2xl hover:shadow-2xl transform hover:scale-105 border border-[#9d7a5e] text-base sm:text-lg"
           >
             See All New Arrivals
