@@ -21,13 +21,28 @@ const EmptyCartView = () => (
           <p className="text-lg text-[#d4c5a0] mb-8">Discover our amazing collection of handcrafted products and add them to your cart!</p>
         </div>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <Link to="/products" className="bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0] text-[#3d2914] py-3 px-8 rounded-xl font-bold flex items-center justify-center gap-3 shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl transform hover:scale-105">
-            <FaShoppingCart className="text-lg" />
-            Start Shopping
+          <Link to="/products" className="bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0] text-[#3d2914] py-3 px-8 rounded-xl font-bold flex items-center justify-center gap-3 shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl transform hover:scale-105 border border-[#9d7a5e]">
+            <FaShoppingCart className="text-lg" style={{ color: '#3d2914' }} />
+            <span className="text-xs sm:text-sm" style={{ color: '#3d2914' }}>Start Shopping</span>
           </Link>
-          <Link to="/" className="bg-transparent border-2 border-[#d4c5a0] text-[#f5f1e8] hover:bg-[#d4c5a0] hover:text-[#3d2914] py-3 px-8 rounded-xl font-bold flex items-center justify-center gap-3 shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl transform hover:scale-105">
-            <FaArrowLeft className="text-lg" />
-            Back to Home
+          <Link
+            to="/"
+            className="bg-transparent border-2 border-[#d4c5a0] text-white hover:bg-[#d4c5a0] hover:text-[#3d2914] py-3 px-8 rounded-xl font-bold flex items-center justify-center gap-3 shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl transform hover:scale-105"
+            onMouseEnter={e => {
+              const icon = e.currentTarget.querySelector('.back-home-icon');
+              const text = e.currentTarget.querySelector('.back-home-text');
+              if (icon) icon.style.color = '#3d2914';
+              if (text) text.style.color = '#3d2914';
+            }}
+            onMouseLeave={e => {
+              const icon = e.currentTarget.querySelector('.back-home-icon');
+              const text = e.currentTarget.querySelector('.back-home-text');
+              if (icon) icon.style.color = 'white';
+              if (text) text.style.color = 'white';
+            }}
+          >
+            <FaArrowLeft className="text-lg back-home-icon" style={{ color: 'white' }} />
+            <span className="text-xs sm:text-sm back-home-text" style={{ color: 'white' }}>Back to Home</span>
           </Link>
         </div>
       </div>
