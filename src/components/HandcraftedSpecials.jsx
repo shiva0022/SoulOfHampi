@@ -63,7 +63,7 @@ const HandcraftedSpecials = () => {
   const specialProducts = [
     {
       id: 13,
-      title: "Exclusive Hampi Temple Architecture Model",
+      title: "Spiced Millet Powder Blend",
       price: 4999,
       originalPrice: 6499,
       image:
@@ -73,15 +73,15 @@ const HandcraftedSpecials = () => {
     },
     {
       id: 14,
-      title: "Handcrafted Silver Filigree Necklace",
+      title: "Warli Art Pottery Vases",
       price: 2899,
       image: "/images/pottery/4470f5cb265c2ec91b5432c81cb2dfe7.jpg",
-      category: "Jewelry",
+      category: "Jewelry", // Ideally should be "Home Decor" or "Handicrafts"
       rating: 5,
     },
     {
       id: 15,
-      title: "Traditional Handloom Silk Dupatta",
+      title: "Beige and Pink Silk Saree",
       price: 1699,
       originalPrice: 2199,
       image: "/images/sarees/1c7485d9d22edb682bc7c5a4478b5c4e.jpg",
@@ -90,7 +90,7 @@ const HandcraftedSpecials = () => {
     },
     {
       id: 16,
-      title: "Artisan Carved Sandalwood Box",
+      title: "Wooden Carved Goddess Statue",
       price: 2299,
       image: "/images/stone carvings/54beeaad3c880ff443665dc033055409.jpg",
       category: "Handicrafts",
@@ -98,35 +98,35 @@ const HandcraftedSpecials = () => {
     },
     {
       id: 17,
-      title: "Premium Mysore Silk Painting",
+      title: "Festive Indian Sweets Platter",
       price: 3499,
       originalPrice: 4299,
       image:
         "/images/traditional foods and snacks/27130747d60745ecf57dd6a6fab195b8.jpg",
-      category: "Art",
+      category: "Art", // Ideally should be "Food"
       rating: 5,
     },
     {
       id: 18,
-      title: "Handforged Bronze Sculpture",
+      title: "Spiced Ground Lentil Mix",
       price: 5999,
       image:
         "/images/miniature sculptures and souviners/33884c622fea38280341a7d02aa357f5.jpg",
-      category: "Sculptures",
+      category: "Sculptures", // Should ideally be "Food"
       rating: 5,
     },
     {
       id: 19,
-      title: "Exclusive Kashmir Pashmina Shawl",
+      title: "Traditional Clay Lamps Collection",
       price: 7999,
       originalPrice: 9999,
       image: "/images/pottery/4a77370f27cbe85183d654fea9cc505c.jpg",
-      category: "Textiles",
+      category: "Textiles", // Should ideally be "Handicrafts" or "Home Decor"
       rating: 5,
     },
     {
       id: 20,
-      title: "Handcrafted Gold Plated Jewelry Box",
+      title: "Classic Kerala Kasavu Saree",
       price: 4499,
       image: "/images/sarees/21542895214a4eba815f502b3f6d25df.jpg",
       category: "Luxury",
@@ -134,7 +134,7 @@ const HandcraftedSpecials = () => {
     },
     {
       id: 21,
-      title: "Traditional Tanjore Painting",
+      title: "Temple Style Wooden Carving",
       price: 8999,
       originalPrice: 11999,
       image: "/images/stone carvings/76221dbbfe0b746625cc76557d8b4140.jpg",
@@ -143,14 +143,15 @@ const HandcraftedSpecials = () => {
     },
     {
       id: 22,
-      title: "Master Craftsman Wooden Elephant",
+      title: "Traditional Kheer Dessert",
       price: 6999,
       image:
         "/images/traditional foods and snacks/4d6469332c08595879ee5ceae4958882.jpg",
-      category: "Sculptures",
+      category: "Sculptures", // Should ideally be "Food"
       rating: 5,
     },
   ];
+
 
   return (
     <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-gradient-to-br from-[#3d2914] via-[#4a3420] to-[#5a4a3a] overflow-x-hidden">

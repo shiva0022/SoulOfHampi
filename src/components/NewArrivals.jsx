@@ -65,7 +65,7 @@ const NewArrivals = () => {
   const newProducts = [
     {
       id: 9,
-      title: "Handwoven Bamboo Basket Set",
+      title: "Brass Rama Darbar Idols Set",
       price: 799,
       image:
         "/images/miniature sculptures and souviners/394c1d1375cb96035a40b349b2aec24f.jpg",
@@ -74,7 +74,7 @@ const NewArrivals = () => {
     },
     {
       id: 10,
-      title: "Traditional Brass Oil Lamp",
+      title: "Terracotta Dancing Dolls",
       price: 649,
       originalPrice: 849,
       image: "/images/pottery/5464839dc1cd2af61062378c70a518f7.jpg",
@@ -83,7 +83,7 @@ const NewArrivals = () => {
     },
     {
       id: 11,
-      title: "Embroidered Silk Cushion Covers",
+      title: "Elegant Green Silk Saree",
       price: 449,
       image: "/images/sarees/4ce921addf51f774aeec8966aa5c7863.jpg",
       category: "Textiles",
@@ -91,7 +91,7 @@ const NewArrivals = () => {
     },
     {
       id: 12,
-      title: "Stone Carved Ganesha Idol",
+      title: "Intricate Wooden Floral Carving",
       price: 1899,
       image: "/images/stone carvings/85b628a683953ba2bed52a4d20390317.jpg",
       category: "Sculptures",
@@ -99,26 +99,26 @@ const NewArrivals = () => {
     },
     {
       id: 13,
-      title: "Handcrafted Leather Journal",
+      title: "North Indian Combo Meal",
       price: 899,
       originalPrice: 1199,
       image:
         "/images/traditional foods and snacks/7030666c91f0bdaa1116f798c7226273.jpg",
-      category: "Stationery",
+      category: "Stationery", // Note: this is mislabeled; actual type is "Food"
       rating: 4,
     },
     {
       id: 14,
-      title: "Traditional Wooden Comb",
+      title: "Traditional Homemade Pickle",
       price: 299,
       image:
         "/images/miniature sculptures and souviners/42b6f85498dae7f3ce474aa246af2889.jpg",
-      category: "Personal Care",
+      category: "Personal Care", // Also ideally "Food"
       rating: 4,
     },
     {
       id: 15,
-      title: "Ceramic Tea Set with Traditional Design",
+      title: "Clay Pots for Cooking & Storage",
       price: 1599,
       originalPrice: 1999,
       image: "/images/pottery/79c09aa0f017c452056b8bc202f0618e.jpg",
@@ -127,15 +127,15 @@ const NewArrivals = () => {
     },
     {
       id: 16,
-      title: "Handmade Soaps Gift Set",
+      title: "Magenta Silk Saree with Belt",
       price: 449,
       image: "/images/sarees/743ad6d71c91dddd91019acfd6ecdff1.jpg",
-      category: "Personal Care",
+      category: "Personal Care", // Ideally "Textiles"
       rating: 4,
     },
     {
       id: 17,
-      title: "Traditional Rangoli Stencils",
+      title: "Artisan Wood Carving in Progress",
       price: 199,
       originalPrice: 299,
       image: "/images/stone carvings/8e9bb1f7a2df92158f8bcfd3bb693d11.jpg",
@@ -144,14 +144,15 @@ const NewArrivals = () => {
     },
     {
       id: 18,
-      title: "Copper Water Jug with Glasses",
+      title: "Delicious Gulab Jamun Dessert",
       price: 1299,
       image:
         "/images/traditional foods and snacks/846f78c0d8224bdfc17444b4b2f93788.jpg",
-      category: "Kitchenware",
+      category: "Kitchenware", // Ideally "Food"
       rating: 5,
     },
   ];
+
 
   return (
     <section className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 bg-gradient-to-br from-[#2d1f0f] via-[#3d2914] to-[#4a3420] overflow-x-hidden">

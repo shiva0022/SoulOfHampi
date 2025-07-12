@@ -63,26 +63,26 @@ const TrendingNow = () => {
   const trendingProducts = [
     {
       id: 1,
-      title: "Hampi Stone Carved Elephant",
+      title: "Indian Sweet pickels",
       price: 2499,
       originalPrice: 3499,
       image:
         "/images/miniature sculptures and souviners/5ae0ab25e48e90b522bbfa20a38ea710.jpg",
-      category: "Sculptures",
+      category: "Soveniers",
       rating: 5,
     },
     {
       id: 2,
-      title: "Traditional Handwoven Silk Saree",
+      title: "Handmade Designed Pots",
       price: 1899,
       originalPrice: 2499,
       image: "/images/pottery/b9ed6322c94048a2feef644a9b855696.jpg",
-      category: "Textiles",
+      category: "Handicrafts",
       rating: 4,
     },
     {
       id: 3,
-      title: "Ancient Temple Bell Replica",
+      title: "Traditional Red Saree",
       price: 899,
       image: "/images/sarees/8b691aeb62447e3f95cfc5343db225f1.jpg",
       category: "Handicrafts",
@@ -90,7 +90,7 @@ const TrendingNow = () => {
     },
     {
       id: 4,
-      title: "Handcrafted Wooden Jewelry Box",
+      title: "Stone Carved Ganesh Statue",
       price: 1299,
       originalPrice: 1599,
       image: "/images/stone carvings/b0e3ea7f7d709aea1f4eba4bef16f607.jpg",
@@ -99,26 +99,26 @@ const TrendingNow = () => {
     },
     {
       id: 5,
-      title: "Brass Oil Lamp with Intricate Design",
+      title: "Delicious Rasgulla – Traditional Indian Sweet",
       price: 649,
       image:
         "/images/traditional foods and snacks/85eb62403daffc2522514e776bc7109c.jpg",
-      category: "Home Decor",
+      category: "Food",
       rating: 4,
     },
     {
       id: 6,
-      title: "Handwoven Basket Set",
+      title: "Spicy Mango Pickle",
       price: 899,
       originalPrice: 1199,
       image:
         "/images/miniature sculptures and souviners/8ab1bba51cf5da1f236cc3cc9868cc9d.jpg",
-      category: "Handicrafts",
+      category: "Food",
       rating: 5,
     },
     {
       id: 7,
-      title: "Traditional Pottery Vase",
+      title: "Traditional Clay Kulhads",
       price: 749,
       image: "/images/pottery/c5854d7184fcfe3e047362a3a4ce2672.jpg",
       category: "Pottery",
@@ -126,16 +126,16 @@ const TrendingNow = () => {
     },
     {
       id: 8,
-      title: "Carved Wooden Photo Frame",
+      title: "Elegant Blue Saree",
       price: 549,
       originalPrice: 699,
       image: "/images/sarees/a8121d302b4635f75c93007cc91f8d6b.jpg",
-      category: "Home Decor",
+      category: "Apparel",
       rating: 4,
     },
     {
       id: 9,
-      title: "Miniature Stone Temple",
+      title: "Intricate Elephant Sculpture",
       price: 1899,
       image: "/images/stone carvings/c7b2a924a699d4113c9830f080ba101f.jpg",
       category: "Sculptures",
@@ -143,7 +143,7 @@ const TrendingNow = () => {
     },
     {
       id: 10,
-      title: "Handmade Copper Water Bottle",
+      title: "Gujarati Snack Platter",
       price: 999,
       originalPrice: 1299,
       image:
