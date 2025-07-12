@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import ProductCard from "./ProductCard";
 
 const TrendingNow = () => {
   const navigate = useNavigate();
+  const scrollContainerRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
 
   // Handle horizontal scroll with mouse wheel
   const handleWheel = (e) => {
@@ -11,6 +16,48 @@ const TrendingNow = () => {
     const scrollAmount = e.deltaY;
     container.scrollLeft += scrollAmount;
     e.preventDefault();
+  };
+
+  // Handle drag scrolling
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
+    setScrollLeft(scrollContainerRef.current.scrollLeft);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - scrollContainerRef.current.offsetLeft;
+    const walk = (x - startX) * 2; // Scroll speed multiplier
+    scrollContainerRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  // Navigation buttons
+  const scrollToPrev = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: -300,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const scrollToNext = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: 300,
+        behavior: "smooth",
+      });
+    }
   };
 
   const trendingProducts = [
@@ -123,17 +170,45 @@ const TrendingNow = () => {
           </p>
         </div>
 
-        {/* Products Horizontal Scroll */}
-        <div
-          className="product-scroll-container flex overflow-x-auto gap-6 pb-4 pt-4 scrollbar-hide px-2 sm:px-4 max-w-full"
-          onWheel={handleWheel}
-          style={{ scrollBehavior: "smooth" }}
-        >
-          {trendingProducts.map((product) => (
-            <div key={product.id} className="product-card-container">
-              <ProductCard product={product} />
-            </div>
-          ))}
+        {/* Products Horizontal Scroll with Navigation */}
+        <div className="relative">
+          {/* Previous Button */}
+          <button
+            onClick={scrollToPrev}
+            className="absolute left-0 top-1/2 -translate-y-1/2 bg-[#c4915c] hover:bg-[#e8b678] text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+            style={{ zIndex: 10 }}
+            aria-label="Scroll to previous products"
+          >
+            <FaChevronLeft className="w-4 h-4" />
+          </button>
+
+          {/* Next Button */}
+          <button
+            onClick={scrollToNext}
+            className="absolute right-0 top-1/2 -translate-y-1/2 bg-[#c4915c] hover:bg-[#e8b678] text-white p-3 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+            style={{ zIndex: 10 }}
+            aria-label="Scroll to next products"
+          >
+            <FaChevronRight className="w-4 h-4" />
+          </button>
+
+          {/* Scroll Container */}
+          <div
+            ref={scrollContainerRef}
+            className="product-scroll-container flex overflow-x-auto gap-6 pb-4 pt-4 scrollbar-hide px-2 sm:px-4 max-w-full cursor-grab active:cursor-grabbing select-none"
+            onWheel={handleWheel}
+            onMouseDown={handleMouseDown}
+            onMouseLeave={handleMouseLeave}
+            onMouseUp={handleMouseUp}
+            onMouseMove={handleMouseMove}
+            style={{ scrollBehavior: isDragging ? "auto" : "smooth" }}
+          >
+            {trendingProducts.map((product) => (
+              <div key={product.id} className="product-card-container">
+                <ProductCard product={product} />
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Enhanced View All Button */}

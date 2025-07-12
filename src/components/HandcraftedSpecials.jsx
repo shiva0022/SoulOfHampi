@@ -1,9 +1,14 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import ProductCard from "./ProductCard";
 
 const HandcraftedSpecials = () => {
   const navigate = useNavigate();
+  const scrollContainerRef = useRef(null);
+  const [isDragging, setIsDragging] = useState(false);
+  const [startX, setStartX] = useState(0);
+  const [scrollLeft, setScrollLeft] = useState(0);
 
   // Handle horizontal scroll with mouse wheel
   const handleWheel = (e) => {
@@ -11,6 +16,48 @@ const HandcraftedSpecials = () => {
     const scrollAmount = e.deltaY;
     container.scrollLeft += scrollAmount;
     e.preventDefault();
+  };
+
+  // Handle drag scrolling
+  const handleMouseDown = (e) => {
+    setIsDragging(true);
+    setStartX(e.pageX - scrollContainerRef.current.offsetLeft);
+    setScrollLeft(scrollContainerRef.current.scrollLeft);
+  };
+
+  const handleMouseLeave = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseUp = () => {
+    setIsDragging(false);
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - scrollContainerRef.current.offsetLeft;
+    const walk = (x - startX) * 2; // Scroll speed multiplier
+    scrollContainerRef.current.scrollLeft = scrollLeft - walk;
+  };
+
+  // Navigation buttons
+  const scrollToPrev = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: -300,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  const scrollToNext = () => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollBy({
+        left: 300,
+        behavior: "smooth",
+      });
+    }
   };
 
   const specialProducts = [
@@ -123,16 +170,39 @@ const HandcraftedSpecials = () => {
         </div>
 
         {/* Products Horizontal Scroll */}
-        <div
-          className="product-scroll-container flex overflow-x-auto gap-6 pb-4 pt-4 scrollbar-hide px-2 sm:px-4 max-w-full"
-          onWheel={handleWheel}
-          style={{ scrollBehavior: "smooth" }}
-        >
-          {specialProducts.map((product) => (
-            <div key={product.id} className="product-card-container">
-              <ProductCard product={product} />
-            </div>
-          ))}
+        <div className="relative">
+          {/* Navigation Buttons */}
+          <button
+            onClick={scrollToPrev}
+            className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-[#c4915c] hover:bg-[#e8b678] text-white p-2 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+            style={{ zIndex: 10 }}
+          >
+            <FaChevronLeft size={20} />
+          </button>
+          <button
+            onClick={scrollToNext}
+            className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-[#c4915c] hover:bg-[#e8b678] text-white p-2 rounded-full shadow-lg transition-all duration-300 hover:scale-110"
+            style={{ zIndex: 10 }}
+          >
+            <FaChevronRight size={20} />
+          </button>
+
+          <div
+            ref={scrollContainerRef}
+            className="product-scroll-container flex overflow-x-auto gap-6 pb-4 pt-4 scrollbar-hide px-2 sm:px-4 max-w-full cursor-grab active:cursor-grabbing"
+            onWheel={handleWheel}
+            onMouseDown={handleMouseDown}
+            onMouseMove={handleMouseMove}
+            onMouseUp={handleMouseUp}
+            onMouseLeave={handleMouseLeave}
+            style={{ scrollBehavior: isDragging ? "auto" : "smooth" }}
+          >
+            {specialProducts.map((product) => (
+              <div key={product.id} className="product-card-container">
+                <ProductCard product={product} />
+              </div>
+            ))}
+          </div>
         </div>
 
         {/* Enhanced View All Button */}

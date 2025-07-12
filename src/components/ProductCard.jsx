@@ -108,270 +108,280 @@ const ProductCard = ({ product }) => {
           transform: "translateZ(0)",
           willChange: "transform, box-shadow",
         }}
-      onMouseEnter={(e) => {
-        e.currentTarget.style.transform =
-          "translateZ(0) scale(1.03) translateY(-4px)";
-        e.currentTarget.style.boxShadow =
-          "0 30px 60px -12px rgba(0, 0, 0, 0.4)";
-        e.currentTarget.style.zIndex = 10;
+        onMouseEnter={(e) => {
+          e.currentTarget.style.transform =
+            "translateZ(0) scale(1.03) translateY(-4px)";
+          e.currentTarget.style.boxShadow =
+            "0 30px 60px -12px rgba(0, 0, 0, 0.4)";
+          e.currentTarget.style.zIndex = "5";
 
-        // Scale the active image on hover
-        const activeImg = e.currentTarget.querySelector(
-          ".swiper-like-slider img.opacity-100"
-        );
-        if (activeImg) {
-          activeImg.style.transform = "scale(1.05)";
-        }
-      }}
-      onMouseLeave={(e) => {
-        e.currentTarget.style.transform =
-          "translateZ(0) scale(1) translateY(0)";
-        e.currentTarget.style.boxShadow = "0 20px 25px -5px rgba(0, 0, 0, 0.2)";
-        e.currentTarget.style.zIndex = 1;
+          // Scale the active image on hover
+          const activeImg = e.currentTarget.querySelector(
+            ".swiper-like-slider img.opacity-100"
+          );
+          if (activeImg) {
+            activeImg.style.transform = "scale(1.05)";
+          }
+        }}
+        onMouseLeave={(e) => {
+          e.currentTarget.style.transform =
+            "translateZ(0) scale(1) translateY(0)";
+          e.currentTarget.style.boxShadow =
+            "0 20px 25px -5px rgba(0, 0, 0, 0.2)";
+          e.currentTarget.style.zIndex = "1";
 
-        // Reset the active image scale
-        const activeImg = e.currentTarget.querySelector(
-          ".swiper-like-slider img.opacity-100"
-        );
-        if (activeImg) {
-          activeImg.style.transform = "scale(1)";
-        }
-      }}
-    >
-      {/* Full Width Product Image Container */}
-      <div className="relative overflow-hidden bg-gradient-to-br from-[#2d1f0f] to-[#3d2914] h-40 sm:h-44 md:h-48">
-        <div className="swiper-like-slider relative w-full h-full">
-          {productImages.map((imgSrc, idx) => (
-            <img
-              key={idx}
-              src={imgSrc}
-              alt={`${title} - view ${idx + 1}`}
-              className={`absolute w-full h-full object-cover transition-transform duration-700 ease-in-out ${
-                currentImageIndex === idx
-                  ? "opacity-100 scale-100 z-10"
-                  : "opacity-0 scale-110 z-0"
-              }`}
-              style={{
-                willChange: "transform, opacity",
-                transition:
-                  "transform 700ms cubic-bezier(0.4, 0, 0.2, 1), opacity 700ms cubic-bezier(0.4, 0, 0.2, 1)",
+          // Reset the active image scale
+          const activeImg = e.currentTarget.querySelector(
+            ".swiper-like-slider img.opacity-100"
+          );
+          if (activeImg) {
+            activeImg.style.transform = "scale(1)";
+          }
+        }}
+      >
+        {/* Full Width Product Image Container */}
+        <div className="relative overflow-hidden bg-gradient-to-br from-[#2d1f0f] to-[#3d2914] h-40 sm:h-44 md:h-48">
+          <div className="swiper-like-slider relative w-full h-full">
+            {productImages.map((imgSrc, idx) => (
+              <img
+                key={idx}
+                src={imgSrc}
+                alt={`${title} - view ${idx + 1}`}
+                className={`absolute w-full h-full object-cover transition-transform duration-700 ease-in-out ${
+                  currentImageIndex === idx
+                    ? "opacity-100 scale-100 z-10"
+                    : "opacity-0 scale-110 z-0"
+                }`}
+                style={{
+                  willChange: "transform, opacity",
+                  transition:
+                    "transform 700ms cubic-bezier(0.4, 0, 0.2, 1), opacity 700ms cubic-bezier(0.4, 0, 0.2, 1)",
+                }}
+              />
+            ))}
+            <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
+          </div>
+
+          {/* Image Navigation Controls (visible on hover) */}
+          {productImages.length > 1 && (
+            <div className="absolute inset-0 flex items-center justify-between px-1 sm:px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30">
+              <button
+                onClick={prevImage}
+                disabled={isTransitioning}
+                className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-black/50 backdrop-blur-sm text-white flex items-center justify-center hover:bg-black/70 transition-all duration-300 transform hover:scale-110 shadow-lg ${
+                  isTransitioning ? "cursor-not-allowed opacity-50" : ""
+                }`}
+                aria-label="Previous image"
+              >
+                <FaAngleLeft size={10} className="sm:text-xs" />
+              </button>
+              <button
+                onClick={nextImage}
+                disabled={isTransitioning}
+                className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-black/50 backdrop-blur-sm text-white flex items-center justify-center hover:bg-black/70 transition-all duration-300 transform hover:scale-110 shadow-lg ${
+                  isTransitioning ? "cursor-not-allowed opacity-50" : ""
+                }`}
+                aria-label="Next image"
+              >
+                <FaAngleRight size={10} className="sm:text-xs" />
+              </button>
+            </div>
+          )}
+
+          {/* Image indicator dots */}
+          {productImages.length > 1 && (
+            <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1 sm:gap-2 z-30">
+              {productImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    e.preventDefault();
+                    if (!isTransitioning && currentImageIndex !== index) {
+                      setIsTransitioning(true);
+                      setCurrentImageIndex(index);
+                      setTimeout(() => {
+                        setIsTransitioning(false);
+                      }, 700);
+                    }
+                  }}
+                  disabled={isTransitioning}
+                  className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-500 ease-in-out cursor-pointer border border-white/40 ${
+                    currentImageIndex === index
+                      ? "bg-white w-4 sm:w-6 shadow-md"
+                      : "bg-white/50 hover:bg-white/80"
+                  }`}
+                  aria-label={`View image ${index + 1}`}
+                />
+              ))}
+            </div>
+          )}
+
+          {/* Overlay Badges & Wishlist */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+
+          {/* Wishlist Button */}
+          <div className="absolute top-2 right-2 sm:top-3 sm:right-3 z-30">
+            <button
+              onClick={handleWishlistToggle}
+              className={`${
+                inWishlist
+                  ? "bg-red-500 hover:bg-red-600"
+                  : "bg-white/90 hover:bg-red-50"
+              } backdrop-blur-sm p-1.5 sm:p-2 rounded-full shadow-lg transition-all duration-300 ease-in-out`}
+              style={{ willChange: "transform, background-color" }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = "scale(1.08)";
               }}
-            />
-          ))}
-          <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 z-20"></div>
-        </div>
-
-        {/* Image Navigation Controls (visible on hover) */}
-        {productImages.length > 1 && (
-          <div className="absolute inset-0 flex items-center justify-between px-1 sm:px-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-30">
-            <button
-              onClick={prevImage}
-              disabled={isTransitioning}
-              className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-black/50 backdrop-blur-sm text-white flex items-center justify-center hover:bg-black/70 transition-all duration-300 transform hover:scale-110 shadow-lg ${
-                isTransitioning ? "cursor-not-allowed opacity-50" : ""
-              }`}
-              aria-label="Previous image"
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = "scale(1)";
+              }}
             >
-              <FaAngleLeft size={10} className="sm:text-xs" />
-            </button>
-            <button
-              onClick={nextImage}
-              disabled={isTransitioning}
-              className={`w-6 h-6 sm:w-8 sm:h-8 rounded-full bg-black/50 backdrop-blur-sm text-white flex items-center justify-center hover:bg-black/70 transition-all duration-300 transform hover:scale-110 shadow-lg ${
-                isTransitioning ? "cursor-not-allowed opacity-50" : ""
-              }`}
-              aria-label="Next image"
-            >
-              <FaAngleRight size={10} className="sm:text-xs" />
+              <FaHeart
+                className={`${
+                  inWishlist ? "text-white" : "text-[#3d2914]"
+                } text-xs sm:text-sm transition-colors duration-300 ease-in-out`}
+              />
             </button>
           </div>
-        )}
 
-        {/* Image indicator dots */}
-        {productImages.length > 1 && (
-          <div className="absolute bottom-2 left-0 right-0 flex justify-center gap-1 sm:gap-2 z-30">
-            {productImages.map((_, index) => (
+          {/* Discount Badge */}
+          {originalPrice && (
+            <div className="absolute top-2 left-2 sm:top-3 sm:left-3">
+              <span className="bg-gradient-to-r from-[#d4c5a0] to-[#b08968] text-[#3d2914] px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs font-bold shadow-lg">
+                {Math.round(((originalPrice - price) / originalPrice) * 100)}%
+                OFF
+              </span>
+            </div>
+          )}
+
+          {/* Category Badge */}
+          <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3">
+            <span className="bg-black/60 backdrop-blur-sm text-white px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs font-medium">
+              {category}
+            </span>
+          </div>
+        </div>
+
+        {/* Compact Product Information */}
+        <div className="p-3 sm:p-4 flex-1 flex flex-col justify-between">
+          <div className="space-y-2 sm:space-y-3">
+            {/* Product Title & Rating in same row */}
+            <div className="flex justify-between items-start gap-2">
+              <h3
+                className="font-bold text-[#f5f1e8] text-sm sm:text-base md:text-lg leading-tight flex-1 group-hover:text-[#d4c5a0] transition-colors duration-300 h-[2.5rem] sm:h-[3rem] md:h-[3.5rem] overflow-hidden"
+                style={{
+                  display: "-webkit-box",
+                  WebkitLineClamp: 2,
+                  WebkitBoxOrient: "vertical",
+                }}
+              >
+                {title}
+              </h3>
+              <div className="flex items-center gap-1 flex-shrink-0 mt-1">
+                <FaStar className="text-yellow-400 text-xs sm:text-sm" />
+                <span className="text-xs sm:text-sm text-[#d4c5a0] font-semibold">
+                  {rating}
+                </span>
+              </div>
+            </div>
+
+            {/* Price & Quantity in same row */}
+            <div className="flex justify-between items-center">
+              <div className="flex items-center gap-1 sm:gap-2">
+                <span className="text-lg sm:text-xl md:text-2xl font-bold text-[#f5f1e8]">
+                  ₹{price.toLocaleString()}
+                </span>
+                {originalPrice && (
+                  <span className="text-xs sm:text-sm text-[#d4c5a0] opacity-70 line-through">
+                    ₹{originalPrice.toLocaleString()}
+                  </span>
+                )}
+              </div>
+
+              {/* Compact Quantity Counter */}
+              <div className="flex items-center gap-1 sm:gap-2 bg-[#2d1f0f] rounded-lg p-1 border border-[#6b5b4b]">
+                <button
+                  onClick={handleQuantityDecrease}
+                  disabled={quantity <= 1}
+                  className={`w-5 h-5 sm:w-6 sm:h-6 rounded flex items-center justify-center transition-all duration-200 ${
+                    quantity <= 1
+                      ? "bg-[#4a3420] text-[#6b5b4b] cursor-not-allowed"
+                      : "bg-[#d4c5a0] text-[#3d2914] hover:bg-[#b08968] active:scale-95"
+                  }`}
+                >
+                  <FaMinus className="text-xs" />
+                </button>
+
+                <span className="min-w-[1.25rem] sm:min-w-[1.5rem] text-center font-bold text-[#f5f1e8] text-xs sm:text-sm">
+                  {quantity}
+                </span>
+
+                <button
+                  onClick={handleQuantityIncrease}
+                  disabled={quantity >= 10}
+                  className={`w-5 h-5 sm:w-6 sm:h-6 rounded flex items-center justify-center transition-all duration-200 ${
+                    quantity >= 10
+                      ? "bg-[#4a3420] text-[#6b5b4b] cursor-not-allowed"
+                      : "bg-[#d4c5a0] text-[#3d2914] hover:bg-[#b08968] active:scale-95"
+                  }`}
+                >
+                  <FaPlus className="text-xs" />
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* Separated Action Buttons - Always at bottom */}
+          <div className="mt-3 sm:mt-4 relative" style={{ zIndex: 15 }}>
+            <div className="flex gap-1.5 sm:gap-2">
               <button
-                key={index}
+                onClick={handleAddToCart}
+                disabled={isAdded}
+                className={`flex-1 ${
+                  isAdded
+                    ? "bg-green-600 hover:bg-green-600"
+                    : "bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0]"
+                } text-[#3d2914] py-2 sm:py-2.5 px-2 sm:px-4 rounded-xl font-bold flex items-center justify-center gap-1 sm:gap-2 shadow-lg transition-all duration-300 ease-in-out border border-[#9d7a5e] hover:shadow-xl transform hover:scale-102 relative`}
+                style={{
+                  willChange: "transform, box-shadow, background",
+                  zIndex: 20,
+                }}
+              >
+                {isAdded ? (
+                  <>
+                    <FaCheck className="text-xs sm:text-sm" />
+                    <span className="text-xs sm:text-sm text-white">
+                      Added!
+                    </span>
+                  </>
+                ) : (
+                  <>
+                    <FaShoppingCart className="text-xs sm:text-sm" />
+                    <span className="text-xs sm:text-sm">
+                      ₹{(price * quantity).toLocaleString()}
+                    </span>
+                  </>
+                )}
+              </button>
+              <button
                 onClick={(e) => {
                   e.stopPropagation();
                   e.preventDefault();
-                  if (!isTransitioning && currentImageIndex !== index) {
-                    setIsTransitioning(true);
-                    setCurrentImageIndex(index);
-                    setTimeout(() => {
-                      setIsTransitioning(false);
-                    }, 700);
-                  }
+                  navigate(`/product/${id}`);
                 }}
-                disabled={isTransitioning}
-                className={`w-1.5 h-1.5 sm:w-2 sm:h-2 rounded-full transition-all duration-500 ease-in-out cursor-pointer border border-white/40 ${
-                  currentImageIndex === index
-                    ? "bg-white w-4 sm:w-6 shadow-md"
-                    : "bg-white/50 hover:bg-white/80"
-                }`}
-                aria-label={`View image ${index + 1}`}
-              />
-            ))}
-          </div>
-        )}
-
-        {/* Overlay Badges & Wishlist */}
-        <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-        {/* Wishlist Button */}
-        <div className="absolute top-2 right-2 sm:top-3 sm:right-3 z-30">
-          <button
-            onClick={handleWishlistToggle}
-            className={`${
-              inWishlist
-                ? "bg-red-500 hover:bg-red-600"
-                : "bg-white/90 hover:bg-red-50"
-            } backdrop-blur-sm p-1.5 sm:p-2 rounded-full shadow-lg transition-all duration-300 ease-in-out`}
-            style={{ willChange: "transform, background-color" }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.transform = "scale(1.08)";
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.transform = "scale(1)";
-            }}
-          >
-            <FaHeart
-              className={`${
-                inWishlist ? "text-white" : "text-[#3d2914]"
-              } text-xs sm:text-sm transition-colors duration-300 ease-in-out`}
-            />
-          </button>
-        </div>
-
-        {/* Discount Badge */}
-        {originalPrice && (
-          <div className="absolute top-2 left-2 sm:top-3 sm:left-3">
-            <span className="bg-gradient-to-r from-[#d4c5a0] to-[#b08968] text-[#3d2914] px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs font-bold shadow-lg">
-              {Math.round(((originalPrice - price) / originalPrice) * 100)}% OFF
-            </span>
-          </div>
-        )}
-
-        {/* Category Badge */}
-        <div className="absolute bottom-2 left-2 sm:bottom-3 sm:left-3">
-          <span className="bg-black/60 backdrop-blur-sm text-white px-2 py-1 sm:px-3 sm:py-1 rounded-full text-xs font-medium">
-            {category}
-          </span>
-        </div>
-      </div>
-
-      {/* Compact Product Information */}
-      <div className="p-3 sm:p-4 flex-1 flex flex-col justify-between">
-        <div className="space-y-2 sm:space-y-3">
-          {/* Product Title & Rating in same row */}
-          <div className="flex justify-between items-start gap-2">
-            <h3
-              className="font-bold text-[#f5f1e8] text-sm sm:text-base md:text-lg leading-tight flex-1 group-hover:text-[#d4c5a0] transition-colors duration-300 h-[2.5rem] sm:h-[3rem] md:h-[3.5rem] overflow-hidden"
-              style={{
-                display: "-webkit-box",
-                WebkitLineClamp: 2,
-                WebkitBoxOrient: "vertical",
-              }}
-            >
-              {title}
-            </h3>
-            <div className="flex items-center gap-1 flex-shrink-0 mt-1">
-              <FaStar className="text-yellow-400 text-xs sm:text-sm" />
-              <span className="text-xs sm:text-sm text-[#d4c5a0] font-semibold">
-                {rating}
-              </span>
-            </div>
-          </div>
-
-          {/* Price & Quantity in same row */}
-          <div className="flex justify-between items-center">
-            <div className="flex items-center gap-1 sm:gap-2">
-              <span className="text-lg sm:text-xl md:text-2xl font-bold text-[#f5f1e8]">
-                ₹{price.toLocaleString()}
-              </span>
-              {originalPrice && (
-                <span className="text-xs sm:text-sm text-[#d4c5a0] opacity-70 line-through">
-                  ₹{originalPrice.toLocaleString()}
-                </span>
-              )}
-            </div>
-
-            {/* Compact Quantity Counter */}
-            <div className="flex items-center gap-1 sm:gap-2 bg-[#2d1f0f] rounded-lg p-1 border border-[#6b5b4b]">
-              <button
-                onClick={handleQuantityDecrease}
-                disabled={quantity <= 1}
-                className={`w-5 h-5 sm:w-6 sm:h-6 rounded flex items-center justify-center transition-all duration-200 ${
-                  quantity <= 1
-                    ? "bg-[#4a3420] text-[#6b5b4b] cursor-not-allowed"
-                    : "bg-[#d4c5a0] text-[#3d2914] hover:bg-[#b08968] active:scale-95"
-                }`}
+                className="bg-transparent border-2 border-[#d4c5a0] text-[#f5f1e8] hover:bg-[#d4c5a0] hover:text-[#3d2914] py-2 sm:py-2.5 px-2 sm:px-4 rounded-xl font-bold shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl transform hover:scale-102 flex items-center justify-center text-xs sm:text-sm relative"
+                style={{
+                  willChange: "transform, box-shadow, background",
+                  zIndex: 20,
+                }}
               >
-                <FaMinus className="text-xs" />
-              </button>
-
-              <span className="min-w-[1.25rem] sm:min-w-[1.5rem] text-center font-bold text-[#f5f1e8] text-xs sm:text-sm">
-                {quantity}
-              </span>
-
-              <button
-                onClick={handleQuantityIncrease}
-                disabled={quantity >= 10}
-                className={`w-5 h-5 sm:w-6 sm:h-6 rounded flex items-center justify-center transition-all duration-200 ${
-                  quantity >= 10
-                    ? "bg-[#4a3420] text-[#6b5b4b] cursor-not-allowed"
-                    : "bg-[#d4c5a0] text-[#3d2914] hover:bg-[#b08968] active:scale-95"
-                }`}
-              >
-                <FaPlus className="text-xs" />
+                Buy Now
               </button>
             </div>
           </div>
         </div>
-
-        {/* Separated Action Buttons - Always at bottom */}
-        <div className="mt-3 sm:mt-4">
-          <div className="flex gap-1.5 sm:gap-2">
-            <button
-              onClick={handleAddToCart}
-              disabled={isAdded}
-              className={`flex-1 ${
-                isAdded
-                  ? "bg-green-600 hover:bg-green-600"
-                  : "bg-gradient-to-r from-[#d4c5a0] to-[#b08968] hover:from-[#b08968] hover:to-[#d4c5a0]"
-              } text-[#3d2914] py-2 sm:py-2.5 px-2 sm:px-4 rounded-xl font-bold flex items-center justify-center gap-1 sm:gap-2 shadow-lg transition-all duration-300 ease-in-out border border-[#9d7a5e] hover:shadow-xl transform hover:scale-102`}
-              style={{ willChange: "transform, box-shadow, background" }}
-            >
-              {isAdded ? (
-                <>
-                  <FaCheck className="text-xs sm:text-sm" />
-                  <span className="text-xs sm:text-sm text-white">Added!</span>
-                </>
-              ) : (
-                <>
-                  <FaShoppingCart className="text-xs sm:text-sm" />
-                  <span className="text-xs sm:text-sm">
-                    ₹{(price * quantity).toLocaleString()}
-                  </span>
-                </>
-              )}
-            </button>
-            <button
-              onClick={(e) => {
-                e.stopPropagation();
-                e.preventDefault();
-                navigate(`/product/${id}`);
-              }}
-              className="bg-transparent border-2 border-[#d4c5a0] text-[#f5f1e8] hover:bg-[#d4c5a0] hover:text-[#3d2914] py-2 sm:py-2.5 px-2 sm:px-4 rounded-xl font-bold shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl transform hover:scale-102 flex items-center justify-center text-xs sm:text-sm"
-              style={{ willChange: "transform, box-shadow, background" }}
-            >
-              Buy Now
-            </button>
-          </div>
-        </div>
       </div>
-    </div>
     </Link>
   );
 };
