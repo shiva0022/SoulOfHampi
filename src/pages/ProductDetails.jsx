@@ -52,11 +52,11 @@ const ProductDetails = () => {
   useEffect(() => {
     // Use passed product data if available, otherwise fetch by ID
     let productData = passedProductData;
-    
+
     if (!productData) {
       productData = getProductById(id);
     }
-    
+
     setProduct(productData);
 
     // Mock fetch of similar products - in a real app, this would be from an API
@@ -66,7 +66,7 @@ const ProductDetails = () => {
       const mockSimilarProducts = [
         {
           id: "sim1",
-          title: `Similar ${productData.category} - Handcrafted Art`,
+          title: "Traditional Spicy Pickle Dish",
           price: Math.round(productData.price * 0.9),
           originalPrice: productData.price,
           image:
@@ -81,7 +81,7 @@ const ProductDetails = () => {
         },
         {
           id: "sim2",
-          title: `Traditional ${productData.category} - Hampi Art`,
+          title: "Handcrafted Pottery Lanterns",
           price: Math.round(productData.price * 1.1),
           image: "/images/pottery/ea7ccc87a9f5aaa8035f6435e4152920.jpg",
           images: [
@@ -94,7 +94,7 @@ const ProductDetails = () => {
         },
         {
           id: "sim3",
-          title: `Modern ${productData.category} - Artisan Crafted`,
+          title: "Elegant Woman in Ilkal Saree",
           price: Math.round(productData.price * 0.8),
           originalPrice: Math.round(productData.price * 1.2),
           image: "/images/sarees/4ce921addf51f774aeec8966aa5c7863.jpg",
@@ -108,7 +108,7 @@ const ProductDetails = () => {
         },
         {
           id: "sim4",
-          title: `Premium ${productData.category} - Collectible`,
+          title: "Intricately Carved Stone Sculpture",
           price: Math.round(productData.price * 1.3),
           image: "/images/stone carvings/31c8f806803a89b67c67faf77ea1ae20.jpg",
           images: [
